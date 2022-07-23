@@ -1,6 +1,6 @@
 # Dependency directory
 node_modules
-.vscodes
+.vscode
 
 # Debug log from npm
 npm-debug.log
