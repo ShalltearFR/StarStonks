@@ -1,12 +1,27 @@
+*{
+  background-color: black;
+}
+
 body {
-  padding: 50px;
+  margin : 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: white;
 }
 
-a {
-  color: #00b7ff;
+nav , #navUser, #navEnd{
+  display: flex;
 }
 
-h1 {
-  color: 15px;
+nav #navLogo {
+    max-height: 65px;
+}
+
+nav .navIcon{
+  max-height: 35px;
+}
+nav #navCartHamburger{
+  margin-left: auto;
+  margin-block: auto;
+  padding-right: 10px;
+  gap: 5px;
 }
