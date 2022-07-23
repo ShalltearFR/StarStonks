@@ -1,19 +1,14 @@
 {
-  "name": "star-stonks",
-  "version": "1.0.0",
-  "description": "Project 2 Iron hack",
-  "main": "app.js",
+  "name": "www",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ShalltearFR/StarStonks.git"
+  "dependencies": {
+ 
   },
-  "author": "shalltearfr, benamzz, wilsonf78",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ShalltearFR/StarStonks/issues"
-  },
-  "homepage": "https://github.com/ShalltearFR/StarStonks#readme"
+  "devDependencies": {
+  }
 }
