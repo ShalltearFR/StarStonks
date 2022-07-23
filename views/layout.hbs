@@ -1,36 +1,53 @@
 <html lang="fr">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>{{title}}</title>
-    <link rel="stylesheet" href="/stylesheets/style.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>{{title}}</title>
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+</head>
 
-  <body>
-    <nav>
-      <img src="https://res.cloudinary.com/shalltear/image/upload/v1658592362/Project%202/public/Logo2_ebnku0.png" id="navLogo">
-      <div id="navUser">
-        {{#if user}}
-        <h3>{{user.pseudonyme}}</h3>
-          {{#if user.avatar}}
-            <img src="{{user.avatar}}" id="navAvatar">
-          {{else}}
-            <img src="https://res.cloudinary.com/shalltear/image/upload/v1658594678/Project%202/public/defaultAvatar_lcj3wl.png" class="navIcon">
-          {{/if}}
-        {{/if}}
+<body>
+  <nav>
+    <img src="https://res.cloudinary.com/shalltear/image/upload/v1658592362/Project%202/public/Logo2_ebnku0.png"
+      id="navLogo">
+    <div id="navUser">
+      {{#if user}}
+      <h3>{{user.pseudonyme}}</h3>
+      {{#if user.avatar}}
+      <img src="{{user.avatar}}" id="navAvatar">
+      {{else}}
+      <img
+        src="https://res.cloudinary.com/shalltear/image/upload/v1658594678/Project%202/public/defaultAvatar_lcj3wl.png"
+        class="navIcon">
+      {{/if}}
+      {{/if}}
 
-      </div>
-      <div id="navCartHamburger">
-        <img src="https://res.cloudinary.com/shalltear/image/upload/v1658592888/Project%202/public/cart_gzmrmy.png" class="navIcon">
-        <img src="https://res.cloudinary.com/shalltear/image/upload/v1658593774/Project%202/public/hamburger_ippbcd.png"class="navIcon">
-      </div>
-    </nav>
+    </div>
+    <div id="navCartHamburger">
+      <img src="https://res.cloudinary.com/shalltear/image/upload/v1658592888/Project%202/public/cart_gzmrmy.png"
+        class="navIcon">
+      <img src="https://res.cloudinary.com/shalltear/image/upload/v1658593774/Project%202/public/hamburger_ippbcd.png"
+        class="navIcon">
+    </div>
+  </nav>
 
-    {{{body}}}
+  {{{body}}}
 
-    <script src="/js/script.js"></script>
-  </body>
+  <footer>
+    <ul>
+      <li> <img src="https://res.cloudinary.com/shalltear/image/upload/v1658592362/Project%202/public/Logo2_ebnku0.png"
+          id="navLogo">
+      </li>
+      <li><a href="#">Application</a></li>
+      <li><a href="#">Classes de voyage</a></li>
+      <li><a href="#">Mention Légales</a></li>
+      <li><a href="#">Contactez-nous</a></li>
+    </ul>
+  </footer>
+
+  <script src="/js/script.js"></script>
+</body>
 
 </html>
