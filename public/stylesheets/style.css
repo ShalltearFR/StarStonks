@@ -1,19 +1,28 @@
 *{
-  background-color:;
+  /*background-color:black;*/
 }
 
 body {
   margin : 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color:;
+  /*color:white;*/
 }
 
 nav , #navUser, #navEnd{
   display: flex;
 }
 
+h1{
+  text-align: center;
+  padding-top: 10px;
+}
+
 nav #navLogo {
     max-height: 65px;
+}
+
+footer #footerLogo {
+  max-width: 100%;
 }
 
 nav .navIcon{
@@ -24,4 +33,24 @@ nav #navCartHamburger{
   margin-block: auto;
   padding-right: 10px;
   gap: 5px;
+}
+
+label{
+	display: block;
+	width: 150px;
+	float: left;
+}
+
+#profile{
+  padding: 24px;
+  padding-top: 70px;
+
+}
+
+#btn{
+text-align: center;
+}
+
+#profile, label, input{
+  
 }

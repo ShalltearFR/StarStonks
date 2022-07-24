@@ -1,52 +1,51 @@
-<h1>{{title}} 🚀</h1>
+<h1 class="title">{{title}}</h1>
 
- <div>
+ <div id="profile">
     <!-- Pseudonyme -->
     <label for="pseudo">Pseudonyme</label>
-    <input id="pseudo"type="text" placeholder="Entrez votre Pseudonyme"><br>
+    <input id="pseudo"type="text" placeholder=""><br>
 
     <!-- Nom -->
     <label for="nom">Nom</label>
-    <input id="nom"type="text" placeholder="Entrez votre Nom"><br>
+    <input id="nom"type="text" placeholder=""><br>
 
     <!-- Prénom -->
     <label for="prénom">Prénom</label>
-    <input id="prenom"type="text" placeholder="Entrez votre Prénom"><br>
+    <input id="prenom"type="text" placeholder=""><br>
 
     <!-- E-mail -->
     <label for="eMail">E-mail</label>
-    <input id="eMail"type="text" placeholder="Entrez votre e-mail"><br>
+    <input id="eMail"type="text" placeholder=""><br>
 
     <!-- Mobile Spatiale -->
     <label for="mobile">Mobile Spatiale</label>
-    <input id="mobile"type="text" placeholder="Entrez votre Moblie Spatiale"><br>
+    <input id="mobile"type="text" placeholder=""><br>
 
     <!-- Age -->
     <label for="age">Age </label> 
-    <input id="age" type="number" placeholder="Entrez votre age" min="0" max="99"><br>
+    <input id="age" type="number" placeholder="" min="0" max="99"><br>
 
     
 
-    <!-- Select Genre V2-->
-    <label for="gender">Genre</label>
-    <input type="radio" name="type" id="Homme">
-    <label for="Homme">Humain</label>
-    <input type="radio" name="type" checked id="Femme">
-    <label for="Femme">Femme</label><br>
+    <!-- Genre -->
+    <label for="sexe">Sexe :</label>
+    <input type="radio" name="sexe" id="sexe" />Homme 
+    <input type="radio" name="sexe" />Femme<br />
 
    
-
+    <!-- Adresse-->
     <label for="adresse">Adresse</label> 
-    <input id="adresse" type="text" placeholder="Entrez votre Adresse"><br>
+    <input id="adresse" type="text" placeholder=""><br>
     <label for="codePostal">Code Postal</label> 
-    <input id="codePostal" type="number" placeholder="Entrez votre Code postal">
+    <input id="codePostal" type="number" placeholder=""><br>
     <label for="département">Départements</label> 
-    <input id="département" type="text" placeholder="Entrez votre Département"><br>
+    <input id="département" type="text" placeholder=""><br>
 
     
-        <!-- Select Genre-->
-    <label for="grSange">Groupe Sanguins</label>
-    <select id="grSang">
+        <!-- Select Group Sanguin-->
+     <label for="grSange">Groupe Sanguins</label>
+
+     <select id="grSang">
         <option selected value=""></option>
         <option value="AB+">AB+</option>
         <option value="AB-">AB-</option>
@@ -57,8 +56,8 @@
         <option value="O+">O+</option>
         <option value="O-">O-</option>
     </select><br>
+</div>
 
-    
-    <input type="submit" value="Valider"> 
-
+  <div id="btn">
+        <button>Valider</button>
  </div>
