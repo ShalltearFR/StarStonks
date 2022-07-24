@@ -1,15 +1,18 @@
 *{
-  /*background-color:black;*/
+  background-color:black;
 }
 
 body {
   margin : 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  /*color:white;*/
+  color:white;
+  
 }
 
 nav , #navUser, #navEnd{
   display: flex;
+  
+  
 }
 
 h1{
@@ -21,8 +24,14 @@ nav #navLogo {
     max-height: 65px;
 }
 
+nav{
+  border: 1px solid gray;
+  
+}
+
 footer #footerLogo {
   max-width: 100%;
+  background-color: gray;
 }
 
 nav .navIcon{
@@ -42,7 +51,7 @@ label{
 }
 
 #profile{
-  padding: 24px;
+  padding: 20px;
   padding-top: 70px;
 
 }
@@ -52,5 +61,25 @@ text-align: center;
 }
 
 #profile, label, input{
-  
+  font-size: 14px;
 }
+
+input, select{
+  background-color:white;
+}
+
+button{
+  background-color: gray;
+  height: 35px;
+  width: 166px;
+}
+
+footer{
+  background-color: gray;
+  position:absolute;
+  right: 0px;
+  left: 0px;
+  bottom:0;
+  position: fixed;
+  
+  }
