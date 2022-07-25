@@ -1,16 +1,25 @@
-<h1>{{title}}</h1>
+{{#if user}}
+<h1>Bienvenue {{user.pseudonyme}}</h1>
+{{/if}}
+
 
 <h2>Choix de votre destination</h2>
-<div class="formulaire">
+<div class="destinationForm">
     <form action="" method="get">
-        <label for="from">Sélectionner La planet de depart</label>
-        <input type="list" id="from" name="from" list="planete" required>
+        <div>
+            <label for="from">Planète de départ</label>
+            <input type="list" id="from" name="from" list="planete" required>
+        </div>
+        <div>
+            <label for="from">Planète de destination</label>
+            <input type="list" id="to" name="to" list="planete" required>
+        </div>
 
-        <label for="from">Sélectionner La planet de destination</label>
-        <input type="list" id="to" name="to" list="planete" required>
+
         <a href="/results">
             <input type="button" value="Go voyage !" />
         </a>
+
     </form>
 
     <datalist id="planete">

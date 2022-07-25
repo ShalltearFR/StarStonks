@@ -1,30 +1,36 @@
-*{
-  background-color:black;
+* {
+  background-color: black;
+  box-sizing: border-box;
 }
 
 body {
-  margin : 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color:white;
-  
+  color: white;
+  max-width: 812px;
 }
 
-nav , #navUser, #navEnd{
+nav,
+#navUser,
+#navEnd {
   display: flex;
 }
 
-h1{
+h1 {
   text-align: center;
   padding-top: 10px;
 }
 
-nav #navLogo {
-    max-height: 65px;
+h2 {
+  color: #FAFF09;
 }
 
-nav{
+nav #navLogo {
+  max-height: 65px;
+}
+
+nav {
   border: 1px solid gray;
-  
+
 }
 
 footer #footerLogo {
@@ -32,55 +38,57 @@ footer #footerLogo {
   background-color: gray;
 }
 
-nav .navIcon{
+nav .navIcon {
   max-height: 35px;
 }
 
-nav #navCartHamburger{
+nav #navCartHamburger {
   margin-left: auto;
   margin-block: auto;
   padding-right: 10px;
   gap: 5px;
 }
 
-label{
-	display: block;
-	width: 150px;
-	float: left;
+label {
+  display: block;
+  width: 150px;
+  float: left;
 }
 
-#profile{
+#profile {
   padding: 20px;
   padding-top: 70px;
 
 }
 
-#btn{
-text-align: center;
+#btn {
+  text-align: center;
 }
 
-#profile, label, input{
+#profile,
+label,
+input {
   font-size: 14px;
 }
 
-input, select{
-  background-color:white;
+input,
+select {
+  background-color: white;
 }
 
-button{
+button {
   background-color: gray;
   height: 35px;
   width: 166px;
 }
 
-footer{
+footer {
   background-color: gray;
-  position:absolute;
   right: 0px;
   left: 0px;
-  bottom:0;
-  position: fixed;
+  bottom: 0;
 }
+
 /* 
 ##          ###    ##    ##  #######  ##     ## ######## 
 ##         ## ##    ##  ##  ##     ## ##     ##    ##    
@@ -92,6 +100,39 @@ footer{
 
 /* ----------------------------------------------------------------LAYOUT------------------------------------------------------------------ */
 /* ----------------------------------------------------------------HOMEPAGE------------------------------------------------------------------ */
+.destinationForm form {
+  display: block;
+}
+
+.destinationForm form div {
+  margin-block: 1rem;
+}
+
+ul {
+  margin: 0 auto;
+  padding: 0;
+}
+
+.planete img {
+  max-width: 50%;
+}
+
+.planete li {
+  list-style: none;
+  margin-block: 2rem;
+}
+
+.planete a {
+  display: block;
+  color: #FAFF09;
+  text-decoration: none;
+}
+
+.planete {
+  display: flex;
+  text-align: center;
+}
+
 /* ----------------------------------------------------------------CLASSES------------------------------------------------------------------ */
 /* ----------------------------------------------------------------PROFILE------------------------------------------------------------------ */
 /* ----------------------------------------------------------------RESULTS------------------------------------------------------------------ */
