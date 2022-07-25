@@ -32,12 +32,12 @@ router.post("/signup", isLoggedOut, (req, res) => {
     return res.status(400).render("auth/signup", {
       errorMessage: "Votre mot de passe doit comporter au minimum 8 caractères",
     });
+  }
 
   if (pseudonyme.length < 1){
     return res.status(400).render("auth/signup", {
       errorMessage: "Veuillez rentrer un pseudonyme",
     });
-  }
   }
 
   //   ! This use case is using a regular expression to control for special characters and min length
@@ -102,11 +102,11 @@ router.get("/login", isLoggedOut, (req, res) => {
 });
 
 router.post("/login", isLoggedOut, (req, res, next) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
 
-  if (!username) {
+  if (!email) {
     return res.status(400).render("auth/login", {
-      errorMessage: "Please provide your username.",
+      errorMessage: "Veuillez rentrer votre mail",
     });
   }
 
@@ -114,17 +114,17 @@ router.post("/login", isLoggedOut, (req, res, next) => {
   // - either length based parameters or we check the strength of a password
   if (password.length < 8) {
     return res.status(400).render("auth/login", {
-      errorMessage: "Your password needs to be at least 8 characters long.",
+      errorMessage: "Votre mot de passe n'a pas suffisement de caractères",
     });
   }
 
   // Search the database for a user with the username submitted in the form
-  User.findOne({ username })
+  User.findOne({ email })
     .then((user) => {
       // If the user isn't found, send the message that user provided wrong credentials
       if (!user) {
         return res.status(400).render("auth/login", {
-          errorMessage: "Wrong credentials.",
+          errorMessage: "Informations incorrectes",
         });
       }
 
@@ -132,7 +132,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
       bcrypt.compare(password, user.password).then((isSamePassword) => {
         if (!isSamePassword) {
           return res.status(400).render("auth/login", {
-            errorMessage: "Wrong credentials.",
+            errorMessage: "Informations incorrectes",
           });
         }
         req.session.user = user;

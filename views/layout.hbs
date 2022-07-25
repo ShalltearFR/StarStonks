@@ -14,14 +14,14 @@
       id="navLogo">
     <div id="navUser">
       {{#if user}}
-      <h3>{{user.pseudonyme}}</h3>
-      {{#if user.avatar}}
-      <img src="{{user.avatar}}" id="navAvatar">
-      {{else}}
-      <img
-        src="https://res.cloudinary.com/shalltear/image/upload/v1658594678/Project%202/public/defaultAvatar_lcj3wl.png"
-        class="navIcon">
-      {{/if}}
+        <h3>{{user.pseudonyme}}</h3>
+        {{#if user.avatarUrl}}
+        <img src="{{user.avatarUrl}}" class="navIcon">
+        {{else}}
+        <img
+          src="https://res.cloudinary.com/shalltear/image/upload/v1658594678/Project%202/public/defaultAvatar_lcj3wl.png"
+          class="navIcon">
+        {{/if}}
       {{/if}}
 
     </div>

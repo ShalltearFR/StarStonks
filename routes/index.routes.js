@@ -2,9 +2,11 @@ const router = require("express").Router();
 
 /* GET home page */
 router.get("/", (req, res, next) => {
-  res.render("homepage", {
-    title: "Home",
-  });
+  console.log("res.user.session",req.session.user)
+    res.render("homepage", {
+      title: "Home",
+      user: req.session.user
+    });
 });
 
 router.get("/profile", (req, res, next) => {
