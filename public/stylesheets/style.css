@@ -1,18 +1,31 @@
 * {
-  background-color: black;
+  box-sizing: border-box;
 }
 
 body {
+  margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  max-width: 812px;
+  max-width: 100vw;
   color: white;
-  background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg);
+  background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#content {
+  /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg); */
+  /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg); */
+  /* background-image: url("https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778891/imgAccueil_yvz3sq.jpg"); */
 }
 
 nav,
 #navUser,
 #navEnd {
   display: flex;
+  /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg); */
+  background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg);
+  /* background-image: url("https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778891/imgAccueil_yvz3sq.jpg"); */
+  background-size: cover;
 }
 
 h1 {
@@ -22,6 +35,7 @@ h1 {
 
 h2 {
   color: #FAFF09;
+  text-align: center;
 }
 
 nav #navLogo {
@@ -100,18 +114,10 @@ footer {
 
 /* ----------------------------------------------------------------LAYOUT------------------------------------------------------------------ */
 /* ----------------------------------------------------------------HOMEPAGE------------------------------------------------------------------ */
-.destinationForm form {
-  display: block;
-}
-
-.destinationForm form div {
-  margin-block: 1rem;
-}
 
 ul {
   margin: 0 auto;
   padding: 0;
-  background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg);
 }
 
 .planete img {
@@ -121,15 +127,13 @@ ul {
 .planete li {
   list-style: none;
   margin-block: 2rem;
-  background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg);
-
 }
 
 .planete a {
   display: block;
   color: #FAFF09;
   text-decoration: none;
-  background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg);
+
 }
 
 .planete {
