@@ -16,16 +16,25 @@ body {
   /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg); */
   /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg); */
   /* background-image: url("https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778891/imgAccueil_yvz3sq.jpg"); */
+  padding-top: 50px;
 }
 
 nav,
 #navUser,
 #navEnd {
   display: flex;
+}
+
+nav {
   /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg); */
   background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg);
   /* background-image: url("https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778891/imgAccueil_yvz3sq.jpg"); */
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  width: 100vw;
+  padding-bottom: 0px;
 }
 
 h1 {
