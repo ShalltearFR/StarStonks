@@ -1,11 +1,9 @@
 * {
   background-color: black;
-  box-sizing: border-box;
 }
 
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  color: white;
   max-width: 812px;
 }
 

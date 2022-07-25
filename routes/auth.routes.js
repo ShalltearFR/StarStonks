@@ -19,18 +19,25 @@ router.get("/signup", isLoggedOut, (req, res) => {
 });
 
 router.post("/signup", isLoggedOut, (req, res) => {
-  const { username, password } = req.body;
+  const { pseudonyme, password,email } = req.body;
 
-  if (!username) {
+  console.log("test")
+  if (!email) {
     return res.status(400).render("auth/signup", {
-      errorMessage: "Please provide your username.",
+      errorMessage: "Veuillez rentrer votre mail",
     });
   }
 
   if (password.length < 8) {
     return res.status(400).render("auth/signup", {
-      errorMessage: "Your password needs to be at least 8 characters long.",
+      errorMessage: "Votre mot de passe doit comporter au minimum 8 caractères",
     });
+
+  if (pseudonyme.length < 1){
+    return res.status(400).render("auth/signup", {
+      errorMessage: "Veuillez rentrer un pseudonyme",
+    });
+  }
   }
 
   //   ! This use case is using a regular expression to control for special characters and min length
@@ -46,12 +53,12 @@ router.post("/signup", isLoggedOut, (req, res) => {
   */
 
   // Search the database for a user with the username submitted in the form
-  User.findOne({ username }).then((found) => {
+  User.findOne({ email }).then((found) => {
     // If the user is found, send the message username is taken
     if (found) {
       return res
         .status(400)
-        .render("auth.signup", { errorMessage: "Username already taken." });
+        .render("auth.signup", { errorMessage: "Email deja utilisé" });
     }
 
     // if user is not found, create a new user - start with hashing the password
@@ -61,7 +68,8 @@ router.post("/signup", isLoggedOut, (req, res) => {
       .then((hashedPassword) => {
         // Create a user and save it in the database
         return User.create({
-          username,
+          pseudonyme,
+          email,
           password: hashedPassword,
         });
       })
@@ -79,7 +87,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
         if (error.code === 11000) {
           return res.status(400).render("auth/signup", {
             errorMessage:
-              "Username need to be unique. The username you chose is already in use.",
+              "L'adresse email est deja utilisé",
           });
         }
         return res
