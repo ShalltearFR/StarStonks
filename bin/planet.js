@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const MONGO_URI = require("../utils/consts");
 
 mongoose
-  .connect(MONGO_URI)
+  .connect("mongodb://0.0.0.0/star-stonks")
   .then((x) => {
     console.log(
       `Connected to Mongo! Database name: "${x.connections[0].name}"`
