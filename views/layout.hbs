@@ -10,22 +10,16 @@
 
 <body>
   <nav>
-    <img src="https://res.cloudinary.com/shalltear/image/upload/v1658592362/Project%202/public/Logo2_ebnku0.png"
-      id="navLogo">
-    <div id="navUser">
+    <img src="https://res.cloudinary.com/shalltear/image/upload/v1658592362/Project%202/public/Logo2_ebnku0.png" id="navLogo">
+
+    <div id="navCartHamburger">
       {{#if user}}
-        <h3>{{user.pseudonyme}}</h3>
         {{#if user.avatarUrl}}
-        <img src="{{user.avatarUrl}}" class="navIcon">
+          <img src="{{user.avatarUrl}}" class="navIcon">
         {{else}}
-        <img
-          src="https://res.cloudinary.com/shalltear/image/upload/v1658594678/Project%202/public/defaultAvatar_lcj3wl.png"
-          class="navIcon">
+          <img src="https://res.cloudinary.com/shalltear/image/upload/v1658785651/Project%202/public/defaultAvatar_ezlpxu.png" class="navIcon">
         {{/if}}
       {{/if}}
-
-    </div>
-    <div id="navCartHamburger">
       <img src="https://res.cloudinary.com/shalltear/image/upload/v1658592888/Project%202/public/cart_gzmrmy.png"
         class="navIcon">
       <img src="https://res.cloudinary.com/shalltear/image/upload/v1658593774/Project%202/public/hamburger_ippbcd.png"
