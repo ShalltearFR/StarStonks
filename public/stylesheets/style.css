@@ -5,6 +5,8 @@
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   max-width: 812px;
+  color: white;
+  background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg);
 }
 
 nav,
@@ -109,6 +111,7 @@ footer {
 ul {
   margin: 0 auto;
   padding: 0;
+  background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg);
 }
 
 .planete img {
@@ -118,12 +121,15 @@ ul {
 .planete li {
   list-style: none;
   margin-block: 2rem;
+  background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg);
+
 }
 
 .planete a {
   display: block;
   color: #FAFF09;
   text-decoration: none;
+  background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg);
 }
 
 .planete {
