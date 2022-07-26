@@ -2,30 +2,33 @@
 <h1>Bienvenue {{user.pseudonyme}}</h1>
 {{/if}}
 
+<div class="homepage">
+    <h2>Choix de votre destination</h2>
 
-<h2>Choix de votre destination</h2>
-<form action="" method="get">
+    <form action="" method="get">
 
-    <label for="from">Sélectionnez la planète de départ</label>
-    <input type="list" id="from" name="from" list="planete" required>
+        <label for="from">Sélectionnez la planète de départ :</label>
+        <input type="list" id="from" name="from" list="planete" required>
 
 
-    <label for="from">Sélectionnez la planète de destination</label>
-    <input type="list" id="to" name="to" list="planete" required>
+        <label for="from">Sélectionnez la planète de destination :</label>
+        <input type="list" id="to" name="to" list="planete" required>
 
-    <a href="/results">
-        <input type="button" value="Go voyage !" />
-    </a>
+        <a href="/results">
+            <input type="button" value="Go voyage !" />
+        </a>
 
-</form>
+    </form>
 
-<datalist id="planete">
-    <option>Terre</option>
-    <option>Tatooine</option>
-    <option>Korriban</option>
-    <option>Mustafar</option>
-    <option>Lola Sayu</option>
-</datalist>
+    <datalist id="planete">
+        <option>Terre</option>
+        <option>Tatooine</option>
+        <option>Korriban</option>
+        <option>Mustafar</option>
+        <option>Lola Sayu</option>
+    </datalist>
+</div>
+
 
 <div class="planete">
     <ul>

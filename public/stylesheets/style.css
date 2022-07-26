@@ -27,7 +27,7 @@ nav,
 
 nav {
   /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg); */
-  background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg);
+  /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg); */
   /* background-image: url("https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778891/imgAccueil_yvz3sq.jpg"); */
   background-size: cover;
   background-position: center;
@@ -106,10 +106,13 @@ button {
 }
 
 footer {
-  background-color: gray;
   right: 0px;
   left: 0px;
   bottom: 0;
+}
+
+footer a {
+  color: #c6c6c6;
 }
 
 /* 
@@ -123,6 +126,29 @@ footer {
 
 /* ----------------------------------------------------------------LAYOUT------------------------------------------------------------------ */
 /* ----------------------------------------------------------------HOMEPAGE------------------------------------------------------------------ */
+
+.homepage form {
+  border: solid 2px;
+  border-radius: 50px;
+
+  margin-inline: 20%;
+  padding: 1rem;
+}
+
+.homepage label {
+  text-align: center;
+  width: 100%;
+  margin-block: 10px;
+}
+
+.homepage input {
+  display: block;
+  margin-inline: auto;
+}
+
+.homepage a input {
+  margin-block: 20px;
+}
 
 ul {
   margin: 0 auto;
@@ -142,7 +168,6 @@ ul {
   display: block;
   color: #FAFF09;
   text-decoration: none;
-
 }
 
 .planete {
@@ -151,6 +176,36 @@ ul {
 }
 
 /* ----------------------------------------------------------------CLASSES------------------------------------------------------------------ */
+.classes {
+  text-align: center;
+  /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg); */
+  /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg); */
+  /* background-image: url("https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778891/imgAccueil_yvz3sq.jpg"); */
+}
+
+.classes img {
+  max-width: 60vw;
+}
+
+.classes ul {
+  margin-block: 20px;
+}
+
+.classes .gold,
+.classes .gold h2 {
+  color: rgb(255, 228, 52);
+}
+
+.classes .silver,
+.classes .silver h2 {
+  color: silver;
+}
+
+.classes .bronze,
+.classes .bronze h2 {
+  color: rgb(145, 110, 24);
+}
+
 /* ----------------------------------------------------------------PROFILE------------------------------------------------------------------ */
 /* ----------------------------------------------------------------RESULTS------------------------------------------------------------------ */
 /* ----------------------------------------------------------------CART------------------------------------------------------------------ */
