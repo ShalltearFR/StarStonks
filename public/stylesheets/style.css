@@ -161,18 +161,26 @@ ul {
 
 .planete li {
   list-style: none;
-  margin-block: 2rem;
+  margin-block: 5rem;
 }
 
 .planete a {
   display: block;
-  color: #FAFF09;
+  color: #ffffff;
   text-decoration: none;
 }
 
 .planete {
   display: flex;
   text-align: center;
+  margin-top: 30px;
+}
+
+/* ----------ENIGME OPTIONNELLE----------- */
+.enigme img {
+  max-width: 50px;
+  position: absolute;
+  margin-left: 40vw;
 }
 
 /* ----------------------------------------------------------------CLASSES------------------------------------------------------------------ */
