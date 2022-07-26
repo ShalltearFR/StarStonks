@@ -7,14 +7,14 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   max-width: 100vw;
   color: white;
-  background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 #content {
-  /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg); */
+  background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg);
   /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg); */
+  background-size: cover;
   /* background-image: url("https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778891/imgAccueil_yvz3sq.jpg"); */
   padding-top: 50px;
 }
@@ -27,11 +27,10 @@ nav,
 
 nav {
   /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg); */
-  /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg); */
+  background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg);
   /* background-image: url("https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778891/imgAccueil_yvz3sq.jpg"); */
   background-size: cover;
   background-position: center;
-  background-repeat: no-repeat;
   position: fixed;
   width: 100vw;
   padding-bottom: 0px;
@@ -107,13 +106,10 @@ button {
 }
 
 footer {
+  background-color: gray;
   right: 0px;
   left: 0px;
   bottom: 0;
-}
-
-footer a {
-  color: #c6c6c6;
 }
 
 /* 
@@ -137,29 +133,6 @@ footer a {
 /* ----------------------------------------------------------------                                                                                         
 /* ----------------------------------------------------------------                                                                                         ------------------------------------------------------------------ */
 
-.homepage form {
-  border: solid 2px;
-  border-radius: 50px;
-
-  margin-inline: 20%;
-  padding: 1rem;
-}
-
-.homepage label {
-  text-align: center;
-  width: 100%;
-  margin-block: 10px;
-}
-
-.homepage input {
-  display: block;
-  margin-inline: auto;
-}
-
-.homepage a input {
-  margin-block: 20px;
-}
-
 ul {
   margin: 0 auto;
   padding: 0;
@@ -171,59 +144,22 @@ ul {
 
 .planete li {
   list-style: none;
-  margin-block: 5rem;
+  margin-block: 2rem;
 }
 
 .planete a {
   display: block;
-  color: #ffffff;
+  color: #FAFF09;
   text-decoration: none;
+
 }
 
 .planete {
   display: flex;
   text-align: center;
-  margin-top: 30px;
-}
-
-/* ----------ENIGME OPTIONNELLE----------- */
-.enigme img {
-  max-width: 50px;
-  position: absolute;
-  margin-left: 40vw;
 }
 
 /* ----------------------------------------------------------------CLASSES------------------------------------------------------------------ */
-.classes {
-  text-align: center;
-  /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg); */
-  /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg); */
-  /* background-image: url("https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778891/imgAccueil_yvz3sq.jpg"); */
-}
-
-.classes img {
-  max-width: 60vw;
-}
-
-.classes ul {
-  margin-block: 20px;
-}
-
-.classes .gold,
-.classes .gold h2 {
-  color: rgb(255, 228, 52);
-}
-
-.classes .silver,
-.classes .silver h2 {
-  color: silver;
-}
-
-.classes .bronze,
-.classes .bronze h2 {
-  color: rgb(145, 110, 24);
-}
-
 /* ----------------------------------------------------------------PROFILE------------------------------------------------------------------ */
 /* ----------------------------------------------------------------RESULTS------------------------------------------------------------------ */
 /* ----------------------------------------------------------------CART------------------------------------------------------------------ */
