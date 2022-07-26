@@ -2,10 +2,10 @@ const router = require("express").Router();
 
 /* GET home page */
 router.get("/", (req, res, next) => {
-    res.render("homepage", {
-      title: "Home",
-      user: req.session.user
-    });
+  res.render("homepage", {
+    title: "Home",
+    user: req.session.user,
+  });
 });
 
 router.get("/profile", (req, res, next) => {
@@ -16,7 +16,7 @@ router.get("/profile", (req, res, next) => {
 
 router.get("/results", (req, res, next) => {
   res.render("results", {
-    title: "Results",
+    title: "Trajets suggérés",
   });
 });
 
