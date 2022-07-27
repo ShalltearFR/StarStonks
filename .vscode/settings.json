@@ -1,0 +1,7 @@
+{
+  "files.exclude": {
+    "node_modules": "explorerExcludedFiles",
+    "npm-debug.log": "explorerExcludedFiles",
+    ".env": "explorerExcludedFiles"
+  }
+}

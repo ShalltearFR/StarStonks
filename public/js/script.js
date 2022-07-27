@@ -24,3 +24,22 @@ $hamburger.addEventListener( "click", () => {
   },
   false
 );
+
+
+let isNavBackground = false
+document.addEventListener('scroll', (event) => {
+  // console.log(window.scrollY)
+  if (window.scrollY === 0){
+    if (isNavBackground){
+      $nav.setAttribute("id", "navTransparent")
+      isNavBackground = false
+      console.log("debut")
+    }
+  } else {
+    if (!isNavBackground){
+      $nav.setAttribute("id", "navBackground")
+      isNavBackground = true
+      console.log("deplacé")
+    }
+  }
+});
