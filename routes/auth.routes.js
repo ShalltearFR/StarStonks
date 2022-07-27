@@ -15,6 +15,9 @@ const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
 router.get("/signup", isLoggedOut, (req, res) => {
+  if (!req.session.user) {
+    return res.redirect("/");
+  }
   res.render("auth/signup");
 });
 
@@ -97,6 +100,9 @@ router.post("/signup", isLoggedOut, (req, res) => {
 });
 
 router.get("/login", isLoggedOut, (req, res) => {
+  if (!req.session.user) {
+    return res.redirect("/");
+  }
   res.render("auth/login");
 });
 
@@ -160,6 +166,9 @@ router.get("/logout", isLoggedIn, (req, res) => {
 });
 
 router.get("/payment", isLoggedOut, (req, res) => {
+  if (!req.session.user) {
+    return res.redirect("/");
+  }
   res.render("auth/payment");
 });
 
@@ -186,6 +195,9 @@ router.post("/payment", isLoggedOut, (req, res) => {
 });
 
 router.get("/profile", (req, res, next) => {
+  if (!req.session.user) {
+    return res.redirect("/");
+  }
   res.render("auth/profile", {
     title: "Profile",
     user: req.session.user,
