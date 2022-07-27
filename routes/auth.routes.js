@@ -172,21 +172,24 @@ router.post("/payment", isLoggedOut, (req, res) => {
     return res.status(400).render("auth/payment", {
       errorMessage: "Votre n° de carte doit comporter 16 caractères",
     });
-  }
-  else if (cryptogramme.length != 3) {
+  } else if (cryptogramme.length != 3) {
     return res.status(400).render("auth/payment", {
       errorMessage: "Votre cryptogramme doit comporter 3 caractères",
     });
-  }
-
-  else if (!expireDate) {
+  } else if (!expireDate) {
     return res.status(400).render("auth/payment", {
       errorMessage: "Veuillez renseigner la date d'expiration de votre carte",
     });
+  } else {
+    return res.redirect("/reservations");
   }
-  else {
-    return res.redirect("/");
-  }
+});
+
+router.get("/profile", (req, res, next) => {
+  res.render("auth/profile", {
+    title: "Profile",
+    user: req.session.user,
+  });
 });
 
 module.exports = router;
