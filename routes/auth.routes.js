@@ -159,4 +159,34 @@ router.get("/logout", isLoggedIn, (req, res) => {
   });
 });
 
+router.get("/payment", isLoggedOut, (req, res) => {
+  res.render("auth/payment");
+});
+
+router.post("/payment", isLoggedOut, (req, res) => {
+  const { cardNumber, cryptogramme, expireDate } = req.body;
+
+  console.log("test");
+
+  if (cardNumber.length != 16) {
+    return res.status(400).render("auth/payment", {
+      errorMessage: "Votre n° de carte doit comporter 16 caractères",
+    });
+  }
+  else if (cryptogramme.length != 3) {
+    return res.status(400).render("auth/payment", {
+      errorMessage: "Votre cryptogramme doit comporter 3 caractères",
+    });
+  }
+
+  else if (!expireDate) {
+    return res.status(400).render("auth/payment", {
+      errorMessage: "Veuillez renseigner la date d'expiration de votre carte",
+    });
+  }
+  else {
+    return res.redirect("/");
+  }
+});
+
 module.exports = router;
