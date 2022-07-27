@@ -1,95 +1,110 @@
 <h1 class="title">{{title}}</h1>
 
-    <div id="profile">
-        <form action="" method="" enctype="multipart/form-data">
-        <img src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1658946574/126403801-cara-de-personaje-malvado_mhahwv.webp" alt="image Profile">
 
-        <div>
+
+<div id="profile">
+    <form action="" method="" enctype="multipart/form-data">
+
+
+        <div class="headerProfile">
+    
             
+            <div>
+                {{#if user}}
+                {{#if user.avatarUrl}}
+                <img src="{{user.avatarUrl}}" class="defautImageProfile">
+                {{else}}
+                <img src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1658946574/126403801-cara-de-personaje-malvado_mhahwv.webp" class="defautImageProfile">
+                {{/if}}
+                {{/if}}
+            </div>
+
+
+
             <input id="image" type="file" name="profile_photo">
             <div>
 
                 <!-- Pseudonyme -->
                 <div>
                     <label for="pseudo">Pseudonyme :</label>
-                    <input id="pseudo"type="text" placeholder=""><br>
+                    <input id="pseudo" type="text" placeholder=""><br>
                 </div>
 
                 <!-- E-mail -->
                 <div>
                     <label for="eMail">E-mail :</label>
-                    <input id="eMail"type="text" placeholder=""><br>
+                    <input id="eMail" type="text" placeholder=""><br>
                 </div>
 
             </div>
 
         </div>
 
-            <!-- Nom -->
-            <div>
-                <label for="nom">Nom :</label>
-                <input id="nom"type="text" placeholder=""><br>
-            </div>
+        <!-- Nom -->
+        <div>
+            <label for="nom">Nom :</label>
+            <input id="nom" type="text" placeholder=""><br>
+        </div>
 
-            <!-- Prénom -->
-            <div>
-                <label for="prénom">Prénom :</label>
-                <input id="prenom"type="text" placeholder=""><br>
-            </div>
+        <!-- Prénom -->
+        <div>
+            <label for="prénom">Prénom :</label>
+            <input id="prenom" type="text" placeholder=""><br>
+        </div>
 
-            
 
-            <!-- Mobile Spatiale -->
-            <div>
-                <label for="mobile">Mobile Spatiale :</label>
-                <input id="mobile"type="text" placeholder=""><br>
-            </div>
 
-            <!-- Age -->
-             <div>
-                <label for="age">Age :</label> 
-                <input id="age" type="number" placeholder="" min="0" max="99"><br>
-            </div>
+        <!-- Mobile Spatiale -->
+        <div>
+            <label for="mobile">Mobile Spatiale :</label>
+            <input id="mobile" type="text" placeholder=""><br>
+        </div>
 
-            <!-- Sexe -->
-            <div>
-                <label for="sexe">Sexe :</label>
-                <input type="radio" name="sexe" id="sexe" />Homme 
-                <input type="radio" name="sexe" />Femme<br />
-            </div>
+        <!-- Age -->
+        <div>
+            <label for="age">Age :</label>
+            <input id="age" type="number" placeholder="" min="0" max="99"><br>
+        </div>
 
-            <!-- Adresse-->
-            <div>
-                <label for="adresse">Adresse :</label> 
-                <input id="adresse" type="text" placeholder=""><br>
-            </div>
-            <div>
-                <label for="codePostal">Code Postal :</label> 
-                <input id="codePostal" type="number" placeholder=""><br>
-            </div>
-            <div>
-                <label for="département">Départements :</label> 
-                <input id="département" type="text" placeholder=""><br>
-            </div>
-    
-            <!-- Select Group Sanguin-->
-            <div>
-                <label for="grSange">Groupe Sanguins :</label>
-                <select id="grSang">
-                    <option selected value=""></option>
-                    <option value="AB+">AB+</option>
-                    <option value="AB-">AB-</option>
-                    <option value="A+">A+</option>
-                    <option value="A-">A-</option>
-                    <option value="B+">B+</option>
-                    <option value="B-">B-</option>
-                    <option value="O+">O+</option>
-                    <option value="O-">O-</option>
-                </select><br>
-            </div>
-        </form>
-    </div>
+        <!-- Sexe -->
+        <div>
+            <label for="sexe">Sexe :</label>
+            <input type="radio" name="sexe" id="sexe" />Homme
+            <input type="radio" name="sexe" />Femme<br />
+        </div>
 
-    <div id="btn">
-        <button>Valider</button>
-    </div>
+        <!-- Adresse-->
+        <div>
+            <label for="adresse">Adresse :</label>
+            <input id="adresse" type="text" placeholder=""><br>
+        </div>
+        <div>
+            <label for="codePostal">Code Postal :</label>
+            <input id="codePostal" type="number" placeholder=""><br>
+        </div>
+        <div>
+            <label for="département">Départements :</label>
+            <input id="département" type="text" placeholder=""><br>
+        </div>
+
+        <!-- Select Group Sanguin-->
+        <div>
+            <label for="grSange">Groupe Sanguins :</label>
+            <select id="grSang">
+                <option selected value=""></option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+            </select><br>
+        </div>
+    </form>
+</div>
+
+<div id="btn">
+    <button>Valider</button>
+</div>
