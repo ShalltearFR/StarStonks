@@ -5,15 +5,13 @@
 body {
   margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  max-width: 100vw;
+  width: 100vw;
   color: white;
   background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  border: solid 2px red;
   display: flex;
   flex-direction: column;
   height: 100vh;
+
 }
 
 #content {
@@ -21,7 +19,6 @@ body {
 
   /* background-image: url("https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778891/imgAccueil_yvz3sq.jpg"); */
   padding-top: 50px;
-  /* height: 731px; */
 }
 
 nav,
@@ -32,7 +29,7 @@ nav,
 
 nav {
   /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg); */
-  /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg); */
+  background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg);
   /* background-image: url("https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778891/imgAccueil_yvz3sq.jpg"); */
   background-size: cover;
   background-position: center;
@@ -115,9 +112,6 @@ button {
 }
 
 footer {
-  right: 0px;
-  left: 0px;
-  bottom: 0;
   background-color: gray;
   margin-top: auto;
 }
