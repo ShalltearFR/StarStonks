@@ -19,9 +19,9 @@ router.get("/signup", isLoggedOut, (req, res) => {
 });
 
 router.post("/signup", isLoggedOut, (req, res) => {
-  const { pseudonyme, password,email } = req.body;
+  const { pseudonyme, password, email } = req.body;
 
-  console.log("test")
+  console.log("test");
   if (!email) {
     return res.status(400).render("auth/signup", {
       errorMessage: "Veuillez rentrer votre mail",
@@ -34,7 +34,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
     });
   }
 
-  if (pseudonyme.length < 1){
+  if (pseudonyme.length < 1) {
     return res.status(400).render("auth/signup", {
       errorMessage: "Veuillez rentrer un pseudonyme",
     });
@@ -86,8 +86,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
         }
         if (error.code === 11000) {
           return res.status(400).render("auth/signup", {
-            errorMessage:
-              "L'adresse email est deja utilisé",
+            errorMessage: "L'adresse email est deja utilisé",
           });
         }
         return res

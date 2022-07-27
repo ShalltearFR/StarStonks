@@ -7,16 +7,14 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   max-width: 100vw;
   color: white;
-  background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
 }
 
 #content {
   /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg); */
-  /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg); */
+  background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg);
   /* background-image: url("https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778891/imgAccueil_yvz3sq.jpg"); */
   padding-top: 50px;
+  height: 731px;
 }
 
 nav,
@@ -27,7 +25,7 @@ nav,
 
 nav {
   /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg); */
-  /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg); */
+  background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg);
   /* background-image: url("https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778891/imgAccueil_yvz3sq.jpg"); */
   background-size: cover;
   background-position: center;
@@ -39,12 +37,14 @@ nav {
 
 h1 {
   text-align: center;
-  padding-top: 10px;
+  padding-top: 30px;
+  color: #FAFF09;
 }
 
 h2 {
   color: #FAFF09;
   text-align: center;
+  padding-top: 30px;
 }
 
 nav #navLogo {
@@ -58,7 +58,7 @@ nav {
 
 footer #footerLogo {
   max-width: 100%;
-  background-color: gray;
+  
 }
 
 nav .navIcon {
@@ -80,7 +80,7 @@ label {
 
 #profile {
   padding: 20px;
-  padding-top: 70px;
+  padding-top: 40px;
 
 }
 
@@ -90,8 +90,10 @@ label {
 
 #profile,
 label,
-input {
+input,
+select {
   font-size: 14px;
+  margin-top: 10px;
 }
 
 input,
@@ -109,6 +111,7 @@ footer {
   right: 0px;
   left: 0px;
   bottom: 0;
+  background-color: gray;
 }
 
 footer a {
@@ -180,7 +183,6 @@ ul {
 
 .enigme img {
   max-width: 50px;
-  position: absolute;
   margin-left: 40vw;
 }
 
