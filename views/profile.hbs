@@ -1,13 +1,30 @@
 <h1 class="title">{{title}}</h1>
 
     <div id="profile">
-        <form action="" method="">
-            <!-- Pseudonyme -->
+        <form action="" method="" enctype="multipart/form-data">
+        <img src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1658946574/126403801-cara-de-personaje-malvado_mhahwv.webp" alt="image Profile">
+
+        <div>
+            
+            <input id="image" type="file" name="profile_photo">
             <div>
-                <label for="pseudo">Pseudonyme :</label>
-                <input id="pseudo"type="text" placeholder=""><br>
+
+                <!-- Pseudonyme -->
+                <div>
+                    <label for="pseudo">Pseudonyme :</label>
+                    <input id="pseudo"type="text" placeholder=""><br>
+                </div>
+
+                <!-- E-mail -->
+                <div>
+                    <label for="eMail">E-mail :</label>
+                    <input id="eMail"type="text" placeholder=""><br>
+                </div>
+
             </div>
-    
+
+        </div>
+
             <!-- Nom -->
             <div>
                 <label for="nom">Nom :</label>
@@ -20,11 +37,7 @@
                 <input id="prenom"type="text" placeholder=""><br>
             </div>
 
-            <!-- E-mail -->
-            <div>
-                <label for="eMail">E-mail :</label>
-                <input id="eMail"type="text" placeholder=""><br>
-            </div>
+            
 
             <!-- Mobile Spatiale -->
             <div>
