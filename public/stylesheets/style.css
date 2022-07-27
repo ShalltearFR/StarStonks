@@ -10,6 +10,10 @@ body {
   background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  border: solid 2px red;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 #content {
@@ -115,6 +119,7 @@ footer {
   left: 0px;
   bottom: 0;
   background-color: gray;
+  margin-top: auto;
 }
 
 footer a {
