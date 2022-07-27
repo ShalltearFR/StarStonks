@@ -32,21 +32,16 @@ h2 {
   padding-top: 30px;
 }
 
-nav #navLogo {
+#navLogo {
   max-height: 65px;
 }
 
-nav {
-  border: 1px solid gray;
-
-}
-
-footer #footerLogo {
+#footerLogo {
   max-width: 100%;
 
 }
 
-nav,
+#navMin,
 #navUser,
 #navEnd {
   display: flex;
@@ -56,29 +51,22 @@ nav {
   /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg); */
   /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg); */
   /* background-image: url("https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778891/imgAccueil_yvz3sq.jpg"); */
+  background-color: rgba(0, 0, 0, 0.75);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: fixed;
   width: 100vw;
+  border-bottom: 2px solid gray;
+  border-radius: 10px;
   padding-bottom: 0px;
 }
 
-#navTransparent {
-  background-color: black;
-  background-image: "";
-}
-
-#navBackground {
-  /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg); */
-  background-color: black;
-}
-
-nav .navIcon {
+.navIcon {
   max-height: 35px;
 }
 
-nav #navCartHamburger {
+#navCartHamburger {
   margin-left: auto;
   margin-block: auto;
   padding-right: 10px;
