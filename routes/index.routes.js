@@ -8,13 +8,6 @@ router.get("/", (req, res, next) => {
   });
 });
 
-router.get("/profile", (req, res, next) => {
-  res.render("profile", {
-    title: "Profile",
-    user: req.session.user,
-  });
-});
-
 router.get("/results", (req, res, next) => {
   res.render("results", {
     title: "Trajets suggérés",
