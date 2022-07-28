@@ -10,19 +10,22 @@ body {
   background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 #content {
   /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg); */
 
   /* background-image: url("https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778891/imgAccueil_yvz3sq.jpg"); */
-  padding-top: 50px;
+  padding-top: 25px;
   /* height: 731px; */
 }
 
 h1 {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 50px;
   color: #FAFF09;
 }
 
@@ -97,13 +100,12 @@ select {
   margin-top: 10px;
 }
 
-#profile
-img{
+#profile img {
   height: 75px;
   width: 75px;
 }
 
-#profile #image{
+#profile #image {
   color: black;
 }
 
@@ -124,6 +126,7 @@ footer {
   left: 0px;
   bottom: 0;
   background-color: gray;
+  margin-top: auto;
 }
 
 footer a {
@@ -141,12 +144,14 @@ footer a {
 
 /* ----------------------------------------------------------------LAYOUT------------------------------------------------------------------ */
 /* ----------------------------------------------------------------HOMEPAGE------------------------------------------------------------------ */
+.homepage {
+  display: flex;
+  flex-direction: column;
+}
 
 .homepage form {
   border: solid 2px;
-  border-radius: 50px;
-
-  margin-inline: 20%;
+  border-radius: 25px;
   padding: 1rem;
 }
 
@@ -156,18 +161,27 @@ footer a {
   margin-block: 10px;
 }
 
-.homepage input {
+.homepage select {
   display: block;
   margin-inline: auto;
 }
 
+.homepage a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .homepage a input {
   margin-block: 20px;
+  padding-inline: 20px;
+  margin-inline: auto;
 }
 
 ul {
-  margin: 0 auto;
+  margin: 0;
   padding: 0;
+  width: 100vw;
 }
 
 .planete img {
@@ -176,7 +190,8 @@ ul {
 
 .planete li {
   list-style: none;
-  margin-block: 5rem;
+  margin-bottom: 5rem;
+  margin-inline: 50px;
 }
 
 .planete a {
@@ -195,7 +210,8 @@ ul {
 
 .enigme img {
   max-width: 50px;
-  margin-left: 40vw;
+  margin-left: 60vw;
+  position: relative;
 }
 
 /* ---------------------------------------- */
