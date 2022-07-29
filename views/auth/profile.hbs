@@ -7,21 +7,29 @@
 
 
         <div class="headerProfile">
-    
-            
+
+
             <div>
                 {{#if user}}
                 {{#if user.avatarUrl}}
                 <img src="{{user.avatarUrl}}" class="defautImageProfile">
                 {{else}}
-                <img src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1658946574/126403801-cara-de-personaje-malvado_mhahwv.webp" class="defautImageProfile">
+                <img src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1658946574/126403801-cara-de-personaje-malvado_mhahwv.webp"
+                    class="defautImageProfile">
                 {{/if}}
                 {{/if}}
             </div>
 
+            <div class="editProfileImg">
+                <input id="file" type="file" name="profile_photo" class="file">
+                <label for="file"><img src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1659106836/SeekPng.com_edit-icon-png_2022672_rqqiez.png" alt=""></label>
+
+                
 
 
-            <input id="image" type="file" name="profile_photo">
+            </div>
+
+
             <div>
 
                 <!-- Pseudonyme -->
