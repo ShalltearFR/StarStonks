@@ -20,4 +20,11 @@ router.get("/classes", (req, res, next) => {
   });
 });
 
+///////////////test wilson//////////////////
+router.get("/profile", (req, res, next) => {
+  res.render("profile", {
+    title: "Profile",
+  });
+});
+///////////////test wilson//////////////////
 module.exports = router;
