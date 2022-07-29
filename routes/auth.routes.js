@@ -15,7 +15,7 @@ const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
 router.get("/signup", isLoggedOut, (req, res) => {
-  if (!req.session.user) {
+  if (req.session.user) {
     return res.redirect("/");
   }
   res.render("auth/signup");
@@ -100,7 +100,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
 });
 
 router.get("/login", isLoggedOut, (req, res) => {
-  if (!req.session.user) {
+  if (req.session.user) {
     return res.redirect("/");
   }
   res.render("auth/login");
