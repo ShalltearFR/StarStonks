@@ -14,7 +14,7 @@ let hamburgerInterval
 
 $hamburger.addEventListener( "click", () => {
     if (!isHamburgerOpen && !lockMenu){ //Déroule le menu
-      $nav.style.filter = "grayscale(75%)";
+      // $nav.style.filter = "grayscale(75%)";
       $nav.style.height = "65px"
       hamburgerInterval = setInterval(()=>{hamburgerAnimation("open")},25)
       lockMenu = true
@@ -38,7 +38,7 @@ function hamburgerAnimation(status){ // Animation d'ouverture/fermeture du menu
   })()
 
     if (status === "open"){ // Ouvre le menu
-      if (height <= 450 - 35){
+      if (height <= 415 - 35){
         $nav.style.height = `${height + 35}px`
       } else{
         clearInterval(hamburgerInterval)
@@ -60,20 +60,20 @@ function hamburgerAnimation(status){ // Animation d'ouverture/fermeture du menu
 }
 
 
-let isNavBackground = false
-document.addEventListener('scroll', (event) => {
-  // console.log(window.scrollY)
-  if (window.scrollY === 0){
-    if (isNavBackground){
-      $nav.setAttribute("id", "navTransparent")
-      isNavBackground = false
-      console.log("debut")
-    }
-  } else {
-    if (!isNavBackground){
-      $nav.setAttribute("id", "navBackground")
-      isNavBackground = true
-      console.log("deplacé")
-    }
-  }
-});
+// let isNavBackground = false
+// document.addEventListener('scroll', (event) => {
+//   // console.log(window.scrollY)
+//   if (window.scrollY === 0){
+//     if (isNavBackground){
+//       $nav.setAttribute("id", "navTransparent")
+//       isNavBackground = false
+//       console.log("debut")
+//     }
+//   } else {
+//     if (!isNavBackground){
+//       $nav.setAttribute("id", "navBackground")
+//       isNavBackground = true
+//       console.log("deplacé")
+//     }
+//   }
+// });

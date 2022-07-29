@@ -175,8 +175,6 @@ router.get("/payment", isLoggedOut, (req, res) => {
 router.post("/payment", isLoggedOut, (req, res) => {
   const { cardNumber, cryptogramme, expireDate } = req.body;
 
-  console.log("test");
-
   if (cardNumber.length != 16) {
     return res.status(400).render("auth/payment", {
       errorMessage: "Votre n° de carte doit comporter 16 caractères",
@@ -203,5 +201,9 @@ router.get("/profile", (req, res, next) => {
     user: req.session.user,
   });
 });
+
+router.post("/profile", (req, res, next) => { 
+  const {pseudonyme, email, lastName, firstName, mobile, sexe, adress, zip, department, bloodGroup } = req.body
+})
 
 module.exports = router;

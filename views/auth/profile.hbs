@@ -3,7 +3,7 @@
 
 
 <div id="profile">
-    <form action="" method="" enctype="multipart/form-data">
+    <form action="/auth/profile" method="POST" enctype="multipart/form-data">
 
 
         <div class="headerProfile">
@@ -41,14 +41,14 @@
                 <!-- Pseudonyme -->
                 <div>
                     <label for="pseudo">Pseudonyme :</label>
-                    <input id="pseudo" type="text" placeholder="">
+                    <input id="pseudo" type="text" placeholder="" name="pseudonyme">
                     
                 </div>
 
                 <!-- E-mail -->
                 <div>
                     <label for="eMail">E-mail :</label>
-                    <input id="eMail" type="text" placeholder="">
+                    <input id="eMail" type="text" placeholder="" name="email">
                 </div>
 
             </div>
@@ -58,13 +58,13 @@
         <!-- Nom -->
         <div>
             <label for="nom">Nom :</label>
-            <input id="nom" type="text" placeholder=""><br>
+            <input id="nom" type="text" placeholder="" name="lastName"><br>
         </div>
 
         <!-- Prénom -->
         <div>
             <label for="prénom">Prénom :</label>
-            <input id="prenom" type="text" placeholder=""><br>
+            <input id="prenom" type="text" placeholder="" name="firstName"><br>
         </div>
 
 
@@ -72,13 +72,7 @@
         <!-- Mobile Spatiale -->
         <div>
             <label for="mobile">Mobile Spatiale :</label>
-            <input id="mobile" type="text" placeholder=""><br>
-        </div>
-
-        <!-- Age -->
-        <div>
-            <label for="age">Age :</label>
-            <input id="age" type="number" placeholder="" min="0" max="99"><br>
+            <input id="mobile" type="text" placeholder="" name="mobile"><br>
         </div>
 
         <!-- Sexe -->
@@ -91,21 +85,21 @@
         <!-- Adresse-->
         <div>
             <label for="adresse">Adresse :</label>
-            <input id="adresse" type="text" placeholder=""><br>
+            <input id="adresse" type="text" placeholder="" name="adress"><br>
         </div>
         <div>
             <label for="codePostal">Code Postal :</label>
-            <input id="codePostal" type="number" placeholder=""><br>
+            <input id="codePostal" type="number" placeholder="" name="zip"><br>
         </div>
         <div>
             <label for="département">Départements :</label>
-            <input id="département" type="text" placeholder=""><br>
+            <input id="département" type="text" placeholder="" name="department"><br>
         </div>
 
         <!-- Select Group Sanguin-->
         <div>
             <label for="grSange">Groupe Sanguins :</label>
-            <select id="grSang">
+            <select id="grSang" name="bloodGroup">
                 <option selected value=""></option>
                 <option value="AB+">AB+</option>
                 <option value="AB-">AB-</option>
