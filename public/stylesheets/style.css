@@ -64,7 +64,8 @@ nav {
   width: 100vw;
   border-bottom: 2px solid gray;
   border-radius: 10px;
-  padding-bottom: 0px;
+  overflow: hidden;
+  height: 65px;
 }
 
 .navIcon {

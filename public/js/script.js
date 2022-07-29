@@ -1,10 +1,10 @@
-// document.addEventListener(
-//   "DOMContentLoaded",
-//   () => {
-//     console.log("www JS imported successfully!");
-//   },
-//   false
-// );
+document.addEventListener(
+  "DOMContentLoaded",
+  () => {
+    // console.log("www JS imported successfully!");
+  },
+  false
+);
 
 const $hamburger = document.querySelector("#hamburger")
 const $nav = document.querySelector("nav")
@@ -14,15 +14,13 @@ let hamburgerInterval
 
 $hamburger.addEventListener( "click", () => {
     if (!isHamburgerOpen && !lockMenu){ //Déroule le menu
-      //$nav.style.paddingBottom = "300px"
       $nav.style.filter = "grayscale(75%)";
-      hamburgerInterval = setInterval(()=>{hamburgerAnimation("open")},35)
+      $nav.style.height = "65px"
+      hamburgerInterval = setInterval(()=>{hamburgerAnimation("open")},25)
       lockMenu = true
       isHamburgerOpen = true
     }else if (isHamburgerOpen && !lockMenu){ //Range le menu
-      //$nav.style.paddingBottom = "0px"
-      $nav.style.filter = "";
-      hamburgerInterval = setInterval(()=>{hamburgerAnimation("close")},35)
+      hamburgerInterval = setInterval(()=>{hamburgerAnimation("close")},25)
       lockMenu = true
       isHamburgerOpen = false
     }
@@ -31,17 +29,17 @@ $hamburger.addEventListener( "click", () => {
 );
 
 function hamburgerAnimation(status){ // Animation d'ouverture/fermeture du menu
-  const padding = (function(){
+  const height = (function(){
     let toNumber = ""
-    for (let i = 0; i < $nav.style.paddingBottom.length - 2; i++){
-      toNumber = `${toNumber}${$nav.style.paddingBottom[i]}`
+    for (let i = 0; i < $nav.style.height.length - 2; i++){
+      toNumber = `${toNumber}${$nav.style.height[i]}`
     }
     return Number(toNumber)
   })()
 
-    if (status === "open"){
-      if (padding < 300){
-        $nav.style.paddingBottom = `${padding + 40}px`
+    if (status === "open"){ // Ouvre le menu
+      if (height <= 450 - 35){
+        $nav.style.height = `${height + 35}px`
       } else{
         clearInterval(hamburgerInterval)
         $nav.style.borderRadius = "35px"
@@ -49,16 +47,16 @@ function hamburgerAnimation(status){ // Animation d'ouverture/fermeture du menu
       }
     }
 
-    if (status === "close"){
-      if (padding > 0){
-        $nav.style.paddingBottom = `${padding - 40}px`
+    if (status === "close"){ // Ferme le menu
+      if (height >= 65 + 35){
+        $nav.style.height = `${height - 35}px`
       } else{
         clearInterval(hamburgerInterval)
+        $nav.style.filter = "";
         $nav.style.borderRadius = "0px"
         lockMenu = false
       }
     }
-  console.log(padding)
 }
 
 
