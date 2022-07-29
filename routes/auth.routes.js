@@ -14,6 +14,8 @@ const User = require("../models/User.model");
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
+const fileUploader = require('../config/cloudinary.config');
+
 router.get("/signup", isLoggedOut, (req, res) => {
   if (req.session.user) {
     return res.redirect("/");
@@ -202,7 +204,7 @@ router.get("/profile", (req, res, next) => {
   });
 });
 
-router.post("/profile", (req, res, next) => { 
+router.post("/profile", fileUploader.single("avatarUrl"), (req, res, next) => { 
   const {pseudonyme, email, lastName, firstName, mobile, sexe, zone, zip, department, bloodGroup } = req.body
 
   console.log(req.body)
