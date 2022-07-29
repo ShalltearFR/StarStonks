@@ -14,7 +14,7 @@
                 {{#if user.avatarUrl}}
                 <div id="showProfile">
                     <img src="{{user.avatarUrl}}" class="defautImageProfile">
-                    <input id="file" type="file" name="profile_photo" class="file">
+                    <input id="file" type="file" class="file" name="avatarUrl">
                     <label for="file"><img id="editProfileImg"
                             src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1659108921/Pen02_etmsso.png"
                             alt=""></label>
@@ -23,7 +23,7 @@
                 <div id="showProfile">
                     <img src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1658946574/126403801-cara-de-personaje-malvado_mhahwv.webp"
                         class="defautImageProfile">
-                    <input id="file" type="file" name="profile_photo" class="file">
+                    <input id="file" type="file" class="file" name="avatarUrl">
                     <label for="file"><img id="editProfileImg"
                             src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1659108921/Pen02_etmsso.png"
                             alt=""></label>
@@ -41,14 +41,14 @@
                 <!-- Pseudonyme -->
                 <div>
                     <label for="pseudo">Pseudonyme :</label>
-                    <input id="pseudo" type="text" placeholder="" name="pseudonyme">
+                    <input id="pseudo" type="text" value="{{user.pseudonyme}}" name="pseudonyme">
                     
                 </div>
 
                 <!-- E-mail -->
                 <div>
                     <label for="eMail">E-mail :</label>
-                    <input id="eMail" type="text" placeholder="" name="email">
+                    <input id="eMail" type="text" value="{{user.email}}" name="email">
                 </div>
 
             </div>
@@ -58,13 +58,13 @@
         <!-- Nom -->
         <div>
             <label for="nom">Nom :</label>
-            <input id="nom" type="text" placeholder="" name="lastName"><br>
+            <input id="nom" type="text" {{#if user.lastName}} value="{{user.lastName}}" {{/if}} name="lastName"><br>
         </div>
 
         <!-- Prénom -->
         <div>
             <label for="prénom">Prénom :</label>
-            <input id="prenom" type="text" placeholder="" name="firstName"><br>
+            <input id="prenom" type="text" {{#if user.firstName}} value="{{user.firstName}}" {{/if}} name="firstName"><br>
         </div>
 
 
@@ -72,34 +72,34 @@
         <!-- Mobile Spatiale -->
         <div>
             <label for="mobile">Mobile Spatiale :</label>
-            <input id="mobile" type="text" placeholder="" name="mobile"><br>
+            <input id="mobile" type="text" {{#if user.mobile}} value="{{user.mobile}}" {{/if}} name="mobile"><br>
         </div>
 
         <!-- Sexe -->
         <div>
             <label for="sexe">Sexe :</label>
-            <input type="radio" name="sexe" id="sexe" />Homme
-            <input type="radio" name="sexe" />Femme<br />
+            <input type="radio" name="sexe" id="sexe" {{#if (eq user.sexe "Homme")}} checked{{/if}}/>Homme
+            <input type="radio" name="sexe" {{#if (eq user.sexe "Femme")}} checked{{/if}}/>Femme<br />
         </div>
 
         <!-- Adresse-->
         <div>
             <label for="adresse">Adresse :</label>
-            <input id="adresse" type="text" placeholder="" name="adress"><br>
+            <input id="adresse" type="text" {{#if user.adress.zone}} value="{{user.adress.zone}}" {{/if}} name="zone"><br>
         </div>
         <div>
             <label for="codePostal">Code Postal :</label>
-            <input id="codePostal" type="number" placeholder="" name="zip"><br>
+            <input id="codePostal" type="number" {{#if user.adress.zip}} value="{{user.adress.zip}}" {{/if}} name="zip"><br>
         </div>
         <div>
             <label for="département">Départements :</label>
-            <input id="département" type="text" placeholder="" name="department"><br>
+            <input id="département" type="text" {{#if user.adress.department}} value="{{user.adress.department}}" {{/if}} name="department"><br>
         </div>
 
         <!-- Select Group Sanguin-->
         <div>
             <label for="grSange">Groupe Sanguins :</label>
-            <select id="grSang" name="bloodGroup">
+            <select id="grSang" {{#if user.adress.zone}} value="{{user.bloodGroup}}" {{/if}} name="bloodGroup">
                 <option selected value=""></option>
                 <option value="AB+">AB+</option>
                 <option value="AB-">AB-</option>
@@ -111,9 +111,9 @@
                 <option value="O-">O-</option>
             </select><br>
         </div>
-    </form>
-</div>
 
-<div id="btn">
-    <button>Modifier</button>
+        <div id="btn">
+            <button>Modifier</button>
+        </div>
+    </form>
 </div>

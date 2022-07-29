@@ -8,7 +8,7 @@ const userSchema = new Schema(
       required :  true
     },
     firstName:    String,
-    firstName :   String,
+    lastName :   String,
     email: {
       type :      String,
       unique :    true,
@@ -18,7 +18,12 @@ const userSchema = new Schema(
       type :      String,
       required :  true
     },
-    adress :      String,
+    adress :  {
+      type :      Object,
+      zone :      String,
+      zip :       String,
+      Department: String
+    },
     mobile :      String,
     bloodGroup :  String,
     sexe :        String,

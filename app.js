@@ -17,6 +17,7 @@ const app = express();
 app.set("views", __dirname + "/views");
 app.set("view engine", "hbs");
 hbs.registerPartials(__dirname + "/views/partials")
+hbs.registerHelper('eq', (a, b) => a == b)
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);

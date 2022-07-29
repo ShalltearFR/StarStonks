@@ -197,13 +197,29 @@ router.get("/profile", (req, res, next) => {
     return res.redirect("/");
   }
   res.render("auth/profile", {
-    title: "Profile",
+    title: "Profil",
     user: req.session.user,
   });
 });
 
 router.post("/profile", (req, res, next) => { 
-  const {pseudonyme, email, lastName, firstName, mobile, sexe, adress, zip, department, bloodGroup } = req.body
+  const {pseudonyme, email, lastName, firstName, mobile, sexe, zone, zip, department, bloodGroup } = req.body
+
+  console.log(req.body)
+  User.findByIdAndUpdate(req.session.user._id, {
+    pseudonyme,
+    email,
+    lastName,
+    firstName, 
+    mobile,
+    sexe,
+    // zone,
+    // zip,
+    // department,
+    bloodGroup
+  })
+  .then(()=> console.log("reussi"))
+  .catch((err)=> next(err))
 })
 
 module.exports = router;
