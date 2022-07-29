@@ -33,15 +33,15 @@ $hamburger.addEventListener( "click", () => {
 function hamburgerAnimation(status){ // Animation d'ouverture/fermeture du menu
   const padding = (function(){
     let toNumber = ""
-    for (let i = 0; i < $nav.style.paddingBottom.length - 2; i++){
-      toNumber = `${toNumber}${$nav.style.paddingBottom[i]}`
+    for (let i = 0; i < $nav.style.height.length - 2; i++){
+      toNumber = `${toNumber}${$nav.style.heigth[i]}`
     }
     return Number(toNumber)
   })()
 
     if (status === "open"){
       if (padding < 300){
-        $nav.style.paddingBottom = `${padding + 40}px`
+        $nav.style.height = `${padding + 40}px`
       } else{
         clearInterval(hamburgerInterval)
         $nav.style.borderRadius = "35px"
@@ -50,8 +50,8 @@ function hamburgerAnimation(status){ // Animation d'ouverture/fermeture du menu
     }
 
     if (status === "close"){
-      if (padding > 0){
-        $nav.style.paddingBottom = `${padding - 40}px`
+      if (padding > 65){
+        $nav.style.height = `${padding - 40}px`
       } else{
         clearInterval(hamburgerInterval)
         $nav.style.borderRadius = "0px"
