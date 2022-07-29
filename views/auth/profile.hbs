@@ -12,22 +12,28 @@
             <div>
                 {{#if user}}
                 {{#if user.avatarUrl}}
-                <img src="{{user.avatarUrl}}" class="defautImageProfile">
+                <div id="showProfile">
+                    <img src="{{user.avatarUrl}}" class="defautImageProfile">
+                    <input id="file" type="file" name="profile_photo" class="file">
+                    <label for="file"><img id="editProfileImg"
+                            src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1659108921/Pen02_etmsso.png"
+                            alt=""></label>
+                </div>
                 {{else}}
-                <img src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1658946574/126403801-cara-de-personaje-malvado_mhahwv.webp"
-                    class="defautImageProfile">
+                <div id="showProfile">
+                    <img src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1658946574/126403801-cara-de-personaje-malvado_mhahwv.webp"
+                        class="defautImageProfile">
+                    <input id="file" type="file" name="profile_photo" class="file">
+                    <label for="file"><img id="editProfileImg"
+                            src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1659108921/Pen02_etmsso.png"
+                            alt=""></label>
+                </div>
                 {{/if}}
                 {{/if}}
-            </div>
-
-            <div class="editProfileImg">
-                <input id="file" type="file" name="profile_photo" class="file">
-                <label for="file"><img src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1659106836/SeekPng.com_edit-icon-png_2022672_rqqiez.png" alt=""></label>
-
-                
-
 
             </div>
+
+
 
 
             <div>
@@ -35,13 +41,14 @@
                 <!-- Pseudonyme -->
                 <div>
                     <label for="pseudo">Pseudonyme :</label>
-                    <input id="pseudo" type="text" placeholder=""><br>
+                    <input id="pseudo" type="text" placeholder="">
+                    
                 </div>
 
                 <!-- E-mail -->
                 <div>
                     <label for="eMail">E-mail :</label>
-                    <input id="eMail" type="text" placeholder=""><br>
+                    <input id="eMail" type="text" placeholder="">
                 </div>
 
             </div>
@@ -114,5 +121,5 @@
 </div>
 
 <div id="btn">
-    <button>Valider</button>
+    <button>Modifier</button>
 </div>
