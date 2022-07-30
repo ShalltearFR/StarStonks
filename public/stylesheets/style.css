@@ -335,10 +335,16 @@ button {
 
 /* ----------------------------------------------------------------RESULTS------------------------------------------------------------------ */
 
-#legendAndPrice{
+#legend{
   display: flex;
   align-items: center;
-  gap: 100px;
+  justify-content: center;
+  text-align: center;
+  gap: 25px;
+}
+
+#legend h3{
+  margin-top: 0;
 }
 
 #price{

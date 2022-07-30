@@ -19,11 +19,27 @@ router.get("/", (req, res, next) => {
 });
 
 router.get("/results", (req, res, next) => {
-  res.render("results", {
-    title: "Trajets suggérés",
-    user: req.session.user,
-    selectResult: req.query.selectResult
-  });
+  const from = req.query.from
+  const to = req.query.to
+  Trip.find({$and:[ { from },{ to } ] })
+  .populate("from")
+  .populate("to")
+  .then(resultFromDB =>{
+    console.log(resultFromDB)
+    res.render("results", {
+      title: "Trajets suggérés",
+      user: req.session.user,
+      selectResult: req.query.selectResult,
+      destinations: resultFromDB
+    });
+  })
+  .catch(()=>{
+    res.render("results", {
+      title: "Trajets suggérés",
+      notFound: "true",
+      selectResult: req.query.selectResult,
+    });
+  })
 });
 
 router.get("/classes", (req, res, next) => {

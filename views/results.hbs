@@ -1,54 +1,55 @@
 <h1>{{title}}</h1>
-
-{{#if selectResult}}
-    <div id="legendAndPrice">
-        <div id="legend">
-            <div class="classTypeLegend">
-                <svg height="20" width="20">
-                    <circle cx="10" cy="10" r="8" stroke="white" stroke-width="1" fill="#FAFF09" />
-                </svg>
-                Class Gold
-            </div>
-            <div class="classTypeLegend">
-                <svg height="20" width="20">
-                    <circle cx="10" cy="10" r="8" stroke="white" stroke-width="1" fill="#E5E1E1" />
-                </svg>
-                Class Silver
-            </div>
-            <div class="classTypeLegend">
-                <svg height="20" width="20">
-                    <circle cx="10" cy="10" r="8" stroke="white" stroke-width="1" fill="#9C7207" />
-                </svg>
-                Class Bronze
-            </div>
-        </div>
-        <div id="price">
-            37205.5€
-        </div>
-    </div>
-
-    <h2 class="dayStart">jeudi 28 juillet</h2>
-    <ul>
-        {{!-- {{#each voyages}} --}}
-            <li> {{> resultsCard}} </li>
-            <li> {{> resultsCard}} </li>
-        {{!-- {{/each}} --}}
-    </ul>
+{{#if notFound}}
+    <h2>Trajet non existant</h2>
 {{else}}
-    <p>Options</p>
-    <form action="/result/finalise" method="POST">
-        <div id="options">
-            <div class="optionsParam">
-                Passagers - 1 +
+    {{#if destinations}}
+        {{#if selectResult}}
+            <div id="legend">
+                <div class="classTypeLegend">
+                    <svg height="50" width="50">
+                        <circle cx="25" cy="25" r="20" stroke="white" stroke-width="1" fill="#FAFF09" />
+                    </svg>
+                    <h3>Class Gold</h3>
+                </div>
+                <div class="classTypeLegend">
+                    <svg height="50" width="50">
+                        <circle cx="25" cy="25" r="20" stroke="white" stroke-width="1" fill="#E5E1E1" />
+                    </svg>
+                    <h3>Class Silver</h3>
+                </div>
+                <div class="classTypeLegend">
+                    <svg height="50" width="50">
+                        <circle cx="25" cy="25" r="20" stroke="white" stroke-width="1" fill="#9C7207" />
+                    </svg>
+                    <h3>Class Bronze</h3>
+                </div>
             </div>
-            <div class="optionsParam">
-                Bagages - 1 +
-            </div>
-            <div class="optionsParam">
-                Retour Oui Non
-            </div>
-        </div>
-    </form>
+
+            <h2 class="dayStart">jeudi 28 juillet</h2>
+            <ul>
+                {{#each destinations}}
+                    <li> {{> resultsCard}} </li>
+                {{/each}}
+            </ul>
+        {{else}}
+            <p>Options</p>
+            <form action="/result/finalise" method="POST">
+                <div id="options">
+                    <div class="optionsParam">
+                        Passagers - 1 +
+                    </div>
+                    <div class="optionsParam">
+                        Bagages - 1 +
+                    </div>
+                    <div class="optionsParam">
+                        Retour Oui Non
+                    </div>
+                </div>
+            </form>
+        {{/if}}
+    {{else}}
+    <h2>Pas de voyages disponible</h2>
+    {{/if}}
 {{/if}}
 
 <script src="../js/results.js"></script>

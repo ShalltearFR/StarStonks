@@ -9,7 +9,7 @@
         {{!-- <input type="list" id="from" name="from" list="planete" required> --}}
         <select name="from">
             {{#each planets}}
-                <option value="{{name}}" name="from">{{name}}</option>
+                <option value="{{_id}}" name="from">{{name}}</option>
             {{/each}}
             {{!-- <option value="Terre" >Terre</option>
             <option value="Tatooine">Tatooine</option>
@@ -22,7 +22,7 @@
         {{!-- <input type="list" id="to" name="to" list="planete" required> --}}
         <select name="to">
             {{#each planets}}
-                <option value="{{name}}" name="to">{{name}}</option>
+                <option value="{{_id}}" name="to">{{name}}</option>
             {{/each}}
             {{!-- <option value="Terre">Terre</option>
             <option value="Tatooine">Tatooine</option>

@@ -17,8 +17,8 @@ const Trip = require("../models/Trip.model");
 
 const data = [
   {
-    from: "62dee3cb8d13f46f3bc96d16",
-    to :"62dee3cb8d13f46f3bc96d13",
+    from: "62dee3cb8d13f46f3bc96d16", // Mustafar
+    to :"62dee3cb8d13f46f3bc96d13", // Terre
     date: "2022-07-01T20:30:00Z",
     duration: "14h30",
     base_price :{
