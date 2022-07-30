@@ -1,0 +1,22 @@
+<h1 class="title">{{title}}</h1>
+
+<div class="cart">
+    {{#if trip}}
+    <div class="planetImg">
+        <img src="{{location.image}}" alt="{{location.name}}">
+    </div>
+    <ul>
+        <li>_Id : 2525152</li>
+        <li>Départ :Terre </li>
+        <li>Arrivé : tatooine</li>
+        <li>Date : 22/09/23</li>
+        <li>Passager : 2</li>
+        <li>Bagages : 1</li>
+    </ul>
+</div>
+{{else}}
+<div class="noTrip">
+    <p>Choose a destination</p>
+</div>
+{{/if}}
+</div>
