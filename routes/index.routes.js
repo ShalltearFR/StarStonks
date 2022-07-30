@@ -1,14 +1,21 @@
 const Ticket = require("../models/Ticket.model");
 const Trip = require("../models/Trip.model");
+const Location = require("../models/Location.model");
 
 const router = require("express").Router();
 
 /* GET home page */
 router.get("/", (req, res, next) => {
-  res.render("homepage", {
-    title: "Home",
-    user: req.session.user,
-  });
+  Location.find()
+  .then(planetsFromDB => {
+    res.render("homepage", {
+      title: "Home",
+      user: req.session.user,
+      planets: planetsFromDB
+    });
+  })
+  .catch(err => next(err))
+
 });
 
 router.get("/results", (req, res, next) => {

@@ -5,21 +5,24 @@ const tripSchema = new Schema(
         _id: Number,
         user_id: {
             type: Schema.Types.ObjectId,
-            ref: User
+            ref: "User"
         },
         from: {
             type: Schema.Types.ObjectId,
-            ref: Location
+            ref: "Location"
         },
         to: {
             type: Schema.Types.ObjectId,
-            ref: Location
+            ref: "Location"
         },
         date: Date,
         duration: String,
         base_price: {
             value: Number,
-            currency: String
+            currency: {
+                type: String,
+                default: "EUR"
+            }
         }
 
     }

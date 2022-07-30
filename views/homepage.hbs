@@ -4,25 +4,31 @@
 
 <div class="homepage">
     <h2>Choix de votre destination</h2>
-    <form action="/results" method="get">
-        <label for="from">Sélectionnez la planète de départ :</label>
+    <form action="/results" method="GET">
+        <label>Sélectionnez la planète de départ :</label>
         {{!-- <input type="list" id="from" name="from" list="planete" required> --}}
         <select name="from">
-            <option value="Terre">Terre</option>
+            {{#each planets}}
+                <option value="{{name}}" name="from">{{name}}</option>
+            {{/each}}
+            {{!-- <option value="Terre" >Terre</option>
             <option value="Tatooine">Tatooine</option>
             <option value="Korriban">Korriban</option>
             <option value="Mustafar">Mustafar</option>
-            <option value="Lola Sayu">Lola Sayu</option>
+            <option value="Lola Sayu">Lola Sayu</option> --}}
         </select>
 
         <label for="from">Sélectionnez la planète de destination :</label>
         {{!-- <input type="list" id="to" name="to" list="planete" required> --}}
         <select name="to">
-            <option value="Terre">Terre</option>
+            {{#each planets}}
+                <option value="{{name}}" name="to">{{name}}</option>
+            {{/each}}
+            {{!-- <option value="Terre">Terre</option>
             <option value="Tatooine">Tatooine</option>
             <option value="Korriban">Korriban</option>
             <option value="Mustafar">Mustafar</option>
-            <option value="Lola Sayu">Lola Sayu</option>
+            <option value="Lola Sayu">Lola Sayu</option> --}}
         </select>
         <a href="/results">
             <input type="button" value="Go voyage !" />
