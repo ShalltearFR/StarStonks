@@ -114,6 +114,8 @@ label {
 #profile {
   margin: 20px;
   margin-top: 20px;
+  background-color: #2f2f30;
+  color: #a0a0a0;
 
 }
 
@@ -127,6 +129,7 @@ input,
 select {
   font-size: 14px;
   margin-top: 10px;
+  
 }
 
 #profile .defautImageProfile {
@@ -139,16 +142,29 @@ select {
   color: black;
 }
 
+#profile input{
+  border-bottom: 0.125rem solid #a0a0a0;
+}
+
 
 input,
 select {
-  background-color: white;
+  
+  background-color: initial;
+  border: none;
+  color: #fff;
+  
+  
 }
 
 button {
-  background-color: gray;
-  height: 35px;
-  width: 166px;
+  cursor: pointer;
+  height: 2.5rem;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
 }
 
 footer {
