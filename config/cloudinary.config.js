@@ -14,7 +14,7 @@ const storage = new CloudinaryStorage({
   // cloudinary: cloudinary,
   cloudinary,
   params: { // see: https://cloudinary.com/documentation/image_upload_api_reference#optional_parameters
-    folder: 'tumblr-clone', // The name of the folder in cloudinary
+    folder: 'Project 2/avatars', // The name of the folder in cloudinary
     allowedFormats: ['jpg', 'png'],
     // resource_type: 'raw', // this is in case you want to upload other type of files, not just images
     // public_id: (req, file) => file.originalname; // The file on cloudinary would have the same name as the original file name

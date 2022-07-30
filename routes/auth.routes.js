@@ -202,6 +202,8 @@ router.get("/profile", (req, res, next) => {
     title: "Profil",
     user: req.session.user,
   });
+
+  console.log(req.session.user)
 });
 
 router.post("/profile", fileUploader.single("avatarUrl"), (req, res, next) => { 
@@ -215,12 +217,34 @@ router.post("/profile", fileUploader.single("avatarUrl"), (req, res, next) => {
     firstName, 
     mobile,
     sexe,
-    // zone,
-    // zip,
-    // department,
+    adress :{
+      zone,
+      zip,
+      department
+    },
     bloodGroup
   })
-  .then(()=> console.log("reussi"))
+  .then((updatedDataFromDB)=> {
+    console.log("email =",updatedDataFromDB.email)
+    const emailFromDB = req.body.email
+    User.findOne({emailFromDB})
+    .then(DataFromDB =>{
+      console.log("DataFromDB", DataFromDB)
+      req.session.destroy((err) => {
+        if (err) {
+          return res
+            .status(500)
+            .render("auth/logout", { errorMessage: err.message });
+        }
+        setTimeout(()=> req.session.user = DataFromDB, 500)
+      })
+
+      
+      console.log("req =",req.session.user)
+    })
+    .catch(err => next(err))
+    
+  })
   .catch((err)=> next(err))
 })
 
