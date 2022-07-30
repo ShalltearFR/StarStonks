@@ -6,29 +6,30 @@
     <form action="/auth/profile" method="POST" enctype="multipart/form-data">
 
 
-        <div class="headerProfile">
+        <div class="topProfile">
 
 
             <div>
                 {{#if user}}
-                    {{#if user.avatarUrl}}
-                    <div id="showProfile">
-                        <img src="{{user.avatarUrl}}" class="defautImageProfile">
-                        <input id="file" type="file" class="file" name="avatarUrl" value="{{user.avatarUrl}}">
-                        <label for="file"><img id="editProfileImg"
-                                src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1659108921/Pen02_etmsso.png"
-                                alt=""></label>
-                    </div>
-                    {{else}}
-                    <div id="showProfile">
-                        <img src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1658946574/126403801-cara-de-personaje-malvado_mhahwv.webp"
-                            class="defautImageProfile">
-                        <input id="file" type="file" class="file" name="avatarUrl" value="https://res.cloudinary.com/dq7egs1s7/image/upload/v1658946574/126403801-cara-de-personaje-malvado_mhahwv.webp">
-                        <label for="file"><img id="editProfileImg"
-                                src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1659108921/Pen02_etmsso.png"
-                                alt=""></label>
-                    </div>
-                    {{/if}}
+                {{#if user.avatarUrl}}
+                <div id="showProfile">
+                    <img src="{{user.avatarUrl}}" class="defautImageProfile">
+                    <input id="file" type="file" class="file" name="avatarUrl" value="{{user.avatarUrl}}">
+                    <label for="file"><img id="editProfileImg"
+                            src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1659108921/Pen02_etmsso.png"
+                            alt=""></label>
+                </div>
+                {{else}}
+                <div id="showProfile">
+                    <img src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1658946574/126403801-cara-de-personaje-malvado_mhahwv.webp"
+                        class="defautImageProfile">
+                    <input id="file" type="file" class="file" name="avatarUrl"
+                        value="https://res.cloudinary.com/dq7egs1s7/image/upload/v1658946574/126403801-cara-de-personaje-malvado_mhahwv.webp">
+                    <label for="file"><img id="editProfileImg"
+                            src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1659108921/Pen02_etmsso.png"
+                            alt=""></label>
+                </div>
+                {{/if}}
                 {{/if}}
 
             </div>
@@ -42,7 +43,7 @@
                 <div>
                     <label for="pseudo">Pseudonyme :</label>
                     <input id="pseudo" type="text" value="{{user.pseudonyme}}" name="pseudonyme">
-                    
+
                 </div>
 
                 <!-- E-mail -->
@@ -51,72 +52,104 @@
                     <input id="eMail" type="text" value="{{user.email}}" name="email">
                 </div>
 
+                <!-- Mot de passe -->
+                <div>
+                    <label for="motdepass">Mot de passe :</label>
+                    <input id="motdepass" type="text" {{#if user.password}} value="{{user.password}}" {{/if}}><br>
+                </div>
+
+                <!-- Comfirmez le mot de passe -->
+
+                <div>
+                    <label for="motdepasse">Comfirmez le mot de passe :</label>
+                    <input id="motdepasse" type="text" {{#if user.password}} value="{{user.password}}" {{/if}}><br>
+                </div>
+
+
             </div>
 
         </div>
 
-        <!-- Nom -->
-        <div>
-            <label for="nom">Nom :</label>
-            <input id="nom" type="text" {{#if user.lastName}} value="{{user.lastName}}" {{/if}} name="lastName"><br>
-        </div>
 
-        <!-- Prénom -->
-        <div>
-            <label for="prénom">Prénom :</label>
-            <input id="prenom" type="text" {{#if user.firstName}} value="{{user.firstName}}" {{/if}} name="firstName"><br>
-        </div>
+        <div id="bottomProfile">
+            <!-- Nom -->
+            <div>
+                <label for="nom">Nom :</label>
+                <input id="nom" type="text" {{#if user.lastName}} value="{{user.lastName}}" {{/if}} name="lastName"><br>
+            </div>
+
+            <!-- Prénom -->
+            <div>
+                <label for="prénom">Prénom :</label>
+                <input id="prenom" type="text" {{#if user.firstName}} value="{{user.firstName}}" {{/if}}
+                    name="firstName"><br>
+            </div>
 
 
 
-        <!-- Mobile Spatiale -->
-        <div>
-            <label for="mobile">Mobile Spatiale :</label>
-            <input id="mobile" type="text" {{#if user.mobile}} value="{{user.mobile}}" {{/if}} name="mobile"><br>
-        </div>
+            <!-- Mobile Spatiale -->
+            <div>
+                <label for="mobile">Mobile Spatiale :</label>
+                <input id="mobile" type="text" {{#if user.mobile}} value="{{user.mobile}}" {{/if}} name="mobile"><br>
+            </div>
 
-        <!-- Sexe -->
-        <div>
-            <label for="sexe">Sexe :</label>
-            <input type="radio" name="sexe" id="sexe" {{#if (eq user.sexe "Male")}} checked{{/if}} value="Male"/>Homme
-            <input type="radio" name="sexe" id="sexe" {{#if (eq user.sexe "Female")}} checked{{/if}} value="Female"/>Femme<br />
-        </div>
+            <!-- Sexe -->
+            <div>
+                <label for="sexe">Sexe :</label>
+                <input type="radio" name="sexe" id="sexe" {{#if (eq user.sexe "Male" )}} checked{{/if}}
+                    value="Male" />Homme
+                <input type="radio" name="sexe" id="sexe" {{#if (eq user.sexe "Female" )}} checked{{/if}}
+                    value="Female" />Femme<br />
+            </div>
 
-        <!-- Adresse-->
-        <div>
-            <label for="adresse">Adresse :</label>
-            <input id="adresse" type="text" {{#if user.adress.zone}} value="{{user.adress.zone}}" {{/if}} name="zone"><br>
-        </div>
-        <div>
-            <label for="codePostal">Code Postal :</label>
-            <input id="codePostal" type="number" {{#if user.adress.zip}} value="{{user.adress.zip}}" {{/if}} name="zip"><br>
-        </div>
-        <div>
-            <label for="département">Départements :</label>
-            <input id="département" type="text" {{#if user.adress.department}} value="{{user.adress.department}}" {{/if}} name="department"><br>
-        </div>
+            <!-- Adresse-->
+            <div>
+                <label for="adresse">Adresse :</label>
+                <input id="adresse" type="text" {{#if user.adress.zone}} value="{{user.adress.zone}}" {{/if}}
+                    name="zone"><br>
+            </div>
+            <div>
+                <label for="codePostal">Code Postal :</label>
+                <input id="codePostal" type="number" {{#if user.adress.zip}} value="{{user.adress.zip}}" {{/if}}
+                    name="zip"><br>
+            </div>
+            <div>
+                <label for="département">Départements :</label>
+                <input id="département" type="text" {{#if user.adress.department}} value="{{user.adress.department}}"
+                    {{/if}} name="department"><br>
+            </div>
 
-        <!-- Select Group Sanguin-->
-        <div>
-            <label for="grSange">Groupe Sanguins :</label>
-            <select id="grSang" {{#if user.adress.zone}} value="{{user.bloodGroup}}" {{/if}} name="bloodGroup">
-                <option value="AB+" {{#if (eq user.bloodGroup "AB+")}} selected {{/if}}>AB+</option>
-                <option value="AB-" {{#if (eq user.bloodGroup "AB-")}} selected {{/if}}>AB-</option>
-                <option value="A+"  {{#if (eq user.bloodGroup "A+")}}  selected {{/if}}>A+</option>
-                <option value="A-"  {{#if (eq user.bloodGroup "A-")}}  selected {{/if}}>A-</option>
-                <option value="B+"  {{#if (eq user.bloodGroup "B+")}}  selected {{/if}}>B+</option>
-                <option value="B-"  {{#if (eq user.bloodGroup "B-")}}  selected {{/if}}>B-</option>
-                <option value="O+"  {{#if (eq user.bloodGroup "O+")}}  selected {{/if}}>O+</option>
-                <option value="O-"  {{#if (eq user.bloodGroup "O-")}}  selected {{/if}}>O-</option>
-            </select><br>
-        </div>
 
-        <div id="btn">
-            <button>Modifier</button>
+
+
+
+            <!-- Select Group Sanguin-->
+            <div>
+                <label for="grSange">Groupe Sanguins :</label>
+                <select id="grSang" {{#if user.bloodGroup}} value="{{user.bloodGroup}}" {{/if}} name="bloodGroup">
+                    <option value="" {{#if (eq user.bloodGroup "" )}} selected {{/if}}></option>
+                    <option value="AB+" {{#if (eq user.bloodGroup "AB+" )}} selected {{/if}}>AB+</option>
+                    <option value="AB-" {{#if (eq user.bloodGroup "AB-" )}} selected {{/if}}>AB-</option>
+                    <option value="A+" {{#if (eq user.bloodGroup "A+" )}} selected {{/if}}>A+</option>
+                    <option value="A-" {{#if (eq user.bloodGroup "A-" )}} selected {{/if}}>A-</option>
+                    <option value="B+" {{#if (eq user.bloodGroup "B+" )}} selected {{/if}}>B+</option>
+                    <option value="B-" {{#if (eq user.bloodGroup "B-" )}} selected {{/if}}>B-</option>
+                    <option value="O+" {{#if (eq user.bloodGroup "O+" )}} selected {{/if}}>O+</option>
+                    <option value="O-" {{#if (eq user.bloodGroup "O-" )}} selected {{/if}}>O-</option>
+                </select><br>
+            </div>
+
+
+
+
+
+            <div id="btn">
+                <button>Modifier</button>
+            </div>
         </div>
     </form>
 
     {{#if information}}
-        {{information}}
+    {{information}}
     {{/if}}
 </div>

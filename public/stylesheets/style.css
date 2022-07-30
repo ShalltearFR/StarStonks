@@ -105,67 +105,6 @@ nav {
   font-size: 16px;
 }
 
-label {
-  display: block;
-  width: 150px;
-  float: left;
-}
-
-#profile {
-  margin: 20px;
-  margin-top: 20px;
-  background-color: #2f2f30;
-  color: #a0a0a0;
-
-}
-
-#btn {
-  text-align: center;
-}
-
-#profile,
-label,
-input,
-select {
-  font-size: 14px;
-  margin-top: 10px;
-  
-}
-
-#profile .defautImageProfile {
-  height: 75px;
-  width: 75px;
-  position: absolute
-}
-
-#profile #image {
-  color: black;
-}
-
-#profile input{
-  border-bottom: 0.125rem solid #a0a0a0;
-}
-
-
-input,
-select {
-  
-  background-color: initial;
-  border: none;
-  color: #fff;
-  
-  
-}
-
-button {
-  cursor: pointer;
-  height: 2.5rem;
-  justify-content: center;
-  position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-  width: 100%;
-}
 
 footer {
   right: 0px;
@@ -315,8 +254,73 @@ ul {
   height: 100px;
 }
 
+#bottomProfile{
+
+}
+
+#profile .defautImageProfile {
+  height: 75px;
+  width: 75px;
+  position: absolute
+}
+
+#profile #image {
+  color: black;
+}
+
+#profile input{
+  border-bottom: 0.125rem solid #a0a0a0;
+}
 
 
+label {
+  display: block;
+  width: 150px;
+  float: left;
+}
+
+#profile {
+  margin: 20px;
+  margin-top: 20px;
+  background-color: #2f2f30;
+  color: #a0a0a0;
+
+}
+
+#btn {
+  text-align: center;
+  margin-top: 100px;
+}
+
+#profile,
+label,
+input,
+select {
+  font-size: 14px;
+  margin-top: 10px;
+
+}
+
+#bottomProfile{
+ margin-top: 50px;
+}
+
+input,
+select {
+  background-color: initial;
+  border: none;
+  color: #fff;
+}
+
+button {
+  cursor: pointer;
+  height: 2.5rem;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 100%;
+}
 /* ----------------------------------------------------------------RESULTS------------------------------------------------------------------ */
 /* ----------------------------------------------------------------CART------------------------------------------------------------------ */
 
