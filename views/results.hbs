@@ -1,30 +1,54 @@
 <h1>{{title}}</h1>
 
-<h2 class="jDepart">jeudi 28 juillet</h2>
-
-<ul>
-    <li>
-        <div>
-            <span class="depart"><span>Départ à : </span></span>
-            <div class="detailDepart">
-                <time datetime="28-07-2022 06:00" class="time">06:00 </time>
+{{#if selectResult}}
+    <div id="legendAndPrice">
+        <div id="legend">
+            <div class="classTypeLegend">
+                <svg height="20" width="20">
+                    <circle cx="10" cy="10" r="8" stroke="white" stroke-width="1" fill="#FAFF09" />
+                </svg>
+                Class Gold
             </div>
-            
-            <span class="arriver"><span>Arrivée à : </span></span>
-            <div class="detailArriver">
-                <time datetime="28-07-2022 09:25" class="time">09:25 </time>
+            <div class="classTypeLegend">
+                <svg height="20" width="20">
+                    <circle cx="10" cy="10" r="8" stroke="white" stroke-width="1" fill="#E5E1E1" />
+                </svg>
+                Class Silver
             </div>
-
-            <div>
-                <span class="classeType"><span>Classe Gold</span></span>
+            <div class="classTypeLegend">
+                <svg height="20" width="20">
+                    <circle cx="10" cy="10" r="8" stroke="white" stroke-width="1" fill="#9C7207" />
+                </svg>
+                Class Bronze
             </div>
-
-            <div>
-                <span class="tempsVol">Temps de vole</span>
-                <span class="detailtempsdevole">79h 23m 56s</span>
-            </div>
-
         </div>
-    </li>
-    
-</ul>
+        <div id="price">
+            37205.5€
+        </div>
+    </div>
+
+    <h2 class="dayStart">jeudi 28 juillet</h2>
+    <ul>
+        {{!-- {{#each voyages}} --}}
+            <li> {{> resultsCard}} </li>
+            <li> {{> resultsCard}} </li>
+        {{!-- {{/each}} --}}
+    </ul>
+{{else}}
+    <p>Options</p>
+    <form action="/result/finalise" method="POST">
+        <div id="options">
+            <div class="optionsParam">
+                Passagers - 1 +
+            </div>
+            <div class="optionsParam">
+                Bagages - 1 +
+            </div>
+            <div class="optionsParam">
+                Retour Oui Non
+            </div>
+        </div>
+    </form>
+{{/if}}
+
+<script src="../js/results.js"></script>

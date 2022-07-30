@@ -5,14 +5,17 @@ const ticketSchema = new Schema(
         id: Number,
         trip_id: {
             type: Schema.Types.ObjectId,
-            ref: Trip
+            ref: "Trip"
         },
         passengers: Number,
         bags: Number,
         class: String,
         price: {
             value: Number,
-            currency: 'EUR'
+            currency: {
+                type: String,
+                default: "EUR"
+            }
         }
     }
 );
