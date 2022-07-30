@@ -46,4 +46,18 @@ router.get("/classes", (req, res, next) => {
 // });
 
 
+router.get("/cart", (req, res, next) => {
+  res.render("cart", {
+    title: "Cart",
+    user: req.session.user,
+  });
+});
+
+router.get("/application", (req, res, next) => {
+  res.render("application", {
+    title: "Application",
+    user: req.session.user,
+  });
+});
+
 module.exports = router;
