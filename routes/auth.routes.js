@@ -14,7 +14,7 @@ const User = require("../models/User.model");
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
-const fileUploader = require('../config/cloudinary.config');
+const fileUploader = require("../config/cloudinary.config");
 
 router.get("/signup", isLoggedOut, (req, res) => {
   if (req.session.user) {
@@ -204,44 +204,70 @@ router.get("/profile", (req, res, next) => {
   });
 });
 
-router.post("/profile", fileUploader.single("avatarUrl"), (req, res, next) => { 
-  const {pseudonyme, email, lastName, firstName, mobile, sexe, zone, zip, department, bloodGroup, avatarUrl } = req.body
-
-  let imageFile
-  if (req.file){ // Si modification d'image, met le nouveau lien
-    imageFile = req.file.path
-  } else{ // Sinon garde le lien de l'image actuel
-    imageFile = avatarUrl
-  }
-  User.findByIdAndUpdate(req.session.user._id, { //Met à jour dans la DB les informations
+router.post("/profile", fileUploader.single("avatarUrl"), (req, res, next) => {
+  const {
     pseudonyme,
     email,
     lastName,
-    firstName, 
+    firstName,
     mobile,
     sexe,
-    adress :{
+    zone,
+    zip,
+    department,
+    bloodGroup,
+    avatarUrl,
+  } = req.body;
+
+  let imageFile;
+  if (req.file) {
+    // Si modification d'image, met le nouveau lien
+    imageFile = req.file.path;
+  } else {
+    // Sinon garde le lien de l'image actuel
+    imageFile = avatarUrl;
+  }
+  User.findByIdAndUpdate(req.session.user._id, {
+    //Met à jour dans la DB les informations
+    pseudonyme,
+    email,
+    lastName,
+    firstName,
+    mobile,
+    sexe,
+    adress: {
       zone,
       zip,
-      department
+      department,
     },
     bloodGroup,
-    avatarUrl: imageFile
+    avatarUrl: imageFile,
   })
-  .then(()=> {
-    User.findOne({email})
-    .then(DataFromDB =>{ // Met à jour dans le client les informations de la DB et affiche un message sur le client
-      req.session.user = DataFromDB 
-      console.log("nouveau req.session.user", req.session.user)
-      res.render("auth/profile", {
-        title: "Profil",
-        user: req.session.user,
-        information: "Profil mis à jour"
-      });
+    .then(() => {
+      User.findOne({ email })
+        .then((DataFromDB) => {
+          // Met à jour dans le client les informations de la DB et affiche un message sur le client
+          req.session.user = DataFromDB;
+          console.log("nouveau req.session.user", req.session.user);
+          res.render("auth/profile", {
+            title: "Profil",
+            user: req.session.user,
+            information: "Profil mis à jour",
+          });
+        })
+        .catch((err) => next(err));
     })
-    .catch(err => next(err))
-  })
-  .catch((err)=> next(err))
-})
+    .catch((err) => next(err));
+});
+
+router.get("/reservations", (req, res, next) => {
+  if (!req.session.user) {
+    return res.redirect("/");
+  }
+  res.render("auth/reservations", {
+    title: "Réservations",
+    user: req.session.user,
+  });
+});
 
 module.exports = router;
