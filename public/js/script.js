@@ -79,4 +79,4 @@ function hamburgerAnimation(status) { // Animation d'ouverture/fermeture du menu
 // });
 
 // ----------------------------------------------------Calcul le price de Trip.model.js----------------------------------------------------
-const price = (base_price * passengers) + 100 * bags
+// const price = (base_price * passengers) + 100 * bags
