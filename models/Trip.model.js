@@ -2,11 +2,6 @@ const { Schema, model } = require("mongoose");
 
 const tripSchema = new Schema(
     {
-        _id: Number,
-        user_id: {
-            type: Schema.Types.ObjectId,
-            ref: "User"
-        },
         from: {
             type: Schema.Types.ObjectId,
             ref: "Location"
@@ -23,7 +18,8 @@ const tripSchema = new Schema(
                 type: String,
                 default: "EUR"
             }
-        }
+        },
+        class : String
 
     }
 

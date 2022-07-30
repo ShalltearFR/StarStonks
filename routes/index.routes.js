@@ -22,6 +22,7 @@ router.get("/results", (req, res, next) => {
   res.render("results", {
     title: "Trajets suggérés",
     user: req.session.user,
+    selectResult: req.query.selectResult
   });
 });
 
