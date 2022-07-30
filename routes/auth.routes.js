@@ -202,15 +202,18 @@ router.get("/profile", (req, res, next) => {
     title: "Profil",
     user: req.session.user,
   });
-
-  console.log(req.session.user)
 });
 
 router.post("/profile", fileUploader.single("avatarUrl"), (req, res, next) => { 
-  const {pseudonyme, email, lastName, firstName, mobile, sexe, zone, zip, department, bloodGroup } = req.body
+  const {pseudonyme, email, lastName, firstName, mobile, sexe, zone, zip, department, bloodGroup, avatarUrl } = req.body
 
-  console.log(req.body)
-  User.findByIdAndUpdate(req.session.user._id, {
+  let imageFile
+  if (req.file){ // Si modification d'image, met le nouveau lien
+    imageFile = req.file.path
+  } else{ // Sinon garde le lien de l'image actuel
+    imageFile = avatarUrl
+  }
+  User.findByIdAndUpdate(req.session.user._id, { //Met à jour dans la DB les informations
     pseudonyme,
     email,
     lastName,
@@ -222,28 +225,21 @@ router.post("/profile", fileUploader.single("avatarUrl"), (req, res, next) => {
       zip,
       department
     },
-    bloodGroup
+    bloodGroup,
+    avatarUrl: imageFile
   })
-  .then((updatedDataFromDB)=> {
-    console.log("email =",updatedDataFromDB.email)
-    const emailFromDB = req.body.email
-    User.findOne({emailFromDB})
-    .then(DataFromDB =>{
-      console.log("DataFromDB", DataFromDB)
-      req.session.destroy((err) => {
-        if (err) {
-          return res
-            .status(500)
-            .render("auth/logout", { errorMessage: err.message });
-        }
-        setTimeout(()=> req.session.user = DataFromDB, 500)
-      })
-
-      
-      console.log("req =",req.session.user)
+  .then(()=> {
+    User.findOne({email})
+    .then(DataFromDB =>{ // Met à jour dans le client les informations de la DB et affiche un message sur le client
+      req.session.user = DataFromDB 
+      console.log("nouveau req.session.user", req.session.user)
+      res.render("auth/profile", {
+        title: "Profil",
+        user: req.session.user,
+        information: "Profil mis à jour"
+      });
     })
     .catch(err => next(err))
-    
   })
   .catch((err)=> next(err))
 })
