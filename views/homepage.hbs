@@ -5,45 +5,21 @@
 <div class="homepage">
     <h2>Choix de votre destination</h2>
     <form action="/results" method="GET">
-        <label>Sélectionnez la planète de départ :</label>
-        {{!-- <input type="list" id="from" name="from" list="planete" required> --}}
+        <label>Planète de départ :</label>
         <select name="from">
             {{#each planets}}
                 <option value="{{_id}}" name="from">{{name}}</option>
             {{/each}}
-            {{!-- <option value="Terre" >Terre</option>
-            <option value="Tatooine">Tatooine</option>
-            <option value="Korriban">Korriban</option>
-            <option value="Mustafar">Mustafar</option>
-            <option value="Lola Sayu">Lola Sayu</option> --}}
         </select>
 
-        <label for="from">Sélectionnez la planète de destination :</label>
-        {{!-- <input type="list" id="to" name="to" list="planete" required> --}}
+        <label for="from">Planète de destination :</label>
         <select name="to">
             {{#each planets}}
                 <option value="{{_id}}" name="to">{{name}}</option>
             {{/each}}
-            {{!-- <option value="Terre">Terre</option>
-            <option value="Tatooine">Tatooine</option>
-            <option value="Korriban">Korriban</option>
-            <option value="Mustafar">Mustafar</option>
-            <option value="Lola Sayu">Lola Sayu</option> --}}
         </select>
-        <input type="hidden" name="selectResult" value="Start">
         <button>Go Voyage !</button>
     </form>
-
-    {{!-- <datalist id="planete">
-        <option>Terre</option>
-        <option>Tatooine</option>
-        <option>Korriban</option>
-        <option>Mustafar</option>
-        <option>Lola Sayu</option>
-    </datalist> --}}
-
-
-
     <div class="enigme">
         <a href="https://benamzz.github.io/Star-Wars-Is-Coming/"><img
                 src="https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658854591/StarStonks/classesPage/background_img/lune_f86gyd.png"

@@ -26,11 +26,9 @@ router.get("/results", (req, res, next) => {
   .populate("to")
   .sort({date : 1})
   .then(resultFromDB =>{
-    console.log(resultFromDB)
     res.render("results", {
       title: "Trajets suggérés",
       user: req.session.user,
-      selectResult: req.query.selectResult,
       destinations: resultFromDB
     });
   })
@@ -38,7 +36,6 @@ router.get("/results", (req, res, next) => {
     res.render("results", {
       title: "Trajets suggérés",
       notFound: "true",
-      selectResult: req.query.selectResult,
     });
   })
 });

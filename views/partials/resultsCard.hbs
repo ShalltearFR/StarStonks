@@ -1,24 +1,13 @@
-<div class="resultCard" style="background-color: 
-    {{#if (eq this.class "gold"   )}} #FAFF09 {{/if}}
-    {{#if (eq this.class "silver" )}} #E5E1E1 {{/if}}
-    {{#if (eq this.class "bronze" )}} #9C7207 {{/if}}
-    " tripId="{{this._id}}"
-    {{!-- backgroundClass="{{this.class}}"> --}}
-    <form action="/result" method="POST">
-        <input type="hidden" name="tripId" value="{{this._id}}">
-        {{!-- <div class="from">
-        Départ le {{#toShortDate this.date}}{{/toShortDate}}
-        </div> --}}
-        
-        <div class="to">
-        Arrivée le {{#toShortDate this.arrived}}{{/toShortDate}} à {{#toArrived this.arrived}}{{/toArrived}}
-        </div>
+<div class="resultCard" style="background-color:{{#if (eq this.class "gold")}}#FAFF09b2{{/if}}{{#if (eq this.class "silver")}}#E5E1E1b2{{/if}}{{#if (eq this.class "bronze")}}#9C7207b2{{/if}}" tripId="{{this._id}}">
+            
+    <p class="to">
+    Arrivée le {{#toShortDate this.arrived}}{{/toShortDate}} à {{#toArrived this.arrived}}{{/toArrived}}
+    </p>
 
-        <div class="fly">
-            {{#calculDuration this.date this.arrived}}{{/calculDuration}} de vol
-        </div>
-        <div class="basePrice">
-            {{this.base_price.value}} {{this.base_price.currency}}
-        </div>
-    </div>
-</form>
+    <p class="fly">
+        {{#calculDuration this.date this.arrived}}{{/calculDuration}} de vol
+    </p>
+    <p class="basePrice">
+        {{this.base_price.value}} {{this.base_price.currency}}
+    </p>
+</div>

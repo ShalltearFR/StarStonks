@@ -52,17 +52,19 @@ hbs.registerHelper('calculDuration', (date, arrived) => {
     const diffMs = arrived.getTime() - date.getTime() // milliseconds between now & Christmas
     const diffDays = Math.floor(diffMs / 86400000); // days
     const diffHrs = Math.floor((diffMs % 86400000) / 3600000); // hours
-    const diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
+    let diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
 
-    if (diffDays === 0){ return `${diffHrs} heures ${diffMins} minutes` }
-    if (diffDays >   1){ return `${diffDays} jours ${diffHrs} heures ${diffMins} minutes`}
-    return `${diffDays} jour ${diffHrs} heures ${diffMins} minutes`
+    if (diffMins === 0){ diffMins = "00"}
+    if (diffDays === 0){ return `${diffHrs}h${diffMins}` }
+    if (diffDays === 1){ return `${diffDays}jour et ${diffHrs}h${diffMins}`}
+    if (diffDays  >  1){ return `${diffDays}jours et ${diffHrs}h${diffMins}`}
+   
 })
 
 hbs.registerHelper('toArrived', (arrived) => {
     const hours = arrived.getHours()
     const minutes = arrived.getMinutes()
-    return `${hours} heures ${minutes} `
+    return `${hours}h${minutes} `
 })
 
 
