@@ -11,7 +11,7 @@ const tripSchema = new Schema(
             ref: "Location"
         },
         date: Date,
-        duration: String,
+        arrived: Date,
         base_price: {
             value: Number,
             currency: {

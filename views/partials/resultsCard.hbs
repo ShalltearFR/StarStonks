@@ -6,20 +6,16 @@
     {{!-- backgroundClass="{{this.class}}"> --}}
     <form action="/result" method="POST">
         <input type="hidden" name="tripId" value="{{this._id}}">
-        <div class="from">
-        Départ à {{this.date}}
-        </div>
+        {{!-- <div class="from">
+        Départ le {{#toShortDate this.date}}{{/toShortDate}}
+        </div> --}}
         
         <div class="to">
-        Arrivée à 
+        Arrivée le {{#toShortDate this.arrived}}{{/toShortDate}} à {{#toArrived this.arrived}}{{/toArrived}}
         </div>
 
-        {{!-- <div>
-            <span class="classType"><span>Classe Gold</span>
-        </div> --}}
-
         <div class="fly">
-            {{this.duration}} de vol
+            {{#calculDuration this.date this.arrived}}{{/calculDuration}} de vol
         </div>
         <div class="basePrice">
             {{this.base_price.value}} {{this.base_price.currency}}

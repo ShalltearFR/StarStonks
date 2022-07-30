@@ -25,12 +25,12 @@
                 </div>
             </div>
 
-            <h2 class="dayStart">jeudi 28 juillet</h2>
-            <ul>
                 {{#each destinations}}
-                    <li> {{> resultsCard}} </li>
+                    <h2 class="dayStart" dateId="{{#toShortDate this.date}}{{/toShortDate}}">{{#toShortDate this.date}}{{/toShortDate}}</h2>
+                        <ul>
+                            <li> {{> resultsCard}} </li>
+                        </ul>
                 {{/each}}
-            </ul>
         {{else}}
             <p>Options</p>
             <form action="/result/finalise" method="POST">

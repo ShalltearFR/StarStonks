@@ -24,6 +24,7 @@ router.get("/results", (req, res, next) => {
   Trip.find({$and:[ { from },{ to } ] })
   .populate("from")
   .populate("to")
+  .sort({date : 1})
   .then(resultFromDB =>{
     console.log(resultFromDB)
     res.render("results", {

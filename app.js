@@ -18,6 +18,53 @@ app.set("views", __dirname + "/views");
 app.set("view engine", "hbs");
 hbs.registerPartials(__dirname + "/views/partials")
 hbs.registerHelper('eq', (a, b) => a == b)
+hbs.registerHelper('toShortDate', (longDate) => {
+    const year = longDate.getFullYear()
+    const month = (function(){
+        if (longDate.getMonth() === 0 ){ return "Janvier"}
+        if (longDate.getMonth() === 1 ){ return "Fevrier"}
+        if (longDate.getMonth() === 2 ){ return "Mars"}
+        if (longDate.getMonth() === 3 ){ return "Avril"}
+        if (longDate.getMonth() === 4 ){ return "Mai"}
+        if (longDate.getMonth() === 5 ){ return "Juin"}
+        if (longDate.getMonth() === 6 ){ return "Juillet"}
+        if (longDate.getMonth() === 7 ){ return "Aout"}
+        if (longDate.getMonth() === 8 ){ return "Septembre"}
+        if (longDate.getMonth() === 9 ){ return "Octobre"}
+        if (longDate.getMonth() === 10){ return "Novembre"}
+        if (longDate.getMonth() === 11){ return "Decembre"}
+    })()//longDate.getMonth()
+    const fullDay = (function () {
+        if (longDate.getDay() === 0){ return "Dimanche"}
+        if (longDate.getDay() === 1){ return "Lundi"}
+        if (longDate.getDay() === 2){ return "Mardi"}
+        if (longDate.getDay() === 3){ return "Mercredi"}
+        if (longDate.getDay() === 4){ return "Jeudi"}
+        if (longDate.getDay() === 5){ return "Vendredi"}
+        if (longDate.getDay() === 6){ return "Samedi"}
+      })()
+    const day = longDate.getDate() + 1
+
+    return `${fullDay} ${day} ${month} ${year}`
+})
+
+hbs.registerHelper('calculDuration', (date, arrived) => {
+    const diffMs = arrived.getTime() - date.getTime() // milliseconds between now & Christmas
+    const diffDays = Math.floor(diffMs / 86400000); // days
+    const diffHrs = Math.floor((diffMs % 86400000) / 3600000); // hours
+    const diffMins = Math.round(((diffMs % 86400000) % 3600000) / 60000); // minutes
+
+    if (diffDays === 0){ return `${diffHrs} heures ${diffMins} minutes` }
+    if (diffDays >   1){ return `${diffDays} jours ${diffHrs} heures ${diffMins} minutes`}
+    return `${diffDays} jour ${diffHrs} heures ${diffMins} minutes`
+})
+
+hbs.registerHelper('toArrived', (arrived) => {
+    const hours = arrived.getHours()
+    const minutes = arrived.getMinutes()
+    return `${hours} heures ${minutes} `
+})
+
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
