@@ -11,24 +11,24 @@
 
             <div>
                 {{#if user}}
-                {{#if user.avatarUrl}}
-                <div id="showProfile">
-                    <img src="{{user.avatarUrl}}" class="defautImageProfile">
-                    <input id="file" type="file" class="file" name="avatarUrl">
-                    <label for="file"><img id="editProfileImg"
-                            src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1659108921/Pen02_etmsso.png"
-                            alt=""></label>
-                </div>
-                {{else}}
-                <div id="showProfile">
-                    <img src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1658946574/126403801-cara-de-personaje-malvado_mhahwv.webp"
-                        class="defautImageProfile">
-                    <input id="file" type="file" class="file" name="avatarUrl">
-                    <label for="file"><img id="editProfileImg"
-                            src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1659108921/Pen02_etmsso.png"
-                            alt=""></label>
-                </div>
-                {{/if}}
+                    {{#if user.avatarUrl}}
+                    <div id="showProfile">
+                        <img src="{{user.avatarUrl}}" class="defautImageProfile">
+                        <input id="file" type="file" class="file" name="avatarUrl" value="{{user.avatarUrl}}">
+                        <label for="file"><img id="editProfileImg"
+                                src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1659108921/Pen02_etmsso.png"
+                                alt=""></label>
+                    </div>
+                    {{else}}
+                    <div id="showProfile">
+                        <img src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1658946574/126403801-cara-de-personaje-malvado_mhahwv.webp"
+                            class="defautImageProfile">
+                        <input id="file" type="file" class="file" name="avatarUrl" value="https://res.cloudinary.com/dq7egs1s7/image/upload/v1658946574/126403801-cara-de-personaje-malvado_mhahwv.webp">
+                        <label for="file"><img id="editProfileImg"
+                                src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1659108921/Pen02_etmsso.png"
+                                alt=""></label>
+                    </div>
+                    {{/if}}
                 {{/if}}
 
             </div>
@@ -78,8 +78,8 @@
         <!-- Sexe -->
         <div>
             <label for="sexe">Sexe :</label>
-            <input type="radio" name="sexe" id="sexe" {{#if (eq user.sexe "Homme")}} checked{{/if}}/>Homme
-            <input type="radio" name="sexe" {{#if (eq user.sexe "Femme")}} checked{{/if}}/>Femme<br />
+            <input type="radio" name="sexe" id="sexe" {{#if (eq user.sexe "Male")}} checked{{/if}} value="Male"/>Homme
+            <input type="radio" name="sexe" id="sexe" {{#if (eq user.sexe "Female")}} checked{{/if}} value="Female"/>Femme<br />
         </div>
 
         <!-- Adresse-->
@@ -100,15 +100,14 @@
         <div>
             <label for="grSange">Groupe Sanguins :</label>
             <select id="grSang" {{#if user.adress.zone}} value="{{user.bloodGroup}}" {{/if}} name="bloodGroup">
-                <option selected value=""></option>
-                <option value="AB+">AB+</option>
-                <option value="AB-">AB-</option>
-                <option value="A+">A+</option>
-                <option value="A-">A-</option>
-                <option value="B+">B+</option>
-                <option value="B-">B-</option>
-                <option value="O+">O+</option>
-                <option value="O-">O-</option>
+                <option value="AB+" {{#if (eq user.bloodGroup "AB+")}} selected {{/if}}>AB+</option>
+                <option value="AB-" {{#if (eq user.bloodGroup "AB-")}} selected {{/if}}>AB-</option>
+                <option value="A+"  {{#if (eq user.bloodGroup "A+")}}  selected {{/if}}>A+</option>
+                <option value="A-"  {{#if (eq user.bloodGroup "A-")}}  selected {{/if}}>A-</option>
+                <option value="B+"  {{#if (eq user.bloodGroup "B+")}}  selected {{/if}}>B+</option>
+                <option value="B-"  {{#if (eq user.bloodGroup "B-")}}  selected {{/if}}>B-</option>
+                <option value="O+"  {{#if (eq user.bloodGroup "O+")}}  selected {{/if}}>O+</option>
+                <option value="O-"  {{#if (eq user.bloodGroup "O-")}}  selected {{/if}}>O-</option>
             </select><br>
         </div>
 
@@ -116,4 +115,8 @@
             <button>Modifier</button>
         </div>
     </form>
+
+    {{#if information}}
+        {{information}}
+    {{/if}}
 </div>
