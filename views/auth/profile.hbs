@@ -37,7 +37,7 @@
 
 
 
-            <div>
+            <div class="profileForm">
 
                 <!-- Pseudonyme -->
                 <div>
@@ -47,7 +47,7 @@
                 </div>
 
                 <!-- E-mail -->
-                <div>
+                <div class="labelEmail">
                     <label for="eMail">E-mail :</label>
                     <input id="eMail" type="text" value="{{user.email}}" name="email">
                 </div>
@@ -58,10 +58,10 @@
                     <input id="motdepass" type="text" {{#if user.password}} value="{{user.password}}" {{/if}}><br>
                 </div>
 
-                <!-- Comfirmez le mot de passe -->
+                <!-- Confirmez le mot de passe -->
 
                 <div>
-                    <label for="motdepasse">Comfirmez le mot de passe :</label>
+                    <label for="motdepasse">Confirmez le mot <br> de passe :</label>
                     <input id="motdepasse" type="text" {{#if user.password}} value="{{user.password}}" {{/if}}><br>
                 </div>
 
