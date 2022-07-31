@@ -274,9 +274,11 @@ ul {
 
 #profile input{
   border-bottom: 0.125rem solid #a0a0a0;
+  background-color: initial;
+  
 }
 
-
+#profile
 label {
   display: block;
   width: 130px;
@@ -294,7 +296,7 @@ label {
 
 }
 
-.btn {
+.btnProfile {
   text-align: center;
   margin-top: 100px;
 }
@@ -305,18 +307,18 @@ input,
 select {
   font-size: 14px;
   margin-top: 10px;
-  background-color: initial;
-  border: none;
+     background-color: initial;
+     border: none;
 
 }
 
 input{
   color: white;
+  border-bottom: 0.125rem solid #a0a0a0;
+  margin-bottom: 20px;
+
 }
 
-#bottomProfile{
- margin-top: 50px;
-}
 
 button {
   cursor: pointer;
@@ -381,39 +383,25 @@ button {
   border: 2px solid #ffdc00;
   border-radius: 20px;
   padding:10px;
-  
-  
-
-}
-
-#login{
   display: flex;
   flex-direction:column;
-  
-}
-
-#emailLogin{
-  
-  
-}
-
-#passwordLogin{
-  
-  
-  
-}
-
-.emailLogin{
- 
- 
-  
-}
-
-.passwordLogin{
-  
+  align-items: center;
+  text-align: center;
+  display: block;
   
 
 }
+
+.labelLoginSize{
+  width: 200px;
+  height: 70px;
+}
+
+.btnLogin{
+  margin-top: 40px;
+}
+  
+
 
 /* ----------------------------------------------------------------LOGOUT------------------------------------------------------------------ */
 /* ----------------------------------------------------------------PAYMENT------------------------------------------------------------------ */
@@ -430,7 +418,35 @@ button {
 
 }
 
-
 /* ----------------------------------------------------------------SINGNUP------------------------------------------------------------------ */
+#signup{
+  margin: 70px;
+  margin-top: 20px;
+  color: #a0a0a0;
+  backdrop-filter:blur(20px) brightness(110%);
+  border: 2px solid #ffdc00;
+  border-radius: 20px;
+  padding:10px;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  text-align: center;
+  display: block;
+  
+  
+
+}
+
+
+.btnSignup{
+  margin-top: 40px;
+}
+
+
+
+
+
+
+
 /* ----------------------------------------------------------------ERROR------------------------------------------------------------------ */
 /* ----------------------------------------------------------------NOT_FOUND------------------------------------------------------------------ */

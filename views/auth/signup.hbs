@@ -1,16 +1,30 @@
 <h2>Creer votre compte</h2>
 
 <form action="/auth/signup" method="POST">
-   <label> Pseudonyme
-      <input type="text" name="pseudonyme">
-   </label>
-   <label> Email
-      <input type="email" name="email">
-   </label>
-   <label> Mot de passe
-      <input type="password" name="password">
-   </label>
-      <button>Confirmer</button>
+
+   <div id="signup">
+
+      <div>
+         <label> Pseudonyme
+            <input  class="pseudoSignup" type="text" name="pseudonyme">
+         </label>
+      </div>
+
+      <div>
+         <label> Email
+            <input type="email" name="email">
+         </label>
+      </div>
+
+      <div>
+         <label> Mot de passe
+            <input type="password" name="password">
+         </label>
+      </div>
+
+      <button class="btnSignup">Confirmer</button>
+   </div>
+
 </form>
 
 {{#if errorMessage}}

@@ -42,27 +42,27 @@
                 <!-- Pseudonyme -->
                 <div>
                     <label for="pseudo">Pseudonyme :</label>
-                    <input id="pseudo" type="text" value="{{user.pseudonyme}}" name="pseudonyme">
+                    <input type="text" value="{{user.pseudonyme}}" name="pseudonyme">
 
                 </div>
 
                 <!-- E-mail -->
                 <div class="labelEmail">
                     <label for="eMail">E-mail :</label>
-                    <input id="eMail" type="text" value="{{user.email}}" name="email">
+                    <input type="text" value="{{user.email}}" name="email">
                 </div>
 
                 <!-- Mot de passe -->
                 <div>
                     <label for="motdepass">Mot de passe :</label>
-                    <input id="motdepass" type="text" {{#if user.password}} value="{{user.password}}" {{/if}}><br>
+                    <input type="text" {{#if user.password}} value="{{user.password}}" {{/if}}><br>
                 </div>
 
                 <!-- Confirmez le mot de passe -->
 
                 <div>
                     <label for="motdepasse">Confirmez le mot <br> de passe :</label>
-                    <input id="motdepasse" type="text" {{#if user.password}} value="{{user.password}}" {{/if}}><br>
+                    <input type="text" {{#if user.password}} value="{{user.password}}" {{/if}}><br>
                 </div>
 
 
@@ -143,7 +143,7 @@
 
 
 
-            <div class="btn">
+            <div class="btnProfile">
                 <button>Modifier</button>
             </div>
         </div>
