@@ -135,9 +135,13 @@ footer a {
 }
 
 .homepage form {
-  border: solid 2px;
-  border-radius: 25px;
+  margin: 20px;
+  margin-top: 20px;
   padding: 1rem;
+  backdrop-filter:blur(20px) brightness(110%);
+  border: 2px solid #ffdc00;
+  border-radius: 20px;
+  padding: 10px;
 }
 
 .homepage label {
@@ -290,29 +294,28 @@ label {
 
 }
 
-#btn {
+.btn {
   text-align: center;
   margin-top: 100px;
 }
 
-#profile,
+#profile
 label,
 input,
 select {
   font-size: 14px;
   margin-top: 10px;
+  background-color: initial;
+  border: none;
 
+}
+
+input{
+  color: white;
 }
 
 #bottomProfile{
  margin-top: 50px;
-}
-
-input,
-select {
-  background-color: initial;
-  border: none;
-  color: #fff;
 }
 
 button {
@@ -323,6 +326,8 @@ button {
   text-decoration: none;
   text-transform: uppercase;
   width: 100%;
+  border-radius: 20px;
+  border: 2px solid #0a0a09;
 }
 
 .profileForm{
@@ -368,6 +373,48 @@ button {
 /* ----------------------------------------------------------------CART------------------------------------------------------------------ */
 
 /* ----------------------------------------------------------------LOGIN------------------------------------------------------------------ */
+#login{
+  margin: 70px;
+  margin-top: 20px;
+  color: #a0a0a0;
+  backdrop-filter:blur(20px) brightness(110%);
+  border: 2px solid #ffdc00;
+  border-radius: 20px;
+  padding:10px;
+  
+  
+
+}
+
+#login{
+  display: flex;
+  flex-direction:column;
+  
+}
+
+#emailLogin{
+  
+  
+}
+
+#passwordLogin{
+  
+  
+  
+}
+
+.emailLogin{
+ 
+ 
+  
+}
+
+.passwordLogin{
+  
+  
+
+}
+
 /* ----------------------------------------------------------------LOGOUT------------------------------------------------------------------ */
 /* ----------------------------------------------------------------PAYMENT------------------------------------------------------------------ */
 /* ----------------------------------------------------------------RESERVATION------------------------------------------------------------------ */
