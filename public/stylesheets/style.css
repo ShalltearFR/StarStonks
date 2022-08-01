@@ -142,6 +142,7 @@ footer a {
   border: 2px solid #ffdc00;
   border-radius: 20px;
   padding: 10px;
+  text-align: center;
 }
 
 .homepage label {
@@ -258,9 +259,6 @@ ul {
   height: 100px;
 }
 
-#bottomProfile{
-
-}
 
 #profile .defautImageProfile {
   height: 100px;
@@ -272,17 +270,29 @@ ul {
   color: black;
 }
 
-#profile input{
+#profile
+input{
   border-bottom: 0.125rem solid #a0a0a0;
   background-color: initial;
   
 }
 
 #profile
-label {
+label{
   display: block;
   width: 130px;
   float: left;
+  margin-top: 10px;
+  
+}
+
+#profile
+input{
+  font-size: 13px;
+  margin-top: 10px;
+  background-color: initial;
+  border: none;
+  border-bottom: 0.125rem solid #a0a0a0;
 }
 
 #profile {
@@ -301,16 +311,6 @@ label {
   margin-top: 100px;
 }
 
-#profile
-label,
-input,
-select {
-  font-size: 14px;
-  margin-top: 10px;
-     background-color: initial;
-     border: none;
-
-}
 
 input{
   color: white;
@@ -318,7 +318,6 @@ input{
   margin-bottom: 20px;
 
 }
-
 
 button {
   cursor: pointer;
