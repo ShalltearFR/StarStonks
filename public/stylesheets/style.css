@@ -251,7 +251,6 @@ ul {
   margin-block: 20px;
   color: #a0a0a0;
   backdrop-filter: blur(20px) brightness(110%);
-  border: 2px solid #ffdc00;
   border-radius: 20px;
   padding: 10px;
   list-style: inside;
@@ -260,6 +259,18 @@ ul {
 
 .classes li {
   margin: 5px;
+}
+
+.classes .gold ul {
+  border: 2px solid #ffdc00;
+}
+
+.classes .silver ul {
+  border: 2px solid silver;
+}
+
+.classes .bronze ul {
+  border: 2px solid rgb(145, 110, 24);
 }
 
 .classes .gold ul,
