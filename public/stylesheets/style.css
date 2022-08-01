@@ -262,17 +262,17 @@ ul {
   margin: 5px;
 }
 
-.classes .gold,
+.classes .gold ul,
 .classes .gold h2 {
   color: rgb(255, 228, 52);
 }
 
-.classes .silver,
+.classes .silver ul,
 .classes .silver h2 {
   color: silver;
 }
 
-.classes .bronze,
+.classes .bronze ul,
 .classes .bronze h2 {
   color: rgb(145, 110, 24);
 }
