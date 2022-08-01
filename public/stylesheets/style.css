@@ -29,8 +29,8 @@ h1 {
   text-align: center;
   margin-top: 50px;
   color: #ffdc00;
-  
-  
+
+
 }
 
 h2 {
@@ -87,7 +87,7 @@ nav {
   margin-left: 10px;
 }
 
-#navMax div{
+#navMax div {
   display: flex;
   align-items: center;
   margin-top: 20px;
@@ -98,7 +98,7 @@ nav {
   color: #ffdc00;
 }
 
-#navMax a{
+#navMax a {
   color: white;
   text-decoration: none;
   margin-left: 10px;
@@ -159,7 +159,7 @@ footer a {
   margin: 20px;
   margin-top: 20px;
   padding: 1rem;
-  backdrop-filter:blur(20px) brightness(110%);
+  backdrop-filter: blur(20px) brightness(110%);
   border: 2px solid #ffdc00;
   border-radius: 20px;
   padding: 10px;
@@ -251,6 +251,17 @@ ul {
 
 .classes ul {
   margin-block: 20px;
+  color: #a0a0a0;
+  backdrop-filter: blur(20px) brightness(110%);
+  border: 2px solid #ffdc00;
+  border-radius: 20px;
+  padding: 10px;
+  list-style: inside;
+  text-align: justify;
+}
+
+.classes li {
+  margin: 5px;
 }
 
 .classes .gold,
@@ -271,13 +282,13 @@ ul {
 
 /* 
 
- ######  ######  ####### ####### ### #       ####### 
- #     # #     # #     # #        #  #       #       
- #     # #     # #     # #        #  #       #       
- ######  ######  #     # #####    #  #       #####   
- #       #   #   #     # #        #  #       #       
- #       #    #  #     # #        #  #       #       
- #       #     # ####### #       ### ####### #######  
+  ######  ######  ####### ####### ### #       ####### 
+  #     # #     # #     # #        #  #       #       
+  #     # #     # #     # #        #  #       #       
+  ######  ######  #     # #####    #  #       #####   
+  #       #   #   #     # #        #  #       #       
+  #       #    #  #     # #        #  #       #       
+  #       #     # ####### #       ### ####### #######  
 
 */
 
@@ -288,8 +299,8 @@ ul {
   width: 0.1px;
   height: 0.1px;
   position: absolute;
-  
-} 
+
+}
 
 #editProfileImg {
   width: 40px;
@@ -297,10 +308,10 @@ ul {
   position: relative;
   margin-left: 65px;
   margin-top: 57px;
-  
+
 }
 
-#showProfile label{
+#showProfile label {
   height: 100px;
 }
 
@@ -315,24 +326,21 @@ ul {
   color: black;
 }
 
-#profile
-input{
+#profile input {
   border-bottom: 0.125rem solid #a0a0a0;
   background-color: initial;
-  
+
 }
 
-#profile
-label{
+#profile label {
   display: block;
   width: 130px;
   float: left;
   margin-top: 10px;
-  
+
 }
 
-#profile
-input{
+#profile input {
   font-size: 13px;
   margin-top: 10px;
   background-color: initial;
@@ -344,10 +352,10 @@ input{
   margin: 20px;
   margin-top: 20px;
   color: #a0a0a0;
-  backdrop-filter:blur(20px) brightness(110%);
+  backdrop-filter: blur(20px) brightness(110%);
   border: 2px solid #ffdc00;
   border-radius: 20px;
-  padding:10px;
+  padding: 10px;
 
 }
 
@@ -357,7 +365,7 @@ input{
 }
 
 
-input{
+input {
   color: white;
   border-bottom: 0.125rem solid #a0a0a0;
   margin-bottom: 20px;
@@ -376,11 +384,11 @@ button {
   border: 2px solid #0a0a09;
 }
 
-.profileForm{
+.profileForm {
   display: block;
 }
 
-.labelEmail{
+.labelEmail {
   margin-top: 54px;
 }
 
@@ -395,9 +403,9 @@ button {
  #    #  #       #     # #     # #          #    #     # 
  #     # #######  #####   #####  #######    #     #####   
 
- */      
- 
-#legend{
+ */
+
+#legend {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -405,15 +413,15 @@ button {
   gap: 25px;
 }
 
-#legend h3{
+#legend h3 {
   margin-top: 0;
 }
 
-#price{
+#price {
   font-size: 30px;
 }
 
-.resultCard{
+.resultCard {
   margin-bottom: 10px;
   border: solid 1px white;
   width: 75%;
@@ -421,10 +429,10 @@ button {
   margin-inline: auto;
 }
 
-.dayStart{
+.dayStart {
   margin-top: 30px;
 
-  padding:0
+  padding: 0
 }
 
 /* 
@@ -444,33 +452,35 @@ button {
 
 
 
-LOGIN
-#login{
+/* LOGIN  */
+#login {
   margin: 70px;
   margin-top: 20px;
   color: #a0a0a0;
-  backdrop-filter:blur(20px) brightness(110%);
+  backdrop-filter: blur(20px) brightness(110%);
   border: 2px solid #ffdc00;
   border-radius: 20px;
-  padding:10px;
+  padding: 10px;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   align-items: center;
   text-align: center;
   display: block;
-  
-
 }
 
-.labelLoginSize{
+#login input {
+  color: #0a0a09;
+}
+
+.labelLoginSize {
   width: 200px;
   height: 70px;
 }
 
-.btnLogin{
+.btnLogin {
   margin-top: 40px;
 }
-  
+
 
 
 /* 
@@ -515,39 +525,37 @@ LOGIN
 */
 
 
-.reservation{
+.reservation {
   margin: 20px;
-  margin-top: 20px;
   color: #a0a0a0;
-  backdrop-filter:blur(20px) brightness(110%);
+  backdrop-filter: blur(20px) brightness(110%);
   border: 2px solid #ffdc00;
   border-radius: 20px;
   padding: 10px;
-  
-
 }
 
 /* ----------------------------------------------------------------SINGNUP------------------------------------------------------------------ */
-#signup{
+#signup {
   margin: 70px;
   margin-top: 20px;
   color: #a0a0a0;
-  backdrop-filter:blur(20px) brightness(110%);
+  backdrop-filter: blur(20px) brightness(110%);
   border: 2px solid #ffdc00;
   border-radius: 20px;
-  padding:10px;
+  padding: 10px;
   display: flex;
-  flex-direction:column;
+  flex-direction: column;
   align-items: center;
   text-align: center;
   display: block;
-  
-  
+}
 
+#signup input {
+  color: #0a0a09;
 }
 
 
-.btnSignup{
+.btnSignup {
   margin-top: 40px;
 }
 
