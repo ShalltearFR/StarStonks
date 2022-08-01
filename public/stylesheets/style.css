@@ -21,8 +21,8 @@ body {
   /* background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658761246/StarStonks/classesPage/background_img/eso1211a_nsl5pp.jpg); */
 
   /* background-image: url("https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778891/imgAccueil_yvz3sq.jpg"); */
-  padding-top: 25px;
-  /* height: 731px; */
+  margin-top: 65px;
+  min-height: calc(100vh - 80px - 65px);
 }
 
 h1 {
@@ -107,11 +107,7 @@ nav {
 
 
 footer {
-  right: 0px;
-  left: 0px;
-  bottom: 0;
-  background-color: gray;
-  margin-top: auto;
+  background-color: #241E1F;
 }
 
 footer a {
@@ -538,7 +534,7 @@ button {
 .reservation {
   margin: 20px;
   color: #a0a0a0;
-  backdrop-filter: blur(20px) brightness(110%);
+  backdrop-filter: blur(5px) brightness(110%);
   border: 2px solid #ffdc00;
   border-radius: 20px;
   padding: 10px;

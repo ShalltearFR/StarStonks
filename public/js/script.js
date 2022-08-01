@@ -8,9 +8,27 @@ document.addEventListener(
 
 const $hamburger = document.querySelector("#hamburger")
 const $nav = document.querySelector("nav")
+const $content = document.querySelector("#content")
+const $footer = document.querySelector("footer")
 let isHamburgerOpen = false
 let lockMenu = false
 let hamburgerInterval
+
+$content.addEventListener("click", () => {
+  closeMenu()
+}, false);
+
+$footer.addEventListener("click", () => {
+  closeMenu()
+}, false);
+
+function closeMenu(){
+  if (isHamburgerOpen) { // Ferme le menu si clic à l'exterieur du menu
+    hamburgerInterval = setInterval(() => { hamburgerAnimation("close") }, 25)
+    lockMenu = true
+    isHamburgerOpen = false
+  }
+}
 
 $hamburger.addEventListener("click", () => {
   if (!isHamburgerOpen && !lockMenu) { //Déroule le menu
