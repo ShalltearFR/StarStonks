@@ -115,6 +115,15 @@ footer {
 
 footer a {
   color: #c6c6c6;
+  list-style: none;
+}
+
+footer ul {
+  margin: 10px;
+}
+
+footer li {
+  list-style: none;
 }
 
 /* 
