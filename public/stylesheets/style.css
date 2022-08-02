@@ -214,15 +214,13 @@ ul {
 .planete {
   display: flex;
   text-align: center;
-  margin-top: 30px;
 }
 
 /* ----------ENIGME OPTIONNELLE----------- */
 
-.enigme img {
-  max-width: 50px;
-  margin-left: 60vw;
-  position: relative;
+.enigme a {
+  margin-left: 30vw;
+  width: 30px;
 }
 
 /* ---------------------------------------- */
