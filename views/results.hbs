@@ -1,37 +1,37 @@
 <h1>{{title}}</h1>
 {{#if notFound}}
-    <h2>Trajet non existant</h2>
+<h2>Trajet non existant</h2>
 {{else}}
-    {{#if destinations}}
-        <div id="legend">
-            <div class="classTypeLegend">
-                <svg height="50" width="50">
-                    <circle cx="25" cy="25" r="20" stroke="white" stroke-width="1" fill="#FAFF09b2" />
-                </svg>
-                <h3>Class Gold</h3>
-            </div>
-            <div class="classTypeLegend">
-                <svg height="50" width="50">
-                    <circle cx="25" cy="25" r="20" stroke="white" stroke-width="1" fill="#E5E1E1b2" />
-                </svg>
-                <h3>Class Silver</h3>
-            </div>
-            <div class="classTypeLegend">
-                <svg height="50" width="50">
-                    <circle cx="25" cy="25" r="20" stroke="white" stroke-width="1" fill="#9C7207b2" />
-                </svg>
-                <h3>Class Bronze</h3>
-            </div>
-        </div>
+{{#if destinations}}
+<div id="legend">
+    <div class="classTypeLegend">
+        <svg height="50" width="50">
+            <circle cx="25" cy="25" r="20" stroke="white" stroke-width="1" fill="#FAFF09b2" />
+        </svg>
+        <h3>Class Gold</h3>
+    </div>
+    <div class="classTypeLegend">
+        <svg height="50" width="50">
+            <circle cx="25" cy="25" r="20" stroke="white" stroke-width="1" fill="#E5E1E1b2" />
+        </svg>
+        <h3>Class Silver</h3>
+    </div>
+    <div class="classTypeLegend">
+        <svg height="50" width="50">
+            <circle cx="25" cy="25" r="20" stroke="white" stroke-width="1" fill="#9C7207b2" />
+        </svg>
+        <h3>Class Bronze</h3>
+    </div>
+</div>
 
-        {{#each destinations}}
-            <h2 class="dayStart" dateId="{{#toShortDate this.date}}{{/toShortDate}}">{{#toShortDate this.date}}{{/toShortDate}}</h2>
-                {{> resultsCard}}
-        {{/each}}
+{{#each destinations}}
+<h2 class="dayStart" dateId="{{#toShortDate this.date}}{{/toShortDate}}">{{#toShortDate this.date}}{{/toShortDate}}</h2>
+{{> resultsCard}}
+{{/each}}
 
-    {{else}}
-    <h2>Pas de voyages disponible</h2>
-    {{/if}}
+{{else}}
+<h2>Pas de voyages disponible</h2>
+{{/if}}
 {{/if}}
 
 <script src="../js/results.js"></script>
