@@ -68,9 +68,10 @@ nav {
   position: fixed;
   width: 100vw;
   border-bottom: 2px solid gray;
-  border-radius: 10px;
   overflow: hidden;
   height: 65px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .navIcon {
@@ -173,6 +174,7 @@ footer a {
 .homepage select {
   display: block;
   margin-inline: auto;
+  margin-block: 10px;
 }
 
 .homepage a {
