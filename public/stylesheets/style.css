@@ -617,7 +617,6 @@ button {
                          #######                                         
 */
 
-<<<<<<< HEAD
 #error{
   display: flex;
   flex-direction: column;
@@ -632,11 +631,11 @@ button {
 
 #error p{
   margin: auto;
-=======
+}
 
 
 
-
+/* Application */
 .appfond{
   align-items: center;
   width: 90px;
@@ -671,5 +670,4 @@ button {
 
 .appDl img{
   width: 100%;
->>>>>>> 4a514b0783a135187045351d08c810c35ad8ed9e
 }
