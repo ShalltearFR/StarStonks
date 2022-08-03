@@ -4,6 +4,9 @@
 </div>
 
 {{#if user}}
+    {{#if user.admin}}
+        <p style="color=red">Administrateur -> <a href="/auth/addtrip"> Ajouter un voyage</a></p>
+    {{/if}}
     <p><a href="/auth/profile">Profil</a></p>
     <p><a href="/auth/reservations">Mes réservations</a></p>
     <p><a href="/auth/logout">Deconnexion</a></p>

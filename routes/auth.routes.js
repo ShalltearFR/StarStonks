@@ -270,4 +270,14 @@ router.get("/reservations", (req, res, next) => {
   });
 });
 
+router.get("/addtrip", (req, res, next) => {
+  if (!req.session.user.admin) {
+    return res.redirect("/");
+  }
+  res.render("auth/addTrip", {
+    title: "Ajout de voyage",
+    user: req.session.user,
+  });
+});
+
 module.exports = router;

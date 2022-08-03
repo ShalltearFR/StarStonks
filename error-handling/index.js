@@ -1,7 +1,10 @@
 module.exports = (app) => {
   app.use((req, res, next) => {
     // this middleware runs whenever requested page is not available
-    res.status(404).render("not-found");
+    res.status(404).render("not-found",{
+      title: "Erreur 404",
+      user: req.session.user
+    });
   });
 
   app.use((err, req, res, next) => {
@@ -13,5 +16,5 @@ module.exports = (app) => {
     if (!res.headersSent) {
       res.status(500).res.render("error");
     }
-  });
+  })
 };

@@ -3,22 +3,27 @@
 {{/if}}
 
 <div class="homepage">
-    <h2>Choix de votre destination</h2>
-    <form action="/results" method="GET">
+    <h1>Choix de votre destination</h1>
+
+    <div id="popUpWaiting">
+        <img src="https://c.tenor.com/t0C2oHL_9NEAAAAC/star-wars-darth-vader.gif">
+    </div>
+
+    <form action="javascript:void(0)">
         <label>Planète de départ :</label>
-        <select name="from">
+        <select id="from">
             {{#each planets}}
-            <option value="{{_id}}" name="from">{{name}}</option>
+                <option value="{{_id}}" name="from">{{name}}</option>
             {{/each}}
         </select>
 
         <label for="from">Planète de destination :</label>
-        <select name="to">
+        <select id="to">
             {{#each planets}}
-            <option value="{{_id}}" name="to">{{name}}</option>
+                <option value="{{_id}}" name="to">{{name}}</option>
             {{/each}}
         </select>
-        <button>Go Voyage !</button>
+        <button id="sendResult">Go Voyage !</button>
     </form>
     <div class="enigme">
         <a href="https://benamzz.github.io/Star-Wars-Is-Coming/"><img
@@ -26,7 +31,6 @@
                 alt=""></a>
     </div>
 </div>
-
 
 <div class="planete">
     <ul>
@@ -62,3 +66,5 @@
         </li>
     </ul>
 </div>
+
+<script src="/js/homepage.js"></script>
