@@ -619,3 +619,43 @@ button {
  #     # #######    #            #       #######  #####  #     # ######  
                          #######                                         
 */
+
+
+
+
+
+.appfond{
+  align-items: center;
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(to bottom right, rgb(65, 65, 66), black);
+  border-radius: 20px;
+  display: flex;
+  box-shadow: 5px 5px 5px black;
+  padding: 5px;
+  margin-inline: auto;
+  margin-block: 50px;
+
+
+}
+.applogo{
+  max-width: 100%;
+  
+  
+}
+
+.appDl{
+  width: 100vw;
+  display: flex;
+
+}
+
+.appDl a{
+  width: 40%; 
+  margin-inline: auto;
+  
+}
+
+.appDl img{
+  width: 100%;
+}
