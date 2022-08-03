@@ -5,25 +5,26 @@
 <div class="homepage">
     <h1>Choix de votre destination</h1>
 
-    <div id="popUpWaiting">
-        <img src="https://c.tenor.com/t0C2oHL_9NEAAAAC/star-wars-darth-vader.gif">
-    </div>
-
     <form action="javascript:void(0)">
-        <label>Planète de départ :</label>
-        <select id="from">
-            {{#each planets}}
-                <option value="{{_id}}" name="from">{{name}}</option>
-            {{/each}}
-        </select>
+        <div id="popUpWaiting">
+            <img src="https://c.tenor.com/t0C2oHL_9NEAAAAC/star-wars-darth-vader.gif">
+        </div>
+        <div id="selectDestination">
+            <label>Planète de départ :</label>
+            <select id="from">
+                {{#each planets}}
+                    <option value="{{_id}}" name="from">{{name}}</option>
+                {{/each}}
+            </select>
 
-        <label for="from">Planète de destination :</label>
-        <select id="to">
-            {{#each planets}}
-                <option value="{{_id}}" name="to">{{name}}</option>
-            {{/each}}
-        </select>
-        <button id="sendResult">Go Voyage !</button>
+            <label for="from">Planète de destination :</label>
+            <select id="to">
+                {{#each planets}}
+                    <option value="{{_id}}" name="to">{{name}}</option>
+                {{/each}}
+            </select>
+            <button id="sendResult">Go Voyage !</button>
+        </div>
     </form>
     <div class="enigme">
         <a href="https://benamzz.github.io/Star-Wars-Is-Coming/"><img
