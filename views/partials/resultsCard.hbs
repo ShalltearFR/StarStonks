@@ -1,5 +1,10 @@
 <div class="resultCard" style="background-color:{{#if (eq this.class "gold")}}#FAFF09b2{{/if}}{{#if (eq this.class "silver")}}#E5E1E1b2{{/if}}{{#if (eq this.class "bronze")}}#9C7207b2{{/if}}" tripId="{{this._id}}">
-            
+
+
+    <p class="from">
+    Départ le {{#toShortDate this.date}}{{/toShortDate}} à {{#toArrived this.date}}{{/toArrived}}
+    </p>
+
     <p class="to">
     Arrivée le {{#toShortDate this.arrived}}{{/toShortDate}} à {{#toArrived this.arrived}}{{/toArrived}}
     </p>
