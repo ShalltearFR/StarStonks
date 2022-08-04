@@ -40,14 +40,21 @@ router.get("/results", (req, res, next) => {
     })
 });
 
+router.get("/result/id/:id", (req, res, next) => {
+  res.render("options", {
+    title: "Options",
+    user: req.session.user,
+    tripId: req.params.id,
+  });
+});
+
 router.get("/classes", (req, res, next) => {
   res.render("classes", {
     title: "Classes",
     user: req.session.user,
   });
 });
-// router.get("/cart", (req, res, next) => {
-//   const 
+// router.get("/cart", (req, res, next) => { 
 //   Trip
 //     .populate("from")
 //     .populate("to")
@@ -80,12 +87,8 @@ router.get("/application", (req, res, next) => {
     user: req.session.user,
   });
 });
-router.get("/options", (req, res, next) => {
-  res.render("options", {
-    title: "Options",
-    user: req.session.user,
 
-  });
-});
+
+
 
 module.exports = router;

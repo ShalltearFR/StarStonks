@@ -227,12 +227,12 @@ ul {
   text-align: center;
 }
 
-#popUpWaiting{
+#popUpWaiting {
   display: none;
   width: 100%;
 }
 
-#popUpWaiting img{
+#popUpWaiting img {
   margin-inline: auto;
   width: 90%;
 }
@@ -465,6 +465,41 @@ button {
   padding: 0
 }
 
+/* --------------------------------------------------------------------      OPTIONS (RESULT/ID/:ID)      ------------------------------------------------------------------------------ */
+
+#optionsForm {
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  width: 80vw;
+  color: #a0a0a0;
+  backdrop-filter: blur(20px) brightness(110%);
+  border: 2px solid #ffdc00;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+#optionsForm div {
+  display: flex;
+  text-align: justify;
+  margin-block: 5px;
+  justify-content: space-between;
+}
+
+#optionsForm button {
+  margin-top: 20px;
+  margin-inline: auto;
+  width: 150px;
+}
+
+#optionsForm h2 {
+  text-align: justify;
+  padding-top: 0;
+  font-size: 1.3em;
+
+}
+
+
 /* 
   #####     #    ######  ####### 
  #     #   # #   #     #    #    
@@ -616,26 +651,26 @@ button {
                          #######                                         
 */
 
-#error{
+#error {
   display: flex;
   flex-direction: column;
   height: 65%;
 }
 
-#error img{
+#error img {
   margin-inline: auto;
   margin-top: 5px;
   width: 75%;
 }
 
-#error p{
+#error p {
   margin: auto;
 }
 
 
 
 /* Application */
-.appfond{
+.appfond {
   align-items: center;
   width: 90px;
   height: 90px;
@@ -649,24 +684,25 @@ button {
 
 
 }
-.applogo{
+
+.applogo {
   max-width: 100%;
-  
-  
+
+
 }
 
-.appDl{
+.appDl {
   width: 100vw;
   display: flex;
 
 }
 
-.appDl a{
-  width: 40%; 
+.appDl a {
+  width: 40%;
   margin-inline: auto;
-  
+
 }
 
-.appDl img{
+.appDl img {
   width: 100%;
 }
