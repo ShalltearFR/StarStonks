@@ -19,6 +19,8 @@ app.set("view engine", "hbs");
 hbs.registerPartials(__dirname + "/views/partials")
 hbs.registerHelper('eq', (a, b) => a == b)
 hbs.registerHelper('toShortDate', (longDate) => {
+    //longDate = Date(date)
+    console.log("return =", longDate)
     const year = longDate.getFullYear()
     const month = (function(){
         if (longDate.getMonth() === 0 ){ return "Janvier"}

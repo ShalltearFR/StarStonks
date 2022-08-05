@@ -18,7 +18,7 @@ $resultClass.forEach(element => {
 
         element.setAttribute("style", `background-color:${backgroundColor};border: solid 3px red`)
         const id = element.getAttribute("tripId")
-        window.location.assign(`/result/id/${id}`);
+        window.location.assign(`/id/${id}`);
       },
         false
       );

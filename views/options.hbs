@@ -1,8 +1,9 @@
 <h1>{{title}} de vol</h1>
 
 
-<form id="optionsForm" action="/cart" method="get">
+<form id="optionsForm" action="/cart" method="POST">
     <h2>Ticket_ID: {{tripId}}</h2>
+    <input name="ticketID" type="hidden" value="{{tripId}}">
     <div>
         <label for="passenger">Nombre de passagers :</label>
         <select name="passengers" id="nbPassengers">
@@ -35,13 +36,5 @@
             <option value="10">10</option>
         </select>
     </div>
-    <div>
-        <label for="return">Aller-Retour :</label>
-        <select name="return" id="return">
-            <option value="">oui</option>
-            <option value="">non</option>
-        </select>
-    </div>
-
-    <button type="submit">Confirmer</button>
+    <button>Confirmer</button>
 </form>
