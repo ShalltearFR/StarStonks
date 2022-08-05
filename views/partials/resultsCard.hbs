@@ -13,6 +13,7 @@
         {{#calculDuration this.date this.arrived}}{{/calculDuration}} de vol
     </p>
     <p class="basePrice">
-        {{this.base_price.value}} {{this.base_price.currency}}
+        
+        {{#numberToMoney this.base_price.value}}{{/numberToMoney}}€
     </p>
 </div>

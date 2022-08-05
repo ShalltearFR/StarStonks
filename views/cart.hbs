@@ -10,9 +10,9 @@
         <li>Départ : {{cart.trip.from.name}} </li>
         <li>Arrivé : {{cart.trip.to.name}}</li>
         <li>Date : {{#toShortDate cart.trip.date}}{{/toShortDate}}</li>
-        <li>Passager : {{cart.passengers}}</li>
+        <li>Passagers : {{cart.passengers}}</li>
         <li>Bagages : {{cart.bags}}</li>
-        <li>Prix : {{cart.price.value}}</li>
+        <li>Prix : {{#numberToMoney cart.price.value}}{{/numberToMoney}}€</li>
     </ul>
 </div>
 {{else}}

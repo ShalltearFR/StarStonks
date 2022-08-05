@@ -17,10 +17,24 @@ const app = express();
 app.set("views", __dirname + "/views");
 app.set("view engine", "hbs");
 hbs.registerPartials(__dirname + "/views/partials")
+
 hbs.registerHelper('eq', (a, b) => a == b)
-hbs.registerHelper('toShortDate', (longDate) => {
-    //longDate = Date(date)
-    console.log("return =", longDate)
+
+hbs.registerHelper('toShortDate', (date) => {
+    const longDate = new Date(date)
+    const year = longDate.getFullYear()
+
+    let day = `${longDate.getDate() + 1}`
+    if (day.length === 1){day = `0${day}`}
+
+    let month = `${longDate.getMonth() + 1}`
+    if (month.length === 1){month = `0${month}`}
+
+    return `${day}/${month}/${year}`
+})
+
+hbs.registerHelper('toLongDate', (date) => {
+    const longDate = new Date(date)
     const year = longDate.getFullYear()
     const month = (function(){
         if (longDate.getMonth() === 0 ){ return "Janvier"}
@@ -35,7 +49,8 @@ hbs.registerHelper('toShortDate', (longDate) => {
         if (longDate.getMonth() === 9 ){ return "Octobre"}
         if (longDate.getMonth() === 10){ return "Novembre"}
         if (longDate.getMonth() === 11){ return "Decembre"}
-    })()//longDate.getMonth()
+    })()
+
     const fullDay = (function () {
         if (longDate.getDay() === 0){ return "Dimanche"}
         if (longDate.getDay() === 1){ return "Lundi"}
@@ -44,8 +59,9 @@ hbs.registerHelper('toShortDate', (longDate) => {
         if (longDate.getDay() === 4){ return "Jeudi"}
         if (longDate.getDay() === 5){ return "Vendredi"}
         if (longDate.getDay() === 6){ return "Samedi"}
-      })()
-    const day = longDate.getDate() + 1
+    })()
+    let day = `${longDate.getDate() + 1}`
+    if (day.length === 1){day = `0${day}`}
 
     return `${fullDay} ${day} ${month} ${year}`
 })
@@ -67,6 +83,10 @@ hbs.registerHelper('toArrived', (arrived) => {
     const hours = arrived.getHours()
     const minutes = arrived.getMinutes()
     return `${hours}h${minutes} `
+})
+
+hbs.registerHelper('numberToMoney', (price) => {
+    return price.toLocaleString()
 })
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware

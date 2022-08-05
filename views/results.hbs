@@ -24,7 +24,7 @@
             </div>
         </div>
     {{#each destinations}}
-        <h2 class="dayStart" dateId="{{#toShortDate this.date}}{{/toShortDate}}">{{#toShortDate this.date}}{{/toShortDate}}</h2>
+        <h2 class="dayStart" dateId="{{#toShortDate this.date}}{{/toShortDate}}">{{#toLongDate this.date}}{{/toLongDate}}</h2>
     {{> resultsCard}}
     {{/each}}
     {{else}}
