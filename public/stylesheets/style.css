@@ -507,6 +507,36 @@ button {
   #####  #     # #     #    #    
 
 */
+.cart {
+  margin-block: 50px;
+}
+
+#cartUl {
+  margin-block: 20px;
+  color: #a0a0a0;
+  backdrop-filter: blur(20px) brightness(110%);
+  border-radius: 20px;
+  padding: 20px;
+  list-style: none;
+  border: solid 2px #ffdc00;
+  width: 80vw;
+  margin-inline: auto;
+}
+
+#cartUl li {
+  font-weight: bold;
+}
+
+.buttonCart {
+  display: flex;
+  width: 60vw;
+  margin-inline: auto;
+}
+
+#resetCart {
+  margin-right: 20px;
+}
+
 
 
 

@@ -5,7 +5,7 @@
     <div class="planetImg">
         {{!-- <img src="{{cart.trip.to.image}}"> --}}
     </div>
-    <ul>
+    <ul id="cartUl">
         <li>_Id : {{cart.trip_id}}</li>
         <li>Départ : {{cart.trip.from.name}} </li>
         <li>Arrivé : {{cart.trip.to.name}}</li>
@@ -15,9 +15,17 @@
         <li>Prix : {{#numberToMoney cart.price.value}}{{/numberToMoney}}€</li>
     </ul>
 </div>
+<div class="buttonCart">
+    <button id="resetCart">Vider le panier</button>
+    <button type="submit">Payer</button>
+</div>
+
 {{else}}
 <div class="noTrip">
     <p>Choose a destination</p>
 </div>
 {{/if}}
 </div>
+
+<script src="../js/cart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>

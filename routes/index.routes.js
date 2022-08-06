@@ -74,27 +74,27 @@ router.get("/classes", (req, res, next) => {
 // });
 
 router.post("/cart", (req, res, next) => {
-  const {ticketID, passengers, bags, roundTrip} = req.body
+  const { ticketID, passengers, bags, roundTrip } = req.body
 
   Trip.findById(ticketID)
-  .populate("from")
-  .populate("to")
-  .then(tripFromDB =>{
-    const totalPrice = tripFromDB.base_price.value + ((4700 * (passengers - 1)) + (1350 * bags)) // Calcul du cout totale
+    .populate("from")
+    .populate("to")
+    .then(tripFromDB => {
+      const totalPrice = tripFromDB.base_price.value + ((4700 * (passengers - 1)) + (1350 * bags)) // Calcul du cout totale
 
-    req.session.cart = {
-      trip_id : ticketID,
-      trip : tripFromDB,
-      passengers,
-      bags,
-      price:{
-        value : totalPrice
-      },
-    }
-  
-    res.redirect("/cart")
-  })
-  .catch(err => next(err))
+      req.session.cart = {
+        trip_id: ticketID,
+        trip: tripFromDB,
+        passengers,
+        bags,
+        price: {
+          value: totalPrice
+        },
+      }
+
+      res.redirect("/cart")
+    })
+    .catch(err => next(err))
 })
 
 router.get("/cart", (req, res, next) => {
@@ -104,7 +104,7 @@ router.get("/cart", (req, res, next) => {
     cart: req.session.cart,
   });
 
-  console.log("cart =",req.session.trip.date)
+  // console.log("cart =", req.session.trip.date)
 });
 
 router.get("/application", (req, res, next) => {
