@@ -103,7 +103,11 @@ router.get("/cart", (req, res, next) => {
     user: req.session.user,
     cart: req.session.cart,
   });
+});
 
+router.delete("/cart", (req, res, next) => {
+  req.session.cart = null
+  res.send("OK")
 });
 
 router.get("/application", (req, res, next) => {

@@ -127,7 +127,7 @@ nav {
 
   /* background-image: url("https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778891/imgAccueil_yvz3sq.jpg"); */
   margin-top: 65px;
-  min-height: calc(100vh - 122px - 65px);
+  min-height: calc(100vh - 107px - 65px);
 }
 
 footer {
@@ -551,7 +551,10 @@ button {
   margin-right: 20px;
 }
 
-
+#noTrip{
+  padding-left: 15px;
+  font-size: 16px;
+}
 
 
 
@@ -608,8 +611,14 @@ button {
  #       #     #    #    #     # ####### #     #    #    
                                                          
 */
+#paymentForm{
+  display:flex;
+  flex-direction: column;
+}
 
-
+#paymentForm input{
+  color: #0a0a09;
+}
 
 
 
@@ -632,6 +641,10 @@ button {
   border: 2px solid #ffdc00;
   border-radius: 20px;
   padding: 10px;
+}
+
+.reservation p{
+  margin: 0;
 }
 
 /* ----------------------------------------------------------------SIGNUP------------------------------------------------------------------ */
@@ -659,7 +672,20 @@ button {
   margin-top: 40px;
 }
 
+/* ADD TRIP*/
+#addTripForm{
+  display:flex;
+  flex-direction: column;
+  gap:15px;
+}
 
+#addTripForm div{
+  padding-left: 15px;
+  height: 20px;
+}
+#addTripForm div label input{
+  color: black;
+}
 
 
 

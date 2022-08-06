@@ -1,7 +1,7 @@
 <h1>{{title}}</h1>
 
-<form action="/auth/addTrip" method="POST">
-    <div class="addTripForm">
+<form action="/auth/addTrip" method="POST" id="addTripForm">
+    <div>
         <label>Depart
             <select name="from">
                 {{#each planets}}
@@ -10,12 +10,12 @@
             </select>
         </label>
         <label>Date
-        <input type="datetime-local" name="date" value="{{data.date}}">
+            <input type="datetime-local" name="date" value="{{data.date}}">
         </label>
     </div>
 
-    <div class="addTripForm">
-        <label>Depart
+    <div>
+        <label>Arrivée
             <select name="to">
                 {{#each planets}}
                     <option value="{{_id}}">{{name}}</option>
@@ -27,7 +27,7 @@
         </label>
     </div>
 
-    <div class="addTripForm">
+    <div>
         <label>
             Classe
             <select name="classe" value="{{data.classe}}">
@@ -38,7 +38,7 @@
         </label>
     </div>
 
-    <div class="addTripForm">
+    <div>
         <label>
             Prix de base
             <input type="number" name="price" value="{{data.price}}">€

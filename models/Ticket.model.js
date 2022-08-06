@@ -7,6 +7,10 @@ const ticketSchema = new Schema(
             type: Schema.Types.ObjectId,
             ref: "Trip"
         },
+        user_id: {
+            type: Schema.Types.ObjectId,
+            ref: "User"
+        },
         passengers: Number,
         bags: Number,
         class: String,

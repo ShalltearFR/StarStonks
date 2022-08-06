@@ -1,30 +1,17 @@
 <h1>{{title}}</h1>
 
-
-<div class="reservation">
-    <div id="volNumber">
-        <div>
-            <span>Vol N°BWK5061</span>
+{{#if tickets}}
+    {{#each tickets}}
+        <div class="reservation">
+            <p>Vol N°{{_id}}</p>
+            <p>{{#toShortDate trip_id.date}}{{/toShortDate}} à {{#toArrived trip_id.date}}{{/toArrived}}</p>
+            <p>{{trip_id.from.name}} ➔ {{trip_id.to.name}}</p>
+            <p>Passagers : {{passengers}}</p>
+            <p>Bagages : {{bags}}</p>
+            <p>Classe {{trip_id.class}}</p>
+            <p>{{#numberToMoney price.value}}{{/numberToMoney}}€</p>
         </div>
-    </div>
-    <div id="voleDate">
-        <div>
-            <span>10/12/2022 à 10h15</span>
-        </div>
-    </div>
-    <div id="volDirection">
-        <div>
-            <span><span id="from">Tatooine</span> ➔ <span id="to">Corula</span></span>
-        </div>
-    </div>
-    <div id="classes">
-        <div>
-            <span>Classe Gold</span>
-        </div>
-    </div>
-    <div id="price">
-        <div>
-            <span>7290.000€</span>
-        </div>
-    </div>
-</div>
+    {{/each}}
+{{else}}
+    <h3>Pas de tickets</h3>
+{{/if}}

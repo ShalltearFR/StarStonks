@@ -11,6 +11,7 @@ const saltRounds = 10;
 const User = require("../models/User.model");
 const Location = require("../models/Location.model");
 const Trip = require("../models/Trip.model");
+const Ticket = require("../models/Ticket.model");
 
 // Require necessary (isLoggedOut and isLiggedIn) middleware in order to control access to specific routes
 const isLoggedOut = require("../middleware/isLoggedOut");
@@ -27,8 +28,6 @@ router.get("/signup", isLoggedOut, (req, res) => {
 
 router.post("/signup", isLoggedOut, (req, res) => {
   const { pseudonyme, password, email } = req.body;
-
-  console.log("test");
   if (!email) {
     return res.status(400).render("auth/signup", {
       errorMessage: "Veuillez rentrer votre mail",
@@ -159,40 +158,61 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 });
 
 router.get("/logout", isLoggedIn, (req, res) => {
-  req.session.destroy((err) => {
-    if (err) {
-      return res
-        .status(500)
-        .render("auth/logout", { errorMessage: err.message });
-    }
+  req.session.user = null
     res.redirect("/");
+});
+
+router.get("/payment", (req, res) => {
+  res.render("auth/payment",{
+    title: "Paiement",
+    user: req.session.user,
+    cart: req.session.cart
   });
 });
 
-router.get("/payment", isLoggedOut, (req, res) => {
-  if (!req.session.user) {
+router.post("/payment", (req, res) => {
+  if (!req.session.user || !req.session.cart) {
     return res.redirect("/");
   }
-  res.render("auth/payment");
-});
-
-router.post("/payment", isLoggedOut, (req, res) => {
   const { cardNumber, cryptogramme, expireDate } = req.body;
 
   if (cardNumber.length != 16) {
     return res.status(400).render("auth/payment", {
+      title: "Paiement",
+      user: req.session.user,
+      cart: req.session.cart,
       errorMessage: "Votre n° de carte doit comporter 16 caractères",
     });
   } else if (cryptogramme.length != 3) {
     return res.status(400).render("auth/payment", {
+      title: "Paiement",
+      user: req.session.user,
+      cart: req.session.cart,
       errorMessage: "Votre cryptogramme doit comporter 3 caractères",
     });
   } else if (!expireDate) {
     return res.status(400).render("auth/payment", {
+      title: "Paiement",
+      user: req.session.user,
+      cart: req.session.cart,
       errorMessage: "Veuillez renseigner la date d'expiration de votre carte",
     });
   } else {
-    return res.redirect("/reservations");
+      const cart = req.session.cart
+      Ticket.create({
+        trip_id: cart.trip_id,
+        user_id: req.session.user._id,
+        passengers: cart.passengers,
+        bags: cart.bags,
+        price: {
+          value: cart.price.value
+        }
+      })
+      .then(()=>{
+        req.session.cart = null
+        res.redirect("/auth/reservations");
+      })
+      .catch(err => next(err))
   }
 });
 
@@ -238,7 +258,6 @@ router.post("/profile", fileUploader.single("avatarUrl"), (req, res, next) => {
         .then((DataFromDB) => {
           // Met à jour dans le client les informations de la DB et affiche un message sur le client
           req.session.user = DataFromDB;
-          console.log("nouveau req.session.user", req.session.user);
           res.render("auth/profile", {
             title: "Profil",
             user: req.session.user,
@@ -254,10 +273,24 @@ router.get("/reservations", (req, res, next) => {
   if (!req.session.user) {
     return res.redirect("/");
   }
-  res.render("auth/reservations", {
-    title: "Réservations",
-    user: req.session.user,
-  });
+  Ticket.find({user_id : req.session.user._id})
+  //.populate("user_id", "_id") // Recupère uniquement le _id dans le user_id (pas besoin de recuperer d'autres infos)
+  .populate({
+    path: 'trip_id', //Populate le trip_id
+    populate: { path: 'from' } // Suivi de from qui se situe dans l'object trip_id
+  })
+  .populate({
+    path: 'trip_id',
+    populate: { path: 'to' }
+  })
+  .then(ticketsFromDB =>{
+    res.render("auth/reservations", {
+      title: "Réservations",
+      user: req.session.user,
+      tickets: ticketsFromDB
+    });
+  })
+  .catch(err => next(err))
 });
 
 router.get("/addtrip", (req, res, next) => {
@@ -279,7 +312,6 @@ router.post("/addtrip", (req, res, next) => {
   if (!req.session.user.admin) {
     return res.redirect("/");
   }
-  //console.log(req.body)
   const { from, to, date, arrived, price, classe } = req.body
 
   if (from === to){
