@@ -104,7 +104,6 @@ router.get("/cart", (req, res, next) => {
     cart: req.session.cart,
   });
 
-  // console.log("cart =", req.session.trip.date)
 });
 
 router.get("/application", (req, res, next) => {
