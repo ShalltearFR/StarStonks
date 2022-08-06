@@ -60,7 +60,8 @@ function hamburgerAnimation(status) { // Animation d'ouverture/fermeture du menu
       $nav.style.height = `${height + 35}px`
     } else {
       clearInterval(hamburgerInterval)
-      $nav.style.borderRadius = "35px"
+      $nav.style.borderBottomLeftRadius = "35px"
+      $nav.style.borderBottomRightRadius = "35px"
       lockMenu = false
     }
   }
@@ -71,7 +72,8 @@ function hamburgerAnimation(status) { // Animation d'ouverture/fermeture du menu
     } else {
       clearInterval(hamburgerInterval)
       $nav.style.filter = "";
-      $nav.style.borderRadius = "0px"
+      $nav.style.borderBottomLeftRadius = "10px"
+      $nav.style.borderBottomRightRadius = "10px"
       lockMenu = false
     }
   }
@@ -95,6 +97,3 @@ function hamburgerAnimation(status) { // Animation d'ouverture/fermeture du menu
 //     }
 //   }
 // });
-
-// ----------------------------------------------------Calcul le price de Trip.model.js----------------------------------------------------
-// const price = (base_price * passengers) + 100 * bags
