@@ -9,6 +9,8 @@ const saltRounds = 10;
 
 // Require the User model in order to interact with the database
 const User = require("../models/User.model");
+const Location = require("../models/Location.model");
+const Trip = require("../models/Trip.model");
 
 // Require necessary (isLoggedOut and isLiggedIn) middleware in order to control access to specific routes
 const isLoggedOut = require("../middleware/isLoggedOut");
@@ -205,19 +207,7 @@ router.get("/profile", (req, res, next) => {
 });
 
 router.post("/profile", fileUploader.single("avatarUrl"), (req, res, next) => {
-  const {
-    pseudonyme,
-    email,
-    lastName,
-    firstName,
-    mobile,
-    sexe,
-    zone,
-    zip,
-    department,
-    bloodGroup,
-    avatarUrl,
-  } = req.body;
+  const { pseudonyme, email, lastName, firstName, mobile, sexe, zone, zip, department, bloodGroup, avatarUrl } = req.body
 
   let imageFile;
   if (req.file) {
@@ -274,10 +264,86 @@ router.get("/addtrip", (req, res, next) => {
   if (!req.session.user.admin) {
     return res.redirect("/");
   }
-  res.render("auth/addTrip", {
-    title: "Ajout de voyage",
-    user: req.session.user,
-  });
+  Location.find()
+  .then(locationFromDB => {
+    res.render("auth/addTrip", {
+      title: "Ajout de voyage",
+      user: req.session.user,
+      planets: locationFromDB
+    });
+  })
+  .catch(err => next(err))
+});
+
+router.post("/addtrip", (req, res, next) => {
+  if (!req.session.user.admin) {
+    return res.redirect("/");
+  }
+  //console.log(req.body)
+  const { from, to, date, arrived, price, classe } = req.body
+
+  if (from === to){
+    return Location.find()
+   .then(locationFromDB => {
+     res.render("auth/addTrip", {
+       title: "Ajout de voyage",
+       user: req.session.user,
+       planets: locationFromDB,
+       information: "La planete de depart et d'arrivée sont les memes, veuillez changer l'une des valeurs",
+       data : {
+        from,
+        to,
+        date,
+        arrived,
+        price,
+        classe
+       }
+     });
+   })
+  }
+
+  if(!date || !arrived || !price){
+    return Location.find()
+   .then(locationFromDB => {
+     res.render("auth/addTrip", {
+       title: "Ajout de voyage",
+       user: req.session.user,
+       planets: locationFromDB,
+       information: "Veuillez completer le voyage",
+       data : {
+        from,
+        to,
+        date,
+        arrived,
+        price,
+        classe
+       }
+     });
+   })
+ }
+
+  Trip.create({
+    from,
+    to,
+    date,
+    arrived,
+    base_price: 
+        {
+        value: price
+        },
+    class: classe
+  })
+
+  Location.find()
+  .then(locationFromDB => {
+    res.render("auth/addTrip", {
+      title: "Ajout de voyage",
+      user: req.session.user,
+      planets: locationFromDB,
+      information: "Voyage ajouté avec succès"
+    });
+  })
+  .catch(err => next(err))
 });
 
 module.exports = router;

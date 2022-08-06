@@ -103,8 +103,6 @@ router.get("/cart", (req, res, next) => {
     user: req.session.user,
     cart: req.session.cart,
   });
-
-  console.log("cart =",req.session.trip.date)
 });
 
 router.get("/application", (req, res, next) => {
