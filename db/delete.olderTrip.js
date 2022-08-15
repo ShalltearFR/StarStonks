@@ -1,6 +1,11 @@
 const Trip = require("../models/Trip.model");
+launchMaintenance()
 
 setInterval(()=>{
+    launchMaintenance()
+},3600000)
+
+function launchMaintenance(){
     Trip.find() // Recherche tous les voyages
     .then(tripsFromDB => {
         tripsFromDB.forEach(el =>{
@@ -15,7 +20,6 @@ setInterval(()=>{
         console.log("Maintenance Trip terminé avec succès")
     })
     .catch(err => console.log("Erreur Maintenance Trip :",err))
-},3600000)
-
+}
 //1h  -> 3 600 000
 //24h -> 8 640 000

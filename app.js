@@ -84,7 +84,11 @@ hbs.registerHelper('calculDuration', (date, arrived) => {
 
 hbs.registerHelper('toArrived', (arrived) => {
     const hours = arrived.getHours()
-    const minutes = arrived.getMinutes()
+    let minutes = `${arrived.getMinutes()}`
+
+    if (minutes.length < 2){
+        minutes = `0${minutes}`
+    }
     return `${hours}h${minutes} `
 })
 

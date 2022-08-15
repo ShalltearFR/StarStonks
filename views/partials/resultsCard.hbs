@@ -1,19 +1,20 @@
 <div class="resultCard" style="background-color:{{#if (eq this.class "gold")}}#FAFF09b2{{/if}}{{#if (eq this.class "silver")}}#E5E1E1b2{{/if}}{{#if (eq this.class "bronze")}}#9C7207b2{{/if}}" tripId="{{this._id}}">
-
-
-    <p class="from">
-    Départ le {{#toShortDate this.date}}{{/toShortDate}} à {{#toArrived this.date}}{{/toArrived}}
+    <p class="resultOther">
+        <img src="https://res.cloudinary.com/shalltear/image/upload/v1660590454/Project%202/public/PL_road_sign_D-3.svg_sjsq6p.png"/>Départ
+        <div>{{#toShortDate this.date}}{{/toShortDate}} à {{#toArrived this.date}}{{/toArrived}}</div>
     </p>
 
-    <p class="to">
-    Arrivée le {{#toShortDate this.arrived}}{{/toShortDate}} à {{#toArrived this.arrived}}{{/toArrived}}
+    <p class="resultOther">
+    <img src="https://res.cloudinary.com/shalltear/image/upload/v1660590648/Project%202/public/Sans_titre-2_hf9gdt.png"/>Arrivée
+        <div>{{#toShortDate this.arrived}}{{/toShortDate}} à {{#toArrived this.arrived}}{{/toArrived}}</div>
     </p>
 
-    <p class="fly">
-        {{#calculDuration this.date this.arrived}}{{/calculDuration}} de vol
+    <p class="resultOther">
+        <img src="https://res.cloudinary.com/shalltear/image/upload/v1660590353/Project%202/public/kisspng-airplane-aircraft-icon-a5-computer-icons-5b390657357285.1428919315304638312189_bfnoo1.png"/>Durée
+        <div>{{#calculDuration this.date this.arrived}}{{/calculDuration}}</div>
     </p>
-    <p class="basePrice">
-        
+    <p class="resultPrice">
+        <img src="https://res.cloudinary.com/shalltear/image/upload/v1660590907/Project%202/public/bourseLogo_xbynct.png"/>
         {{#numberToMoney this.base_price.value}}{{/numberToMoney}}€
     </p>
 </div>

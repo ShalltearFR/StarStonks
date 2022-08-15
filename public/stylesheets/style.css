@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mouse+Memoirs&family=Oswald:wght@200&family=Raleway:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&family=Mochiy+Pop+One&family=Mouse+Memoirs&family=Silkscreen&display=swap');
 
 
 * {
@@ -469,6 +469,37 @@ button {
   text-align: center;
   margin-inline: auto;
 }
+
+.resultCard p{
+  margin-bottom: 5px;
+  margin-top: 15px;
+}
+
+.resultOther{
+  font-size: 20px;
+  letter-spacing: -3px;
+  color: rgb(53, 35, 35);
+  font-family: 'Silkscreen';
+  text-decoration:underline 3px rgb(53, 35, 35);
+}
+
+.resultCard div{
+  margin-block: 0;
+  font-size: 16px;
+  font-weight: 750;
+}
+
+.resultCard img{
+  width: 15px;
+  vertical-align: middle;
+  margin-right: 5px;
+}
+
+.resultPrice{
+  font-family: 'DynaPuff';
+  font-size: 26px;
+}
+
 
 .dayStart {
   margin-top: 30px;
