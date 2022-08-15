@@ -77,8 +77,8 @@ hbs.registerHelper('calculDuration', (date, arrived) => {
 
     if (diffMins === 0){ diffMins = "00"}
     if (diffDays === 0){ return `${diffHrs}h${diffMins}` }
-    if (diffDays === 1){ return `${diffDays}jour et ${diffHrs}h${diffMins}`}
-    if (diffDays  >  1){ return `${diffDays}jours et ${diffHrs}h${diffMins}`}
+    if (diffDays === 1){ return `${diffDays} jour et ${diffHrs}h${diffMins}`}
+    if (diffDays  >  1){ return `${diffDays} jours et ${diffHrs}h${diffMins}`}
    
 })
 

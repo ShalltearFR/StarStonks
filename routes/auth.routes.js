@@ -227,7 +227,7 @@ router.get("/profile", (req, res, next) => {
 });
 
 router.post("/profile", fileUploader.single("avatarUrl"), (req, res, next) => {
-  const { pseudonyme, email, lastName, firstName, mobile, sexe, zone, zip, department, bloodGroup, avatarUrl } = req.body
+  const { pseudonyme, email, lastName, pass1, pass2, firstName, mobile, sexe, zone, zip, department, bloodGroup, avatarUrl } = req.body
 
   let imageFile;
   if (req.file) {
@@ -237,6 +237,33 @@ router.post("/profile", fileUploader.single("avatarUrl"), (req, res, next) => {
     // Sinon garde le lien de l'image actuel
     imageFile = avatarUrl;
   }
+
+  let password
+  if (pass1 !== pass2){
+    return res.render("auth/profile", {
+      title: "Profil",
+      user: req.session.user,
+      information: "Les 2 champs de mot de passe ne correspondent pas",
+    });
+  } else{
+    password = pass1
+  }
+
+    if(password !== ""){
+      bcrypt.genSalt(saltRounds)
+      .then((salt) => bcrypt.hash(password, salt))
+      .then((hashedPassword) => {
+        User.findByIdAndUpdate(req.session.user._id, {
+          password: hashedPassword
+        })
+        .then(()=>{
+          console.log("pass changé")
+        })
+        .catch(err => next(err))
+      })
+      .catch(err => next(err))
+    }
+
   User.findByIdAndUpdate(req.session.user._id, {
     //Met à jour dans la DB les informations
     pseudonyme,
