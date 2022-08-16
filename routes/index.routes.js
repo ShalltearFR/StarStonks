@@ -116,6 +116,31 @@ router.get("/application", (req, res, next) => {
     user: req.session.user,
   });
 });
+router.get("/terre", (req, res, next) => {
+  res.render("terre", {
+    title: "Terre",
+  });
+});
+router.get("/Tatooine", (req, res, next) => {
+  res.render("tatooine", {
+    title: "Tatooine",
+  });
+});
+router.get("/LolaSayu", (req, res, next) => {
+  res.render("LolaSayu", {
+    title: "Lola Sayu",
+  });
+});
+router.get("/Mustafar", (req, res, next) => {
+  res.render("mustafar", {
+    title: "Mustafar",
+  });
+});
+router.get("/Korriban", (req, res, next) => {
+  res.render("korriban", {
+    title: "Korriban",
+  });
+});
 
 
 
