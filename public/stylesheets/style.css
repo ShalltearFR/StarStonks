@@ -358,8 +358,6 @@ ul {
 }
 
 @media screen and (min-width: 900px) {
-  .classes {}
-
   .classes ul {
     width: 60vw;
     margin-inline: auto;
