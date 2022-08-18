@@ -766,7 +766,7 @@ button {
 
 
 .btnSignup {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 /* ADD TRIP*/
@@ -783,6 +783,34 @@ button {
 
 #addTripForm div label input {
   color: black;
+}
+
+@media screen and (min-width: 370px) {
+  #signup {
+    width: 60vw;
+    padding-inline: 30px;
+    margin-inline: auto;
+    margin-block: 80px;
+  }
+
+  #signup div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #signup {
+    width: 40vw;
+    padding-inline: 100px;
+    margin-inline: auto;
+    margin-block: 80px;
+  }
+
+  #signup div {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 
