@@ -1,11 +1,3 @@
-document.addEventListener(
-  "DOMContentLoaded",
-  () => {
-    // console.log("www JS imported successfully!");
-  },
-  false
-);
-
 const $hamburger = document.querySelector("#hamburger")
 const $nav = document.querySelector("nav")
 const $content = document.querySelector("#content")

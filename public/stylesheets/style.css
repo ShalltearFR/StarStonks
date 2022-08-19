@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&family=Mochiy+Pop+One&family=Mouse+Memoirs&family=Silkscreen&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DynaPuff:wght@500&family=Lexend+Deca:wght@300&family=Mochiy+Pop+One&family=Mouse+Memoirs&family=Silkscreen&display=swap');
 
 
 * {
@@ -8,7 +8,7 @@
 body {
   margin: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  width: 100vw;
+  max-width: 100vw;
   color: white;
   background-image: url(https://res.cloudinary.com/dxwvgsbzq/image/upload/v1658778447/imgAccueil2_regvr4.jpg);
   background-size: cover;
@@ -16,6 +16,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: calc(100vh - 65px);
+  overflow-x: hidden;
 }
 
 h1 {
@@ -162,7 +163,11 @@ footer li {
   margin: 0
 }
 
-/* Masque la nav mobile sur la version desktop*/
+#hamburgerDesktopOpen{
+  display: none;
+}
+
+/* Version desktop*/
 @media (min-width: 900px) {
   #navMobile{
     display: none;
@@ -170,6 +175,7 @@ footer li {
 
   #navDesktop{
     display: block;
+    width: 100vw
   }
 
   nav, #navMin {
@@ -197,6 +203,7 @@ footer li {
 
   #navCartHamburger{
     margin-left: 0;
+    margin-right: 15px;
     gap: 15px;
   }
 
@@ -212,6 +219,7 @@ footer li {
 
   #chevron{
     height: 10px;
+    align-items: baseline;
   }
 
   #avatarDesktop {
@@ -228,6 +236,83 @@ footer li {
     font-size: 26px;
     text-decoration: none;
     color: white;
+  }
+
+  #hamburgerDesktopOpen{
+    z-index: 99;
+    position: fixed;
+    display: none;
+    flex-direction: column;
+    width: 300px;
+    background-color: rgba(0, 0, 0, 1);
+    margin-left: calc(100vw - 300px);
+    margin-top: 83px;
+    padding-block: 30px;
+    border: solid 2px gray;
+    border-bottom-left-radius: 15px;
+    border-top-style: none;
+    border-right-style: none;
+  }
+
+  #hamburgerDesktopOpen label{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  #hamburgerDesktop a{
+    text-decoration: none;
+    font-family: 'DynaPuff';
+    color: #ffdc00;
+  }
+
+  .desktopCreateAccount{
+    text-align: center;
+    margin-block: 5px;
+  }
+
+  .desktopCreateAccount a{
+    color: #ffdc00;
+  }
+
+  #authDesktop{
+    margin-bottom: 35px;
+  }
+
+  .desktopMenuP{
+    margin-block: 3px;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    font-family: "Lexend Deca";
+    padding-left: 25px;
+    width: 300px;
+  }
+
+  .desktopMenuP:hover{
+    background-color: rgb(18, 17, 17);
+  }
+
+  .desktopMenuP a{
+    text-decoration: none;
+    color: white;
+  }
+
+  .desktopMenuP a:hover{
+    padding-left: 5px;
+    color: #ffdc00;
+  }
+
+  .admin{
+    margin-bottom: 25px;
+  }
+
+  .user{
+    color: green;
+  }
+
+  #authDesktop input{
+    color: black;
   }
 }
 

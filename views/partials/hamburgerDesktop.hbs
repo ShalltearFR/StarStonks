@@ -1,0 +1,30 @@
+{{#if user}}
+    {{#if user.admin}}
+        <p class="admin desktopMenuP">Administrateur -><a href="/auth/addtrip"> Ajouter un voyage</a></p>
+    {{/if}}
+
+    {{#if user.admin}}
+    <p class="user desktopMenuP">Utilisateur -></p>
+    {{/if}}
+    <p class="desktopMenuP"><a href="/auth/profile">Profil</a></p>
+    <p class="desktopMenuP"><a href="/auth/reservations">Mes réservations</a></p>
+    <p class="desktopMenuP"><a href="/auth/logout">Deconnexion</a></p>
+
+{{else}}
+    <form action="/auth/login" method="POST" id="authDesktop">
+        <label>
+            Email
+            <input type="email" name="email" >
+        </label>
+
+        <label>
+            Mot de passe
+            <input type="password" name="password">
+        </label>
+
+    <button>Se connecter</button>
+    </form>
+
+    <h4 class="desktopCreateAccount">Vous n'avez pas de compte ?</h4>
+    <p class="desktopCreateAccount"><a href="/auth/signup">Creer en un dès maintenant</a></p>
+{{/if}}

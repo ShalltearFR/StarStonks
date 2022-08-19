@@ -50,15 +50,17 @@
             <div id="hamburgerDesktop">
               {{#if user}}
                 <div>
-                  {{#if user.avatarUrl}}
-                    <img src="{{user.avatarUrl}}" class="navIcon" id="avatarDesktop">
-                  {{else}}
-                    <img src="https://res.cloudinary.com/shalltear/image/upload/v1658785651/Project%202/public/defaultAvatar_ezlpxu.png"
-                    class="navIcon" id="avatarDesktop">
-                  {{/if}}
-                  <img src="https://res.cloudinary.com/shalltear/image/upload/v1660910428/Project%202/public/chevron_qupgmz.png" id="chevron">
+                  <a href="/auth/profile">
+                    {{#if user.avatarUrl}}
+                      <img src="{{user.avatarUrl}}" class="navIcon" id="avatarDesktop">
+                    {{else}}
+                      <img src="https://res.cloudinary.com/shalltear/image/upload/v1658785651/Project%202/public/defaultAvatar_ezlpxu.png"
+                      class="navIcon" id="avatarDesktop">
+                    {{/if}}
+                    <img src="https://res.cloudinary.com/shalltear/image/upload/v1660910428/Project%202/public/chevron_qupgmz.png" id="chevron">
+                  </a>
                 </div>
-                <span>{{user.pseudonyme}}</span>
+                <a href="/auth/profile">{{user.pseudonyme}}</a>
               {{else}}
                 <div>
                   <img src="https://res.cloudinary.com/shalltear/image/upload/v1658785651/Project%202/public/defaultAvatar_ezlpxu.png"
@@ -70,12 +72,12 @@
             </div>
         </div>
       </div>
-      <div id="navMax">
-        {{> hamburger}}
-      </div>
-    </div>
     </div>
   </nav>
+
+  <div id="hamburgerDesktopOpen">
+    {{> hamburgerDesktop}}
+  </div>
 
   <div id="content">
     {{{body}}}
@@ -90,7 +92,8 @@
     </ul>
   </footer>
 
-  <script src="/js/hamburger.js"></script>
+  <script src="/js/hamburgerMobile.js"></script>
+  <script src="/js/hamburgerDesktop.js"></script>
 </body>
 
 </html>
