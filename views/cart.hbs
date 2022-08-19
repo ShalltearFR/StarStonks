@@ -2,31 +2,30 @@
 
 <div id="cart">
     {{#if cart}}
-        <div id="cartsData">
-            <div class="planetImg">
-                {{!-- <img src="{{cart.trip.to.image}}"> --}}
-            </div>
-            <ul id="cartUl">
-                <li>_Id : {{cart.trip_id}}</li>
-                <li>Départ : {{cart.trip.from.name}} </li>
-                <li>Arrivé : {{cart.trip.to.name}}</li>
-                <li>Date : {{#toShortDate cart.trip.date}}{{/toShortDate}}</li>
-                <li>Passagers : {{cart.passengers}}</li>
-                <li>Bagages : {{cart.bags}}</li>
-                <li>Prix : {{#numberToMoney cart.price.value}}{{/numberToMoney}}€</li>
-            </ul>
-            <div class="buttonCart">
-                <button onClick="deleteCart()">Vider le panier</button>
-                <form action="/auth/payment" method="GET">
-                    <button>Payer</button>
-                </form>
-                
-            </div>
+    <div id="cartsData">
+        <div class="planetImg">
+            {{!-- <img src="{{cart.trip.to.image}}"> --}}
         </div>
+        <ul id="cartUl">
+            <li>_Id : {{cart.trip_id}}</li>
+            <li>Départ : {{cart.trip.from.name}} </li>
+            <li>Arrivé : {{cart.trip.to.name}}</li>
+            <li>Date : {{#toShortDate cart.trip.date}}{{/toShortDate}}</li>
+            <li>Passagers : {{cart.passengers}}</li>
+            <li>Bagages : {{cart.bags}}</li>
+            <li>Prix : {{#numberToMoney cart.price.value}}{{/numberToMoney}}€</li>
+        </ul>
+        <div class="buttonCart">
+            <button id="btnVidPanier" onClick="deleteCart()">Vider le panier</button>
+            <form action="/auth/payment" method="GET">
+                <button>Payer</button>
+            </form>
+        </div>
+    </div>
     {{else}}
-        <div id="noTrip">
-            <p>Panier vide</p>
-        </div>
+    <div id="noTrip">
+        <p>Panier vide</p>
+    </div>
     {{/if}}
 </div>
 

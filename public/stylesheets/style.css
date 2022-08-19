@@ -753,6 +753,13 @@ button {
 
 }
 
+@media screen and (min-width:460px) {
+  #optionsForm {
+    width: 380px;
+    margin-block: 50px;
+  }
+}
+
 
 /* 
   #####     #    ######  ####### 
@@ -786,8 +793,8 @@ button {
 
 .buttonCart {
   display: flex;
-  width: 60vw;
-  margin-inline: auto;
+  width: 100%;
+  justify-content: center;
 }
 
 #resetCart {
@@ -799,7 +806,14 @@ button {
   font-size: 16px;
 }
 
+#cartUl {
+  width: 300px;
+}
 
+
+#btnVidPanier {
+  width: 140px;
+}
 
 
 
@@ -888,9 +902,46 @@ button {
   padding: 20px;
   list-style: none;
   border: solid 2px #ffdc00;
-  width: 60vw;
+  width: 80vw;
   margin-inline: auto;
+  display: flex;
+  flex-direction: column;
 }
+
+#inputCardNum {
+  width: 127px;
+}
+
+#inputCryptogramme {
+  width: 30px;
+}
+
+#inputExpDate {
+  width: 100px;
+}
+
+#paymentForm div {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 460px) {
+  #paymentForm div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #paymentForm {
+    margin-top: 50px;
+    padding-inline: 70px;
+    width: 35vw;
+  }
+}
+
+
 
 
 /*

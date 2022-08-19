@@ -1,21 +1,28 @@
 <h1>{{title}}</h1>
 {{#if user}}
-    <form action="/auth/payment" method="POST" id="paymentForm">
-        <label> N° de carte bancaire spatiale :
-            <input type="number" name="cardNumber">
-        </label>
-        <label> Cryptogramme
-            <input type="number" name="cryptogramme">
-        </label>
-        <label> Date d'expiration
-            <input type="date" name="expireDate">
-        </label>
+<form action="/auth/payment" method="POST" id="paymentForm">
+    <div>
+        <label> N° de carte bancaire spatiale :</label>
+        <input id="inputCardNum" type="number" name="cardNumber">
 
-        <button type="submit">Payer</button>
-    </form>
+    </div>
+    <div>
+        <label> Cryptogramme :</label>
+        <input id="inputCryptogramme" type="number" name="cryptogramme">
+
+    </div>
+    <div>
+        <label> Date d'expiration :</label>
+        <input id="inputExpDate" type="date" name="expireDate">
+
+    </div>
+
+
+    <button type="submit">Payer</button>
+</form>
 {{else}}
-    <h2>Veuillez vous authentifier avant de proceder à la commande</h2>
+<h2>Veuillez vous authentifier avant de proceder à la commande</h2>
 {{/if}}
 {{#if errorMessage}}
-    {{errorMessage}}
+{{errorMessage}}
 {{/if}}
