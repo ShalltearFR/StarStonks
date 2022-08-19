@@ -185,6 +185,7 @@ footer li {
   border-radius: 20px;
   padding: 10px;
   text-align: center;
+
 }
 
 .homepage label {
@@ -249,12 +250,47 @@ ul {
   width: 90%;
 }
 
+@media screen and (min-width: 600px) {
+  .homepage button {
+    width: 30vw;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .homepage {
+    display: flex;
+  }
+
+  .homepage form {
+    margin-inline: auto;
+    width: 50vw;
+    padding-block: 50px;
+  }
+
+  .homepage label {
+    font-size: 20px;
+  }
+
+  .homepage button {
+    width: 20vw;
+  }
+
+  .planete img {
+    width: 10vw;
+  }
+
+  .enigme {
+    margin-left: 10vw;
+  }
+}
+
 /* ----------ENIGME OPTIONNELLE----------- */
 
 .enigme a {
   margin-left: 30vw;
   width: 30px;
 }
+
 
 /* ---------------------------------------- */
 
@@ -321,6 +357,12 @@ ul {
   color: rgb(145, 110, 24);
 }
 
+@media screen and (min-width: 900px) {
+  .classes ul {
+    width: 60vw;
+    margin-inline: auto;
+  }
+}
 
 /* 
 
@@ -434,6 +476,12 @@ button {
   margin-top: 54px;
 }
 
+@media screen and (min-width: 900px) {
+  #profile {
+    width: 50vw;
+    margin-inline: auto;
+  }
+}
 
 /* 
 
@@ -632,6 +680,23 @@ button {
   margin-top: 40px;
 }
 
+@media screen and (min-width: 600px) {
+  #login {
+    width: 40vw;
+    margin-block: 100px;
+    margin-inline: auto;
+  }
+
+  #login div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #login div label {
+    margin-inline: auto;
+  }
+
+}
 
 /* 
  ######     #    #     # #     # ####### #     # ####### 
@@ -701,7 +766,7 @@ button {
 
 
 .btnSignup {
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 /* ADD TRIP*/
@@ -718,6 +783,34 @@ button {
 
 #addTripForm div label input {
   color: black;
+}
+
+@media screen and (min-width: 370px) {
+  #signup {
+    width: 60vw;
+    padding-inline: 30px;
+    margin-inline: auto;
+    margin-block: 80px;
+  }
+
+  #signup div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #signup {
+    width: 40vw;
+    padding-inline: 100px;
+    margin-inline: auto;
+    margin-block: 80px;
+  }
+
+  #signup div {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 
@@ -807,6 +900,17 @@ button {
   width: 100%;
 }
 
+@media screen and (min-width: 600px) {
+  .appDl {
+    padding-inline: 15vw;
+  }
+
+  .appDl a {
+    width: 200px;
+    margin-inline: auto;
+  }
+}
+
 /* -------------------------------------------------------------------------------------PLANETE---------------------------------------------------------------------------------------- */
 .planeteImg {
   display: flex;
@@ -822,4 +926,34 @@ button {
 article {
   text-align: justify;
   margin-inline: 10%;
+  margin-block: 100px;
+  color: #a0a0a0;
+  backdrop-filter: blur(20px) brightness(110%);
+  border: 2px solid #ffdc00;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+article h3 {
+  color: #ffdc00;
+  font-size: 20px;
+}
+
+article h4 {
+  color: #d2d2d2;
+  font-style: italic;
+}
+
+@media screen and (min-width:600px) {
+  .planeteImg {
+    margin-inline: auto;
+    width: 60vw;
+  }
+}
+
+@media screen and (min-width:900px) {
+  .planeteImg {
+    margin-inline: auto;
+    width: 30vw;
+  }
 }
