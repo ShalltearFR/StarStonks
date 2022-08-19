@@ -12,11 +12,8 @@ $hamburgerDesktop.addEventListener("mouseover",(event)=>{
 
 $content.addEventListener("mouseover", (event) =>{
     if(isOpen){
-        setTimeout(()=>{
-            isOpen = false
-            $hamburgerDesktopOpen.style.display = "none"
-    
-        },500)
+        isOpen = false
+        $hamburgerDesktopOpen.style.display = "none"
     }
 })
 

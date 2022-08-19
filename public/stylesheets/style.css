@@ -238,6 +238,10 @@ footer li {
     color: white;
   }
 
+  #navDesktopCenter a:hover{
+    color: #ffdc00;
+  }
+
   #hamburgerDesktopOpen{
     z-index: 99;
     position: fixed;
