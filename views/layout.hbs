@@ -20,9 +20,9 @@
           {{#if user.avatarUrl}}
             <a href="/auth/profile"><img src="{{user.avatarUrl}}" class="navIcon"></a>
           {{else}}
-            <img
+            <a href="/auth/profile"><img
               src="https://res.cloudinary.com/shalltear/image/upload/v1658785651/Project%202/public/defaultAvatar_ezlpxu.png"
-              class="navIcon">
+              class="navIcon"></a>
           {{/if}}
         {{/if}}
         <a href="/cart"><img src="https://res.cloudinary.com/shalltear/image/upload/v1658592888/Project%202/public/cart_gzmrmy.png"
