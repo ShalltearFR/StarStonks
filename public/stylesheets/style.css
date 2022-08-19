@@ -939,13 +939,25 @@ button {
     flex-direction: row;
     justify-content: space-between;
   }
+
+  #paymentForm button {
+    width: 200px;
+    margin-inline: auto;
+  }
 }
+
+/* @media screen and (min-width: 600px) {
+  #paymentForm {
+    margin-top: 50px;
+    width: 70vw;
+  }
+} */
 
 @media screen and (min-width: 900px) {
   #paymentForm {
-    margin-top: 50px;
-    padding-inline: 70px;
-    width: 35vw;
+    margin-top: 30px;
+    padding-inline: 50px;
+    width: 450px;
   }
 }
 
