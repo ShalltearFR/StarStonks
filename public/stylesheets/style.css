@@ -804,6 +804,14 @@ button {
 #noTrip {
   padding-left: 15px;
   font-size: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+#noTrip a {
+  margin-block: 50px;
+  width: 150px;
+  margin-inline: auto;
 }
 
 #cartUl {
@@ -1182,4 +1190,10 @@ article h4 {
     margin-inline: auto;
     width: 30vw;
   }
+}
+
+/* -----------------------------------------------------ADD TRIP ------------------------------------------------------------ */
+
+#addTripForm button {
+  width: 200px;
 }

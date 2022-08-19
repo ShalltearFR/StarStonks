@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>{{title}}</title>
 
-    <!-- Primary Meta Tags -->
+  <!-- Primary Meta Tags -->
   <meta name="title" content="Star Stonks">
   <meta name="description" content="Reservez vos tickets de voyage spacial avec Star Stonks.
   Voyez la vie en stonks.">
@@ -17,7 +17,8 @@
   <meta property="og:title" content="Star Stonks">
   <meta property="og:description" content="Reservez vos tickets de voyage spacial avec Star Stonks.
   Voyez la vie en stonks.">
-  <meta property="og:image" content="https://res.cloudinary.com/shalltear/image/upload/v1660929732/Project%202/public/Logo_kebzdq.png">
+  <meta property="og:image"
+    content="https://res.cloudinary.com/shalltear/image/upload/v1660929732/Project%202/public/Logo_kebzdq.png">
 
   <!-- Twitter -->
   <meta property="twitter:card" content="summary_large_image">
@@ -25,8 +26,9 @@
   <meta property="twitter:title" content="Star Stonks">
   <meta property="twitter:description" content="Reservez vos tickets de voyage spacial avec Star Stonks.
   Voyez la vie en stonks.">
-  <meta property="twitter:image" content="https://res.cloudinary.com/shalltear/image/upload/v1660929732/Project%202/public/Logo_kebzdq.png">
-  
+  <meta property="twitter:image"
+    content="https://res.cloudinary.com/shalltear/image/upload/v1660929732/Project%202/public/Logo_kebzdq.png">
+
   <link rel="stylesheet" href="/stylesheets/style.css" />
 </head>
 
@@ -34,21 +36,24 @@
   <nav>
     <div id="navMobile">
       <div id="navMin">
-        <a href="/"><img src="https://res.cloudinary.com/shalltear/image/upload/v1658785932/Project%202/public/Logo2_uusmkb.png"
-          id="navLogo"></a>
+        <a href="/"><img
+            src="https://res.cloudinary.com/shalltear/image/upload/v1658785932/Project%202/public/Logo2_uusmkb.png"
+            id="navLogo"></a>
         <div id="navCartHamburger">
           {{#if user}}
-            {{#if user.avatarUrl}}
-              <a href="/auth/profile"><img src="{{user.avatarUrl}}" class="navIcon"></a>
-            {{else}}
-              <a href="/auth/profile"><img
-                src="https://res.cloudinary.com/shalltear/image/upload/v1658785651/Project%202/public/defaultAvatar_ezlpxu.png"
-                class="navIcon"></a>
-            {{/if}}
+          {{#if user.avatarUrl}}
+          <a href="/auth/profile"><img src="{{user.avatarUrl}}" class="navIcon"></a>
+          {{else}}
+          <a href="/auth/profile"><img
+              src="https://res.cloudinary.com/shalltear/image/upload/v1658785651/Project%202/public/defaultAvatar_ezlpxu.png"
+              class="navIcon"></a>
           {{/if}}
-          <a href="/cart"><img src="https://res.cloudinary.com/shalltear/image/upload/v1658592888/Project%202/public/cart_gzmrmy.png"
-            class="navIcon"></a>
-          <img src="https://res.cloudinary.com/shalltear/image/upload/v1658593774/Project%202/public/hamburger_ippbcd.png"
+          {{/if}}
+          <a href="/cart"><img
+              src="https://res.cloudinary.com/shalltear/image/upload/v1658592888/Project%202/public/cart_gzmrmy.png"
+              class="navIcon"></a>
+          <img
+            src="https://res.cloudinary.com/shalltear/image/upload/v1658593774/Project%202/public/hamburger_ippbcd.png"
             class="navIcon" id="hamburger">
         </div>
       </div>
@@ -59,39 +64,47 @@
 
     <div id="navDesktop">
       <div id="navMin">
-        <a href="/"><img src="https://res.cloudinary.com/shalltear/image/upload/v1658785932/Project%202/public/Logo2_uusmkb.png"
-          id="navLogo"></a>
+        <a href="/"><img
+            src="https://res.cloudinary.com/shalltear/image/upload/v1658785932/Project%202/public/Logo2_uusmkb.png"
+            id="navLogo"></a>
 
         <div id="navDesktopCenter">
           <a href="/classes">Classes</a>
           <a href="/Application">Application</a>
         </div>
         <div id="navCartHamburger">
-          <a href="/cart"><img src="https://res.cloudinary.com/shalltear/image/upload/v1658592888/Project%202/public/cart_gzmrmy.png"
-            class="navIcon"></a>
-            <div id="hamburgerDesktop">
-              {{#if user}}
-                <div>
-                  <a href="/auth/profile">
-                    {{#if user.avatarUrl}}
-                      <img src="{{user.avatarUrl}}" class="navIcon" id="avatarDesktop">
-                    {{else}}
-                      <img src="https://res.cloudinary.com/shalltear/image/upload/v1658785651/Project%202/public/defaultAvatar_ezlpxu.png"
-                      class="navIcon" id="avatarDesktop">
-                    {{/if}}
-                    <img src="https://res.cloudinary.com/shalltear/image/upload/v1660910428/Project%202/public/chevron_qupgmz.png" id="chevron">
-                  </a>
-                </div>
-                <a href="/auth/profile">{{user.pseudonyme}}</a>
-              {{else}}
-                <div>
-                  <img src="https://res.cloudinary.com/shalltear/image/upload/v1658785651/Project%202/public/defaultAvatar_ezlpxu.png"
-                    class="navIcon" id="avatarDesktop">
-                  <img src="https://res.cloudinary.com/shalltear/image/upload/v1660910428/Project%202/public/chevron_qupgmz.png" id="chevron">
-                </div>
-                <span>Connexion</span>
-              {{/if}}
+          <a href="/cart"><img
+              src="https://res.cloudinary.com/shalltear/image/upload/v1658592888/Project%202/public/cart_gzmrmy.png"
+              class="navIcon"></a>
+          <div id="hamburgerDesktop">
+            {{#if user}}
+            <div>
+              <a href="/auth/profile">
+                {{#if user.avatarUrl}}
+                <img src="{{user.avatarUrl}}" class="navIcon" id="avatarDesktop">
+                {{else}}
+                <img
+                  src="https://res.cloudinary.com/shalltear/image/upload/v1658785651/Project%202/public/defaultAvatar_ezlpxu.png"
+                  class="navIcon" id="avatarDesktop">
+                {{/if}}
+                <img
+                  src="https://res.cloudinary.com/shalltear/image/upload/v1660910428/Project%202/public/chevron_qupgmz.png"
+                  id="chevron">
+              </a>
             </div>
+            <a href="/auth/profile">{{user.pseudonyme}}</a>
+            {{else}}
+            <div>
+              <img
+                src="https://res.cloudinary.com/shalltear/image/upload/v1658785651/Project%202/public/defaultAvatar_ezlpxu.png"
+                class="navIcon" id="avatarDesktop">
+              <img
+                src="https://res.cloudinary.com/shalltear/image/upload/v1660910428/Project%202/public/chevron_qupgmz.png"
+                id="chevron">
+            </div>
+            <span>Connexion</span>
+            {{/if}}
+          </div>
         </div>
       </div>
     </div>
@@ -110,7 +123,9 @@
     <ul>
       <li><a href="/application">Application</a></li>
       <li><a href="/classes">Classes de voyage</a></li>
-      <li><p>© Star Stonks - Toutes droites reservés</p></li>
+      <li>
+        <p>© Star Stonks - Tout droits reservés</p>
+      </li>
     </ul>
   </footer>
 
