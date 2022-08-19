@@ -47,9 +47,13 @@ h2 {
 
 
 #navLogo {
-  max-height: 55px;
-  margin-top: 5px;
+  height: 55px;
   margin-left: 10px;
+}
+
+#navMin a{
+  display: flex;
+  align-items: center;
 }
 
 #navMin,
@@ -85,6 +89,10 @@ nav {
   margin-block: auto;
   padding-right: 15px;
   gap: 5px;
+}
+
+#navDesktop{
+  display: none;
 }
 
 #navMax {
@@ -154,9 +162,74 @@ footer li {
   margin: 0
 }
 
+/* Masque la nav mobile sur la version desktop*/
+@media (min-width: 900px) {
+  #navMobile{
+    display: none;
+  }
 
+  #navDesktop{
+    display: block;
+  }
 
+  nav, #navMin {
+    height: 85px;
+  }
 
+  #navLogo {
+    height: 70px;
+  }
+
+  #content{
+    margin-top: 85px;
+    min-height: calc(100vh - 107px - 85px);
+  }
+
+  .navIcon {
+    height: 50px;
+  }
+
+  #hamburgerDesktop{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #navCartHamburger{
+    margin-left: 0;
+    gap: 15px;
+  }
+
+  #navCartHamburger a{
+    display: flex;
+    align-items: center;
+  }
+
+  #navLogo{
+    display: flex;
+    align-items: center;
+  }
+
+  #chevron{
+    height: 10px;
+  }
+
+  #avatarDesktop {
+    border-radius: 50px;
+  }
+
+  #navDesktopCenter{
+    display: flex;
+    gap: 50px;
+    margin-inline: auto;
+  }
+
+  #navDesktopCenter a{
+    font-size: 26px;
+    text-decoration: none;
+    color: white;
+  }
+}
 
 /* 
 
