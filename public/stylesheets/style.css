@@ -52,7 +52,7 @@ h2 {
   margin-left: 10px;
 }
 
-#navMin a{
+#navMin a {
   display: flex;
   align-items: center;
 }
@@ -92,7 +92,7 @@ nav {
   gap: 5px;
 }
 
-#navDesktop{
+#navDesktop {
   display: none;
 }
 
@@ -163,22 +163,23 @@ footer li {
   margin: 0
 }
 
-#hamburgerDesktopOpen{
+#hamburgerDesktopOpen {
   display: none;
 }
 
 /* Version desktop*/
 @media (min-width: 900px) {
-  #navMobile{
+  #navMobile {
     display: none;
   }
 
-  #navDesktop{
+  #navDesktop {
     display: block;
     width: 100vw
   }
 
-  nav, #navMin {
+  nav,
+  #navMin {
     height: 85px;
   }
 
@@ -186,7 +187,7 @@ footer li {
     height: 70px;
   }
 
-  #content{
+  #content {
     margin-top: 85px;
     min-height: calc(100vh - 107px - 85px);
   }
@@ -195,29 +196,29 @@ footer li {
     height: 50px;
   }
 
-  #hamburgerDesktop{
+  #hamburgerDesktop {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  #navCartHamburger{
+  #navCartHamburger {
     margin-left: 0;
     margin-right: 15px;
     gap: 15px;
   }
 
-  #navCartHamburger a{
+  #navCartHamburger a {
     display: flex;
     align-items: center;
   }
 
-  #navLogo{
+  #navLogo {
     display: flex;
     align-items: center;
   }
 
-  #chevron{
+  #chevron {
     height: 10px;
     align-items: baseline;
   }
@@ -226,23 +227,23 @@ footer li {
     border-radius: 50px;
   }
 
-  #navDesktopCenter{
+  #navDesktopCenter {
     display: flex;
     gap: 50px;
     margin-inline: auto;
   }
 
-  #navDesktopCenter a{
+  #navDesktopCenter a {
     font-size: 26px;
     text-decoration: none;
     color: white;
   }
 
-  #navDesktopCenter a:hover{
+  #navDesktopCenter a:hover {
     color: #ffdc00;
   }
 
-  #hamburgerDesktopOpen{
+  #hamburgerDesktopOpen {
     z-index: 99;
     position: fixed;
     display: none;
@@ -258,32 +259,32 @@ footer li {
     border-right-style: none;
   }
 
-  #hamburgerDesktopOpen label{
+  #hamburgerDesktopOpen label {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  
-  #hamburgerDesktop a{
+
+  #hamburgerDesktop a {
     text-decoration: none;
     font-family: 'DynaPuff';
     color: #ffdc00;
   }
 
-  .desktopCreateAccount{
+  .desktopCreateAccount {
     text-align: center;
     margin-block: 5px;
   }
 
-  .desktopCreateAccount a{
+  .desktopCreateAccount a {
     color: #ffdc00;
   }
 
-  #authDesktop{
+  #authDesktop {
     margin-bottom: 35px;
   }
 
-  .desktopMenuP{
+  .desktopMenuP {
     margin-block: 3px;
     font-size: 20px;
     display: flex;
@@ -293,29 +294,29 @@ footer li {
     width: 300px;
   }
 
-  .desktopMenuP:hover{
+  .desktopMenuP:hover {
     background-color: rgb(18, 17, 17);
   }
 
-  .desktopMenuP a{
+  .desktopMenuP a {
     text-decoration: none;
     color: white;
   }
 
-  .desktopMenuP a:hover{
+  .desktopMenuP a:hover {
     padding-left: 5px;
     color: #ffdc00;
   }
 
-  .admin{
+  .admin {
     margin-bottom: 25px;
   }
 
-  .user{
+  .user {
     color: green;
   }
 
-  #authDesktop input{
+  #authDesktop input {
     color: black;
   }
 }
@@ -879,6 +880,17 @@ button {
   color: #0a0a09;
 }
 
+#paymentForm {
+  margin-block: 20px;
+  color: #a0a0a0;
+  backdrop-filter: blur(20px) brightness(110%);
+  border-radius: 20px;
+  padding: 20px;
+  list-style: none;
+  border: solid 2px #ffdc00;
+  width: 60vw;
+  margin-inline: auto;
+}
 
 
 /*
