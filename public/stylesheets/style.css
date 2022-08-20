@@ -960,7 +960,13 @@ button {
   margin-left: auto;
 }
 
-
+#sortReservation{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 15px;
+  font-size: 18px;
+}
 
 /* ----------------------------------------------------------------SIGNUP------------------------------------------------------------------ */
 #signup {

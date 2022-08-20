@@ -1,8 +1,15 @@
 <h1>{{title}}</h1>
-
 {{#if tickets}}
-    {{#each tickets}}
+    <div id="sortReservation">
+        <span>Trier par :</span>
+        <select id="sortOption" onchange="sortReservation()">
+            <option value="date" {{#if (eq sortType "date")}}selected{{/if}}>Date croissant</option>
+            <option value="price" {{#if (eq sortType "price")}}selected{{/if}}>Prix croissant</option>
+            <option value="class" {{#if (eq sortType "class")}}selected{{/if}}>Classes</option>
+        </select>
+    </div>
 
+    {{#each tickets}}
     <div class="reservations">
         <div class="reservationGlobalInfo">
             <span class="reservationDate">{{#toShortDate trip_id.date}}{{/toShortDate}}-> {{trip_id.to.name}}</span>

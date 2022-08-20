@@ -1,7 +1,6 @@
 const $reservations = document.querySelectorAll(".reservations")
 
 $reservations.forEach((el)=>{
-    //el.style.height = "50px"
     const $reservationInformation = el.querySelector(".reservationInformation")
 
     $reservationInformation.style.display = "none"
@@ -17,3 +16,10 @@ $reservations.forEach((el)=>{
         }
       }, false);
 })
+
+function sortReservation(){
+    //console.log(document.querySelector("#sortReservation").value)
+    const value = document.querySelector("#sortOption").value
+    window.location.assign(`/auth/reservations?sort=${value}`)
+
+}

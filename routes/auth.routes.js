@@ -46,18 +46,6 @@ router.post("/signup", isLoggedOut, (req, res) => {
     });
   }
 
-  //   ! This use case is using a regular expression to control for special characters and min length
-  /*
-  const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
-
-  if (!regex.test(password)) {
-    return res.status(400).render("signup", {
-      errorMessage:
-        "Password needs to have at least 8 chars and must contain at least one number, one lowercase and one uppercase letter.",
-    });
-  }
-  */
-
   // Search the database for a user with the username submitted in the form
   User.findOne({ email }).then((found) => {
     // If the user is found, send the message username is taken
@@ -300,8 +288,26 @@ router.get("/reservations", (req, res, next) => {
   if (!req.session.user) {
     return res.redirect("/");
   }
+  let sortType
+  switch (req.query.sort) {
+    case 'date':
+      sortType = {date : 1};
+      break;
+  
+    case 'price':
+      sortType = {price : 1};
+      break;
+
+    case 'class':
+      sortType = {class : 1};
+      break;
+
+    default:
+      sortType = {date : 1};
+      break;
+  }
+  //const sortType = {`${req.query.sort}` : 1}
   Ticket.find({user_id : req.session.user._id})
-  //.populate("user_id", "_id") // Recupère uniquement le _id dans le user_id (pas besoin de recuperer d'autres infos)
   .populate({
     path: 'trip_id', //Populate le trip_id
     populate: { path: 'from' } // Suivi de from qui se situe dans l'object trip_id
@@ -310,11 +316,13 @@ router.get("/reservations", (req, res, next) => {
     path: 'trip_id',
     populate: { path: 'to' }
   })
+  .sort(sortType)
   .then(ticketsFromDB =>{
     res.render("auth/reservations", {
       title: "Réservations",
       user: req.session.user,
-      tickets: ticketsFromDB
+      tickets: ticketsFromDB,
+      sortType: req.query.sort
     });
   })
   .catch(err => next(err))
