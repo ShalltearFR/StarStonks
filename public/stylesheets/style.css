@@ -892,19 +892,75 @@ button {
                                                                                      
 */
 
-
-.reservation {
-  margin: 20px;
-  color: #a0a0a0;
-  backdrop-filter: blur(5px) brightness(110%);
-  border: 2px solid #ffdc00;
-  border-radius: 20px;
-  padding: 10px;
+.reservations{
+  min-width: 500px;
+  max-width: 700px;
+  background-color: rgba(128, 128, 128, 0.650);
+  margin-inline: auto;
+  ppadding-bottom: 15px;
+  margin-bottom: 20px;
+  overflow-y: hidden;
+  user-select: none;
+  box-sizing: content-box;
 }
 
-.reservation p {
+.reservationGlobalInfo{
+  display: flex;
+  height: 50px;
+  padding-left: 15px;
+  align-items: center;
+  font-family: "DynaPuff";
+  font-size: 22px;
+}
+
+.reservationArrow{
+  margin-left: auto;
+  margin-right: 15px;
+}
+
+.reservationFromAndTo, .reservationClassAndPrice, .volInformation{
+  display: flex;
+  flex-direction: column;
+  margin-block: 10px;
+  padding-left: 15px;
+}
+
+.reservations{
+  display: flex;
+  flex-direction: column;
+}
+
+.reservationOther, .reservationInformation {
+  display: flex;
+  align-items: center;
+}
+
+.reservationTicketAndQrCode{
+  margin-left: auto;
+  margin-right: 15px;
+  width: 75px;
+  text-align: center;
+  font-family: "DynaPuff";
+  width: 75px;
+  font-size: 12px;
+}
+
+.reservationInformation p{
   margin: 0;
+  font-family: "Lexend Deca";
+  font-size: 16px;
 }
+
+.reservationInformation span{
+  font-family: "DynaPuff";
+  color: rgb(210, 210, 210);
+}
+
+.downloadTicket{
+  margin-left: auto;
+}
+
+
 
 /* ----------------------------------------------------------------SIGNUP------------------------------------------------------------------ */
 #signup {

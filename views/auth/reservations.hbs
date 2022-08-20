@@ -2,7 +2,39 @@
 
 {{#if tickets}}
     {{#each tickets}}
-        <div class="reservation">
+
+    <div class="reservations">
+        <div class="reservationGlobalInfo">
+            <span class="reservationDate">{{#toShortDate trip_id.date}}{{/toShortDate}}-> {{trip_id.to.name}}</span>
+            <span class="reservationArrow">↓</span>
+        </div>
+
+        <div class="reservationInformation">
+            <div>
+                <div class="reservationFromAndTo">
+                    <p><span>Depart : </span>{{#toShortDate trip_id.date}}{{/toShortDate}} - {{#toArrived trip_id.date}}{{/toArrived}} de {{trip_id.from.name}}</p>
+                    <p><span>Arrivée : </span>{{#toShortDate trip_id.arrived}}{{/toShortDate}} - {{#toArrived trip_id.arrived}}{{/toArrived}} vers {{trip_id.to.name}}</p>
+                </div>
+
+                <div class="reservationClassAndPrice">
+                    <p><span>Classe : </span>{{trip_id.class}}</p>
+                    <p><span>Prix : </span>{{#numberToMoney price.value}}{{/numberToMoney}}€</p>
+                </div>
+
+                <div class="reservationOther">
+                    <div class="volInformation">
+                        <p><span>N° de vol : </span>{{_id}}</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reservationTicketAndQrCode">
+                Telecharger le ticket
+                <img class="qrCode" src="http://via.placeholder.com/75x75">
+            </div>
+        </div>
+    </div>
+        {{!-- <div class="reservation">
             <p>Vol N°{{_id}}</p>
             <p>{{#toShortDate trip_id.date}}{{/toShortDate}} à {{#toArrived trip_id.date}}{{/toArrived}}</p>
             <p>{{trip_id.from.name}} ➔ {{trip_id.to.name}}</p>
@@ -10,8 +42,11 @@
             <p>Bagages : {{bags}}</p>
             <p>Classe {{trip_id.class}}</p>
             <p>{{#numberToMoney price.value}}{{/numberToMoney}}€</p>
-        </div>
+        </div> --}}
     {{/each}}
 {{else}}
     <h3>Pas de tickets</h3>
 {{/if}}
+
+
+<script src="../js/reservations.js"></script>
