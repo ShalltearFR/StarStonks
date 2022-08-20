@@ -893,7 +893,7 @@ button {
 */
 
 .reservations{
-  min-width: 500px;
+  min-width: 300px;
   max-width: 700px;
   background-color: rgba(128, 128, 128, 0.650);
   margin-inline: auto;
