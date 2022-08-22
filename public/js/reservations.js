@@ -21,5 +21,4 @@ function sortReservation(){
     //console.log(document.querySelector("#sortReservation").value)
     const value = document.querySelector("#sortOption").value
     window.location.assign(`/auth/reservations?sort=${value}`)
-
 }

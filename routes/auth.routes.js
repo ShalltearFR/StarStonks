@@ -291,7 +291,7 @@ router.get("/reservations", (req, res, next) => {
   let sortType
   switch (req.query.sort) {
     case 'date':
-      sortType = {date : 1};
+      sortType = {["trip_id.date"] : 1};
       break;
   
     case 'price':
@@ -306,8 +306,12 @@ router.get("/reservations", (req, res, next) => {
       sortType = {date : 1};
       break;
   }
+
+  //const sortType = {[req.query.sort]: 1};
+
+  console.log("sortType :",sortType)
   //const sortType = {`${req.query.sort}` : 1}
-  Ticket.find({user_id : req.session.user._id})
+  Ticket.find({user_id : req.session.user._id}, null, /*{sort: sortType} */)
   .populate({
     path: 'trip_id', //Populate le trip_id
     populate: { path: 'from' } // Suivi de from qui se situe dans l'object trip_id
