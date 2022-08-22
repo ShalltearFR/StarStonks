@@ -96,6 +96,19 @@ hbs.registerHelper('numberToMoney', (price) => {
     return price.toLocaleString()
 })
 
+hbs.registerHelper('toShortDate', (date) => {
+    const longDate = new Date(date)
+    const year = longDate.getFullYear()
+
+    let day = `${longDate.getDate() + 1}`
+    if (day.length === 1){day = `0${day}`}
+
+    let month = `${longDate.getMonth() + 1}`
+    if (month.length === 1){month = `0${month}`}
+
+    return `${day}/${month}/${year}`
+})
+
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 

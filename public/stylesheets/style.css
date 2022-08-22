@@ -52,7 +52,7 @@ h2 {
   margin-left: 10px;
 }
 
-#navMin a{
+#logo{
   display: flex;
   align-items: center;
   height: 65px;
@@ -189,7 +189,7 @@ footer li {
     height: 85px;
   }
 
-  #navMin a{
+  #navMin #logo{
     height: 85px;
   }
 
@@ -216,6 +216,7 @@ footer li {
     margin-left: 0;
     margin-right: 15px;
     gap: 15px;
+    height: 85px;
   }
 
   #navCartHamburger a{
@@ -233,11 +234,14 @@ footer li {
 
   #navDesktopCenter{
     display: flex;
+    align-items: center;
     gap: 50px;
     margin-inline: auto;
   }
 
   #navDesktopCenter a{
+    display: flex;
+    
     font-size: 26px;
     text-decoration: none;
     color: white;
@@ -310,6 +314,10 @@ footer li {
   .desktopMenuP a:hover{
     padding-left: 5px;
     color: #ffdc00;
+  }
+
+  #avatarName{
+    height: 15px;
   }
 
   .admin{

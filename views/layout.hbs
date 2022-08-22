@@ -36,7 +36,7 @@
   <nav>
     <div id="navMobile">
       <div id="navMin">
-        <a href="/"><img
+        <a href="/" id="logo" class="mobileA"><img
             src="https://res.cloudinary.com/shalltear/image/upload/v1658785932/Project%202/public/Logo2_uusmkb.png"
             id="navLogo"></a>
         <div id="navCartHamburger">
@@ -64,7 +64,7 @@
 
     <div id="navDesktop">
       <div id="navMin">
-        <a href="/"><img
+        <a href="/" id="logo"><img
             src="https://res.cloudinary.com/shalltear/image/upload/v1658785932/Project%202/public/Logo2_uusmkb.png"
             id="navLogo"></a>
 
@@ -92,7 +92,7 @@
                   id="chevron">
               </a>
             </div>
-            <a href="/auth/profile">{{user.pseudonyme}}</a>
+            <a href="/auth/profile" id="avatarName">{{user.pseudonyme}}</a>
             {{else}}
             <div>
               <img
