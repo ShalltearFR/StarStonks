@@ -10,21 +10,26 @@
             <img src="https://c.tenor.com/t0C2oHL_9NEAAAAC/star-wars-darth-vader.gif">
         </div>
         <div id="selectDestination">
-            <label>Planète de départ :</label>
-            <select id="from">
-                {{#each planets}}
-                <option value="{{_id}}" name="from">{{name}}</option>
-                {{/each}}
-            </select>
+            <div id="GlobalDestination">
+                <label>Planète de départ :
+                    <select id="from">
+                        {{#each planets}}
+                            <option value="{{_id}}" name="from">{{name}}</option>
+                        {{/each}}
+                    </select>
+                </label>
+                <div id="homepageArrowDesktop"><img src="https://res.cloudinary.com/shalltear/image/upload/v1661196738/Project%202/public/arrowRight_szsfqw.png"></div>
 
-            <label for="from">Planète de destination :</label>
-            <select id="to">
-                {{#each planets}}
-                <option value="{{_id}}" name="to">{{name}}</option>
-                {{/each}}
-            </select>
-            <div id="homePageInformation"></div>
+                <label for="from">Planète de destination :
+                    <select id="to">
+                        {{#each planets}}
+                            <option value="{{_id}}" name="to">{{name}}</option>
+                        {{/each}}
+                    </select>
+                </label>
+            </div>
             <button id="sendResult">Go Voyage !</button>
+            <div id="homePageInformation"></div>
         </div>
     </form>
     <div class="enigme">

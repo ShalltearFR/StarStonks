@@ -23,10 +23,12 @@
                 <h3>Class Bronze</h3>
             </div>
         </div>
-    {{#each destinations}}
-        <h2 class="dayStart" dateId="{{#toShortDate this.date}}{{/toShortDate}}">{{#toLongDate this.date}}{{/toLongDate}}</h2>
-    {{> resultsCard}}
-    {{/each}}
+        <div id="allDestinations">
+            {{#each destinations}}
+                <h2 class="dayStart" dateId="{{#toShortDate this.date}}{{/toShortDate}}">{{#toLongDate this.date}}{{/toLongDate}}</h2>
+                {{> resultsCard}}
+            {{/each}}
+        </div>
     {{else}}
         <h2>Pas de voyages disponible</h2>
     {{/if}}

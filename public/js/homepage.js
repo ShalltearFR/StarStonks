@@ -14,7 +14,7 @@ function sendResult(){
 
     if (from === to){
         buzzSound.play()
-        $homePageInformation.innerHTML = "Les planètes de depart et de destination sont les mêmes"
+        $homePageInformation.innerHTML = "<h3>Les planètes de depart et de destination sont les mêmes</h3>"
         return null
     }
     

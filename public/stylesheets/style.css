@@ -55,6 +55,7 @@ h2 {
 #navMin a{
   display: flex;
   align-items: center;
+  height: 65px;
 }
 
 #navMin,
@@ -84,11 +85,17 @@ nav {
   height: 35px;
 }
 
+#navLogo{
+  display: flex;
+  align-items: center;
+}
+
 #navCartHamburger {
   display: flex;
   margin-left: auto;
   margin-block: auto;
   padding-right: 15px;
+  align-items: center;
   gap: 5px;
 }
 
@@ -182,6 +189,10 @@ footer li {
     height: 85px;
   }
 
+  #navMin a{
+    height: 85px;
+  }
+
   #navLogo {
     height: 70px;
   }
@@ -211,12 +222,6 @@ footer li {
     display: flex;
     align-items: center;
   }
-
-  #navLogo{
-    display: flex;
-    align-items: center;
-  }
-
   #chevron{
     height: 10px;
     align-items: baseline;
@@ -412,13 +417,30 @@ ul {
   width: 90%;
 }
 
-@media screen and (min-width: 600px) {
+/* @media screen and (min-width: 600px) { */
   .homepage button {
     width: 30vw;
   }
-}
+/* } */
 
-@media screen and (min-width: 900px) {
+#homepageArrowDesktop{
+  display: none;
+}
+@media (min-width: 900px) {
+  #GlobalDestination{
+    display: flex;
+    align-items: center;
+  }
+
+  #homepageArrowDesktop{
+    display: flex;
+  }
+
+  #homepageArrowDesktop img{
+    min-width: 25px;
+    max-width: 50px;
+  }
+
   .homepage {
     display: flex;
   }
@@ -676,7 +698,7 @@ button {
 .resultCard {
   margin-bottom: 10px;
   border: solid 1px white;
-  width: 75%;
+  max-width: 400px;
   text-align: center;
   margin-inline: auto;
 }
@@ -716,6 +738,17 @@ button {
   margin-top: 30px;
 
   padding: 0
+}
+
+@media (min-width: 900px) {
+  .resultCard {
+    display: inline-block;
+    margin-left: 10px;
+    min-width: 400px;
+  }
+  #allDestinations{
+    text-align: center;
+  }
 }
 
 /* --------------------------------------------------------------------      OPTIONS (RESULT/ID/:ID)      ------------------------------------------------------------------------------ */
