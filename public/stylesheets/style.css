@@ -52,7 +52,7 @@ h2 {
   margin-left: 10px;
 }
 
-#logo{
+#logo {
   display: flex;
   align-items: center;
   height: 65px;
@@ -85,7 +85,7 @@ nav {
   height: 35px;
 }
 
-#navLogo{
+#navLogo {
   display: flex;
   align-items: center;
 }
@@ -99,7 +99,7 @@ nav {
   gap: 5px;
 }
 
-#navDesktop{
+#navDesktop {
   display: none;
 }
 
@@ -170,26 +170,27 @@ footer li {
   margin: 0
 }
 
-#hamburgerDesktopOpen{
+#hamburgerDesktopOpen {
   display: none;
 }
 
 /* Version desktop*/
 @media (min-width: 900px) {
-  #navMobile{
+  #navMobile {
     display: none;
   }
 
-  #navDesktop{
+  #navDesktop {
     display: block;
     width: 100vw
   }
 
-  nav, #navMin {
+  nav,
+  #navMin {
     height: 85px;
   }
 
-  #navMin #logo{
+  #navMin #logo {
     height: 85px;
   }
 
@@ -197,7 +198,7 @@ footer li {
     height: 70px;
   }
 
-  #content{
+  #content {
     margin-top: 85px;
     min-height: calc(100vh - 107px - 85px);
   }
@@ -206,24 +207,25 @@ footer li {
     height: 50px;
   }
 
-  #hamburgerDesktop{
+  #hamburgerDesktop {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
-  #navCartHamburger{
+  #navCartHamburger {
     margin-left: 0;
     margin-right: 15px;
     gap: 15px;
     height: 85px;
   }
 
-  #navCartHamburger a{
+  #navCartHamburger a {
     display: flex;
     align-items: center;
   }
-  #chevron{
+
+  #chevron {
     height: 10px;
     align-items: baseline;
   }
@@ -232,26 +234,26 @@ footer li {
     border-radius: 50px;
   }
 
-  #navDesktopCenter{
+  #navDesktopCenter {
     display: flex;
     align-items: center;
     gap: 50px;
     margin-inline: auto;
   }
 
-  #navDesktopCenter a{
+  #navDesktopCenter a {
     display: flex;
-    
+
     font-size: 26px;
     text-decoration: none;
     color: white;
   }
 
-  #navDesktopCenter a:hover{
+  #navDesktopCenter a:hover {
     color: #ffdc00;
   }
 
-  #hamburgerDesktopOpen{
+  #hamburgerDesktopOpen {
     z-index: 99;
     position: fixed;
     display: none;
@@ -267,32 +269,32 @@ footer li {
     border-right-style: none;
   }
 
-  #hamburgerDesktopOpen label{
+  #hamburgerDesktopOpen label {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-  
-  #hamburgerDesktop a{
+
+  #hamburgerDesktop a {
     text-decoration: none;
     font-family: 'DynaPuff';
     color: #ffdc00;
   }
 
-  .desktopCreateAccount{
+  .desktopCreateAccount {
     text-align: center;
     margin-block: 5px;
   }
 
-  .desktopCreateAccount a{
+  .desktopCreateAccount a {
     color: #ffdc00;
   }
 
-  #authDesktop{
+  #authDesktop {
     margin-bottom: 35px;
   }
 
-  .desktopMenuP{
+  .desktopMenuP {
     margin-block: 3px;
     font-size: 20px;
     display: flex;
@@ -302,33 +304,33 @@ footer li {
     width: 300px;
   }
 
-  .desktopMenuP:hover{
+  .desktopMenuP:hover {
     background-color: rgb(18, 17, 17);
   }
 
-  .desktopMenuP a{
+  .desktopMenuP a {
     text-decoration: none;
     color: white;
   }
 
-  .desktopMenuP a:hover{
+  .desktopMenuP a:hover {
     padding-left: 5px;
     color: #ffdc00;
   }
 
-  #avatarName{
+  #avatarName {
     height: 15px;
   }
 
-  .admin{
+  .admin {
     margin-bottom: 25px;
   }
 
-  .user{
+  .user {
     color: green;
   }
 
-  #authDesktop input{
+  #authDesktop input {
     color: black;
   }
 }
@@ -373,6 +375,7 @@ footer li {
   display: block;
   margin-inline: auto;
   margin-block: 10px;
+
 }
 
 .homepage a {
@@ -386,6 +389,7 @@ footer li {
   margin-block: 20px;
   padding-inline: 20px;
   margin-inline: auto;
+
 }
 
 ul {
@@ -426,25 +430,27 @@ ul {
 }
 
 /* @media screen and (min-width: 600px) { */
-  .homepage button {
-    width: 30vw;
-  }
+.homepage button {
+  width: 30vw;
+}
+
 /* } */
 
-#homepageArrowDesktop{
+#homepageArrowDesktop {
   display: none;
 }
+
 @media (min-width: 900px) {
-  #GlobalDestination{
+  #GlobalDestination {
     display: flex;
     align-items: center;
   }
 
-  #homepageArrowDesktop{
+  #homepageArrowDesktop {
     display: flex;
   }
 
-  #homepageArrowDesktop img{
+  #homepageArrowDesktop img {
     min-width: 25px;
     max-width: 50px;
   }
@@ -754,7 +760,8 @@ button {
     margin-left: 10px;
     min-width: 400px;
   }
-  #allDestinations{
+
+  #allDestinations {
     text-align: center;
   }
 }
@@ -790,7 +797,6 @@ button {
   text-align: justify;
   padding-top: 0;
   font-size: 1.3em;
-
 }
 
 
@@ -914,12 +920,30 @@ button {
 #paymentForm {
   display: flex;
   flex-direction: column;
+  margin: 70px;
+  margin-top: 20px;
+  color: #a0a0a0;
+  backdrop-filter: blur(20px) brightness(110%);
+  border: 2px solid #ffdc00;
+  border-radius: 20px;
+  padding: 10px;
 }
 
 #paymentForm input {
-  color: #0a0a09;
+  background-color: #0a0a0900;
+  color: #FAFF09;
 }
 
+@media screen and (min-width: 600px) {
+  #paymentForm {
+    width: 500px;
+  }
+
+  #paymentForm div {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 
 
 /*
@@ -933,19 +957,19 @@ button {
                                                                                      
 */
 
-.reservations{
+.reservations {
   min-width: 300px;
   max-width: 700px;
   background-color: rgba(128, 128, 128, 0.650);
   margin-inline: auto;
-  ppadding-bottom: 15px;
+  padding-bottom: 15px;
   margin-bottom: 20px;
   overflow-y: hidden;
   user-select: none;
   box-sizing: content-box;
 }
 
-.reservationGlobalInfo{
+.reservationGlobalInfo {
   display: flex;
   height: 50px;
   padding-left: 15px;
@@ -954,29 +978,32 @@ button {
   font-size: 22px;
 }
 
-.reservationArrow{
+.reservationArrow {
   margin-left: auto;
   margin-right: 15px;
 }
 
-.reservationFromAndTo, .reservationClassAndPrice, .volInformation{
+.reservationFromAndTo,
+.reservationClassAndPrice,
+.volInformation {
   display: flex;
   flex-direction: column;
   margin-block: 10px;
   padding-left: 15px;
 }
 
-.reservations{
+.reservations {
   display: flex;
   flex-direction: column;
 }
 
-.reservationOther, .reservationInformation {
+.reservationOther,
+.reservationInformation {
   display: flex;
   align-items: center;
 }
 
-.reservationTicketAndQrCode{
+.reservationTicketAndQrCode {
   margin-left: auto;
   margin-right: 15px;
   width: 75px;
@@ -986,22 +1013,22 @@ button {
   font-size: 12px;
 }
 
-.reservationInformation p{
+.reservationInformation p {
   margin: 0;
   font-family: "Lexend Deca";
   font-size: 16px;
 }
 
-.reservationInformation span{
+.reservationInformation span {
   font-family: "DynaPuff";
   color: rgb(210, 210, 210);
 }
 
-.downloadTicket{
+.downloadTicket {
   margin-left: auto;
 }
 
-#sortReservation{
+#sortReservation {
   display: flex;
   gap: 10px;
   justify-content: center;
@@ -1078,7 +1105,13 @@ button {
   }
 }
 
+/* -----------------------------------------------------QR CODE A REVOIR ------------------------------------------------------- */
+.qrCode {
+  width: 75px;
+  height: 75px;
+}
 
+/* ------------------------------------------------------------------------------------------------------------------------------ */
 
 
 
