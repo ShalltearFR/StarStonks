@@ -937,6 +937,7 @@ button {
 @media screen and (min-width: 600px) {
   #paymentForm {
     width: 500px;
+    margin-inline: auto;
   }
 
   #paymentForm div {
