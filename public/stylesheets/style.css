@@ -1156,7 +1156,10 @@ button {
 }
 
 #error p {
-  margin: auto;
+  margin-inline: auto;
+  margin-bottom: 0;
+  margin-top: 5px;
+  font-size: 24px;
 }
 
 
